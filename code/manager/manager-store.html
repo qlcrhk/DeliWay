@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>식당 관리 - 맛집 플랫폼 관리자</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/manager-common.css">
+    <link rel="stylesheet" href="./css/manager-store.css">
+    <script src="./js/manager-common.js" defer></script>
+    <script src="./js/manager-store.js" defer></script>
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="logo">맛집관리</div>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="./manager-dashboard.html" class="nav-link">
+                    <i class="fas fa-home"></i>
+                    <span>대시보드</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="./manager-store.html" class="nav-link">
+                    <i class="fas fa-utensils"></i>
+                    <span>식당 관리</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="./manager-user.html" class="nav-link">
+                    <i class="fas fa-users"></i>
+                    <span>회원 관리</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="./manager-review.html" class="nav-link">
+                    <i class="fas fa-star"></i>
+                    <span>리뷰 관리</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="./manager-statistics.html" class="nav-link">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>통계</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="./manager-setting.html" class="nav-link">
+                    <i class="fas fa-cog"></i>
+                    <span>설정</span>
+                </a>
+            </li>
+        </ul>
+    </aside>
+
+    <!-- 메인 컨텐츠 -->
+    <div class="main-content">
+        <!-- 검색/필터 섹션 -->
+        <div class="search-section">
+            <form class="search-form">
+                <div class="form-group">
+                    <label for="search">검색어</label>
+                    <input type="text" id="search" placeholder="식당명 또는 주소 검색">
+                </div>
+                <div class="form-group">
+                    <label for="category">카테고리</label>
+                    <select id="category">
+                        <option value="">전체</option>
+                        <option value="korean">한식</option>
+                        <option value="japanese">일식</option>
+                        <option value="chinese">중식</option>
+                        <option value="western">양식</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="status">상태</label>
+                    <select id="status">
+                        <option value="">전체</option>
+                        <option value="pending">승인대기</option>
+                        <option value="approved">승인완료</option>
+                        <option value="rejected">승인거절</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>&nbsp;</label>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-search"></i>
+                        검색
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- 식당 목록 테이블 -->
+        <div class="restaurant-table">
+            <div class="table-header">
+                <h2>식당 목록</h2>
+                <div class="btn-group">
+                    <button class="btn btn-secondary">
+                        <i class="fas fa-download"></i>
+                        엑셀 다운로드
+                    </button>
+                    <button class="btn btn-primary">
+                        <i class="fas fa-plus"></i>
+                        새 식당 등록
+                    </button>
+                </div>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>
+                            <input type="checkbox">
+                        </th>
+                        <th>식당명</th>
+                        <th>카테고리</th>
+                        <th>주소</th>
+                        <th>연락처</th>
+                        <th>등록일</th>
+                        <th>상태</th>
+                        <th>관리</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="checkbox">
+                        </td>
+                        <td>맛있는 찌개</td>
+                        <td>한식</td>
+                        <td>서울시 강남구 역삼동 123-45</td>
+                        <td>02-1234-5678</td>
+                        <td>2024-02-23</td>
+                        <td><span class="badge badge-pending">승인대기</span></td>
+                        <td>
+                            <button class="btn btn-primary">수정</button>
+                            <button class="btn btn-danger">삭제</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox">
+                        </td>
+                        <td>파스타 하우스</td>
+                        <td>양식</td>
+                        <td>서울시 마포구 서교동 456-78</td>
+                        <td>02-9876-5432</td>
+                        <td>2024-02-23</td>
+                        <td><span class="badge badge-approved">승인완료</span></td>
+                        <td>
+                            <button class="btn btn-primary">수정</button>
+                            <button class="btn btn-danger">삭제</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox">
+                        </td>
+                        <td>스시야</td>
+                        <td>일식</td>
+                        <td>서울시 서초구 서초동 789-10</td>
+                        <td>02-2345-6789</td>
+                        <td>2024-02-22</td>
+                        <td><span class="badge badge-pending">승인대기</span></td>
+                        <td>
+                            <button class="btn btn-primary">수정</button>
+                            <button class="btn btn-danger">삭제</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- 페이지네이션 -->
+            <div class="pagination">
+                <button class="page-btn"><i class="fas fa-angle-double-left"></i></button>
+                <button class="page-btn"><i class="fas fa-angle-left"></i></button>
+                <button class="page-btn active">1</button>
+                <button class="page-btn">2</button>
+                <button class="page-btn">3</button>
+                <button class="page-btn">4</button>
+                <button class="page-btn">5</button>
+                <button class="page-btn"><i class="fas fa-angle-right"></i></button>
+                <button class="page-btn"><i class="fas fa-angle-double-right"></i></button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

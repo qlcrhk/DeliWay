@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>점주 대시보드</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/owner-common.css">
+    <link rel="stylesheet" href="./css/owner-dashboard.css">
+    <script src="./js/owner-common.js" defer></script>
+    <script src="./js/owner-dashboard.js" defer></script>
+</head>
+<body>
+    <button class="sidebar-toggle" aria-label="메뉴 열기">
+        <i class="ri-menu-line"></i>
+    </button>
+    <!-- Navigation -->
+    <aside class="sidebar" role="navigation">
+        <div class="sidebar-brand">
+            <div class="brand-logo">
+                <i class="ri-store-2-fill"></i>
+            </div>
+            <h1 class="brand-name">델리웨이</h1>
+        </div>
+        <nav>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="./owner-dashboard.html" class="active">
+                        <i class="ri-dashboard-line"></i>
+                        대시보드
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="./owner-reservation.html">
+                        <i class="ri-calendar-line"></i>
+                        예약 관리
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="./owner-store.html">
+                        <i class="ri-store-line"></i>
+                        매장 정보
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="./owner-menu.html">
+                        <i class="ri-restaurant-line"></i>
+                        메뉴 관리
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="./owner-sales.html">
+                        <i class="ri-bar-chart-line"></i>
+                        매출 통계
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="./owner-setting.html">
+                        <i class="ri-settings-line"></i>
+                        설정
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+    <main class="main-content">
+        <header class="header">
+            <div class="store-info">
+                <div class="store-avatar">M</div>
+                <div>
+                    <h1>맛있는 치킨</h1>
+                    <span class="store-status">영업 중</span>
+                </div>
+            </div>
+            <div class="quick-actions">
+                <button class="btn btn-primary">예약 시간 관리</button>
+                <button class="btn btn-red">영업 상태 변경</button>
+            </div>
+        </header>
+
+        <section class="stats-container">
+            <div class="stat-card">
+                <div class="stat-title">오늘 예약</div>
+                <div class="stat-value">28</div>
+                <div class="stat-trend">어제보다 5건 많음</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-title">오늘 매출</div>
+                <div class="stat-value">857,000원</div>
+                <div class="stat-trend">목표 달성률 85%</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-title">새 리뷰</div>
+                <div class="stat-value">12</div>
+                <div class="stat-trend">평균 평점 4.5</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-title">남은 예약 가능 시간</div>
+                <div class="stat-value">6</div>
+                <div class="stat-trend">저녁 타임 예약 가능</div>
+            </div>
+        </section>
+
+        <div class="grid-container">
+            <section class="card">
+                <div class="card-header">
+                    <h3 class="card-title">최근 예약</h3>
+                    <button class="btn btn-primary">전체 보기</button>
+                </div>
+                <div class="reservation-list">
+                    <div class="reservation-item">
+                        <span class="status-badge status-pending">대기중</span>
+                        <div class="reservation-info">
+                            <h4>김손님 (4인)</h4>
+                            <div class="reservation-meta">
+                                오늘 18:30 | 테이블 12 | 픽업 요청
+                            </div>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="btn btn-primary">승인</button>
+                            <button class="btn btn-red">거절</button>
+                        </div>
+                    </div>
+                    <div class="reservation-item">
+                        <span class="status-badge status-pending">대기중</span>
+                        <div class="reservation-info">
+                            <h4>이손님 (2인)</h4>
+                            <div class="reservation-meta">
+                                오늘 19:00 | 테이블 5
+                            </div>
+                        </div>
+                        <!-- 승인 시 여기에 상태 뱃지가 추가됨 -->
+                        <div class="action-buttons">
+                            <button class="btn btn-primary">승인</button>
+                            <button class="btn btn-red">거절</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card">
+                <div class="card-header">
+                    <h3 class="card-title">공지사항</h3>
+                </div>
+                <ul class="notice-list">
+                    <li class="notice-item">
+                        <span>신규 기능 안내</span>
+                        <span class="notice-badge">New</span>
+                    </li>
+                    <li class="notice-item">
+                        <span>2월 정산 완료</span>
+                        <span class="notice-badge">정산</span>
+                    </li>
+                    <li class="notice-item">
+                        <span>명절 영업 안내</span>
+                        <span class="notice-badge">안내</span>
+                    </li>
+                </ul>
+            </section>
+        </div>
+
+        <div class="grid-container">
+            <section class="card">
+                <div class="card-header">
+                    <h3 class="card-title">오늘의 예약 현황</h3>
+                </div>
+                <div class="time-slots">
+                    <div class="time-slot">17:00 (만석)</div>
+                    <div class="time-slot available">17:30 (4석)</div>
+                    <div class="time-slot">18:00 (만석)</div>
+                    <div class="time-slot available">18:30 (2석)</div>
+                    <div class="time-slot available">19:00 (6석)</div>
+                    <div class="time-slot">19:30 (만석)</div>
+                    <div class="time-slot available">20:00 (8석)</div>
+                    <div class="time-slot available">20:30 (8석)</div>
+                </div>
+            </section>
+
+            <section class="card">
+                <div class="card-header">
+                    <h3 class="card-title">픽업 서비스 현황</h3>
+                </div>
+                <div class="reservation-list">
+                    <div class="reservation-item">
+                        <div class="reservation-info">
+                            <h4>박손님</h4>
+                            <div class="reservation-meta">
+                                18:30 | 2인 | 강남역 4번 출구
+                            </div>
+                        </div>
+                        <span class="status-badge status-confirmed">확정</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

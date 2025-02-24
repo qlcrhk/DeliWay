@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>리뷰 관리 - 맛집 플랫폼 관리자</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/manager-common.css">
+    <link rel="stylesheet" href="./css/manager-review.css">
+    <script src="./js/manager-common.js" defer></script>
+    <script src="./js/manager-review.js" defer></script>
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="logo">맛집관리</div>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="./manager-dashboard.html" class="nav-link">
+                    <i class="fas fa-home"></i>
+                    <span>대시보드</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="./manager-store.html" class="nav-link">
+                    <i class="fas fa-utensils"></i>
+                    <span>식당 관리</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="./manager-user.html" class="nav-link">
+                    <i class="fas fa-users"></i>
+                    <span>회원 관리</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="./manager-review.html" class="nav-link active">
+                    <i class="fas fa-star"></i>
+                    <span>리뷰 관리</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="./manager-statistics.html" class="nav-link">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>통계</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="./manager-setting.html" class="nav-link">
+                    <i class="fas fa-cog"></i>
+                    <span>설정</span>
+                </a>
+            </li>
+        </ul>
+    </aside>
+
+    <div class="main-content">
+        <!-- 검색 섹션 -->
+        <div class="search-section">
+            <form class="search-form">
+                <div class="form-group">
+                    <label for="search">검색어</label>
+                    <input type="text" id="search" placeholder="리뷰 내용, 식당명, 작성자">
+                </div>
+                <div class="form-group">
+                    <label for="rating">별점</label>
+                    <select id="rating">
+                        <option value="">전체</option>
+                        <option value="5">5점</option>
+                        <option value="4">4점</option>
+                        <option value="3">3점</option>
+                        <option value="2">2점</option>
+                        <option value="1">1점</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-search"></i>
+                        검색
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- 리뷰 통계 -->
+        <div class="stat-cards">
+            <div class="stat-card">
+                <div class="stat-card-title">신고된 리뷰</div>
+                <div class="stat-card-value">23</div>
+            </div>
+        </div>
+
+        <!-- 리뷰 목록 -->
+        <div class="review-list">
+            <div class="list-header">
+                <h2 class="list-title">신고된 리뷰 목록</h2>
+                <button class="btn btn-secondary">
+                    <i class="fas fa-download"></i>
+                    엑셀 다운로드
+                </button>
+            </div>
+            
+            <div class="review-table-container">
+                <table class="review-list-table">
+                    <thead>
+                        <tr>
+                            <th>작성자</th>
+                            <th>식당명</th>
+                            <th>리뷰내용</th>
+                            <th>별점</th>
+                            <th>작성일시</th>
+                            <th>관리</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="reviewer-name">김철수</td>
+                            <td class="restaurant-name">맛있는 찌개</td>
+                            <td class="review-content">정말 맛있게 먹었습니다. 특히 김치찌개의 맛이 일품이었고...</td>
+                            <td class="review-rating">★★★★☆</td>
+                            <td class="review-date">2024-02-23 14:30</td>
+                            <td class="review-actions">
+                                <button class="btn btn-primary btn-view-detail">상세보기</button>
+                                <button class="btn btn-warning btn-hide-review">숨기기</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="reviewer-name">이영희</td>
+                            <td class="restaurant-name">파스타 하우스</td>
+                            <td class="review-content">파스타는 맛있었지만 웨이팅이 너무 길었습니다...</td>
+                            <td class="review-rating">★★★☆☆</td>
+                            <td class="review-date">2024-02-22 18:45</td>
+                            <td class="review-actions">
+                                <button class="btn btn-primary btn-view-detail">상세보기</button>
+                                <button class="btn btn-warning btn-hide-review">숨기기</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- 페이지네이션 -->
+            <div class="pagination">
+                <button class="page-btn"><i class="fas fa-angle-double-left"></i></button>
+                <button class="page-btn"><i class="fas fa-angle-left"></i></button>
+                <button class="page-btn active">1</button>
+                <button class="page-btn">2</button>
+                <button class="page-btn">3</button>
+                <button class="page-btn">4</button>
+                <button class="page-btn">5</button>
+                <button class="page-btn"><i class="fas fa-angle-right"></i></button>
+                <button class="page-btn"><i class="fas fa-angle-double-right"></i></button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

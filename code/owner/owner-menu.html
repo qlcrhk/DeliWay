@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="맛집 파트너 메뉴 관리 시스템">
+    <title>메뉴 관리</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/owner-common.css">
+    <link rel="stylesheet" href="./css/owner-menu.css">
+    <script src="./js/owner-common.js" defer></script>
+<body>
+    <button class="sidebar-toggle" aria-label="메뉴 열기">
+        <i class="ri-menu-line"></i>
+    </button>
+    <!-- Navigation -->
+    <aside class="sidebar" role="navigation">
+        <div class="sidebar-brand">
+            <div class="brand-logo">
+                <i class="ri-store-2-fill"></i>
+            </div>
+            <h1 class="brand-name">델리웨이</h1>
+        </div>
+        <nav>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="./owner-dashboard.html">
+                        <i class="ri-dashboard-line"></i>
+                        대시보드
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="./owner-reservation.html">
+                        <i class="ri-calendar-line"></i>
+                        예약 관리
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="./owner-store.html">
+                        <i class="ri-store-line"></i>
+                        매장 정보
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="./owner-menu.html" class="active">
+                        <i class="ri-restaurant-line"></i>
+                        메뉴 관리
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="./owner-sales.html">
+                        <i class="ri-bar-chart-line"></i>
+                        매출 통계
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="./owner-setting.html">
+                        <i class="ri-settings-line"></i>
+                        설정
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+        <main class="main-content">
+            <header class="page-header">
+                <h2 class="page-title">메뉴 관리</h2>
+                <button class="btn btn-primary">
+                    <i class="ri-add-line"></i>
+                    새 메뉴 추가
+                </button>
+            </header>
+
+            <div class="menu-container">
+                <aside class="categories-panel">
+                    <div class="panel-header">
+                        <h3>카테고리</h3>
+                        <button class="btn btn-outline">
+                            <i class="ri-add-line"></i>
+                            추가
+                        </button>
+                    </div>
+                    <div class="category-list">
+                        <div class="category-item active">
+                            <span>치킨</span>
+                            <span class="badge badge-success">6</span>
+                        </div>
+                    </div>
+                </aside>
+
+                <section class="menu-items">
+                    <div class="menu-filters">
+                        <div class="search-input">
+                            <i class="ri-search-line"></i>
+                            <input type="search" placeholder="메뉴 검색..." class="form-control">
+                        </div>
+                        <select class="form-control">
+                            <option>최신순</option>
+                            <option>가격순</option>
+                            <option>인기순</option>
+                        </select>
+                    </div>
+
+                    <div class="menu-grid">
+                        <div class="menu-card">
+                            <div class="menu-image">
+                                <img src="/api/placeholder/400/320" alt="후라이드 치킨" />
+                            </div>
+                            <div class="menu-content">
+                                <div class="menu-header">
+                                    <h3 class="menu-title">후라이드 치킨</h3>
+                                    <span class="menu-price">18,000원</span>
+                                </div>
+                                <p class="menu-description">바삭하고 촉촉한 프리미엄 후라이드 치킨</p>
+                                <div class="menu-actions">
+                                    <button class="btn btn-outline">수정</button>
+                                    <button class="btn btn-danger">삭제</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="menu-card">
+                            <div class="menu-image">
+                                <img src="/api/placeholder/400/320" alt="양념 치킨" />
+                            </div>
+                            <div class="menu-content">
+                                <div class="menu-header">
+                                    <h3 class="menu-title">양념 치킨</h3>
+                                    <span class="menu-price">19,000원</span>
+                                </div>
+                                <p class="menu-description">특제 양념 소스를 입힌 치킨</p>
+                                <div class="menu-actions">
+                                    <button class="btn btn-outline">수정</button>
+                                    <button class="btn btn-danger">삭제</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <dialog id="menu-dialog">
+                <div class="dialog-content">
+                    <div class="dialog-header">
+                        <h3 class="dialog-title">메뉴 추가/수정</h3>
+                    </div>
+                    <form>
+                        <div class="form-group">
+                            <label class="form-label">메뉴명</label>
+                            <input type="text" class="form-control" placeholder="메뉴명을 입력하세요">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">카테고리</label>
+                            <select class="form-control">
+                                <option>치킨</option>
+                                <option>사이드메뉴</option>
+                                <option>음료</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">가격</label>
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <input type="number" class="form-control" min="0" step="100">
+                                <span>원</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">메뉴 설명</label>
+                            <textarea class="form-control" rows="3" placeholder="메뉴에 대한 설명을 입력하세요"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">메뉴 이미지</label>
+                            <div style="border: 2px dashed #E5E7EB; border-radius: var(--border-radius); padding: 2rem; text-align: center; cursor: pointer;">
+                                <i class="ri-image-add-line" style="font-size: 2rem; color: #9CA3AF;"></i>
+                                <p>이미지를 드래그하거나 클릭하여 업로드</p>
+                                <p style="font-size: 0.875rem; color: #6B7280;">권장 크기: 800x600px, 최대 5MB</p>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">옵션 그룹</label>
+                            <div style="border: 1px solid #E5E7EB; border-radius: var(--border-radius); padding: 1rem; margin-bottom: 1rem;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                                    <h4>맵기 선택</h4>
+                                    <button type="button" class="btn btn-outline">옵션 추가</button>
+                                </div>
+                                <ul style="list-style: none;">
+                                    <li style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #E5E7EB;">
+                                        <span>순한맛</span>
+                                        <span>+0원</span>
+                                    </li>
+                                    <li style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #E5E7EB;">
+                                        <span>중간맛</span>
+                                        <span>+0원</span>
+                                    </li>
+                                    <li style="display: flex; justify-content: space-between; padding: 0.5rem 0;">
+                                        <span>매운맛</span>
+                                        <span>+0원</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <button type="button" class="btn btn-outline" style="width: 100%;">
+                                <i class="ri-add-line"></i>
+                                새 옵션 그룹 추가
+                            </button>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">메뉴 상태</label>
+                            <div style="display: flex; gap: 2rem;">
+                                <label style="display: flex; align-items: center; gap: 0.5rem;">
+                                    <input type="checkbox" checked>
+                                    <span>판매 중</span>
+                                </label>
+                                <label style="display: flex; align-items: center; gap: 0.5rem;">
+                                    <input type="checkbox">
+                                    <span>품절</span>
+                                </label>
+                                <label style="display: flex; align-items: center; gap: 0.5rem;">
+                                    <input type="checkbox">
+                                    <span>인기 메뉴</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; justify-content: flex-end; gap: 1rem; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #E5E7EB;">
+                            <button type="button" class="btn btn-outline">취소</button>
+                            <button type="submit" class="btn btn-primary">저장</button>
+                        </div>
+                    </form>
+                </div>
+            </dialog>
+        </main>
+    </div>
+</body>
+</html>
