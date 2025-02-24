@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>검색 결과</title>
+  </head>
+  <body>
+    <header>
+      <h1>검색 결과</h1>
+      <form action="#">
+        <input
+          type="text"
+          id="searchInput"
+          name="search"
+          value="동구청"
+          placeholder="원하는 주제나 맛집을 입력해주세요."
+        />
+        <button type="button" onclick="clearSearch()">지우기</button>
+      </form>
+      <a href="#">뒤로가기</a>
+
+      <nav>
+        <h2>주 메뉴</h2>
+        <ul>
+          <li><a href="#">홈</a></li>
+          <li><a href="#">검색</a></li>
+          <li><a href="#">찜한 맛집</a></li>
+          <li><a href="#">예약내역</a></li>
+          <li><a href="#">마이페이지</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- 지도 영역 -->
+      <section>
+        <h2>지도</h2>
+        <div id="map-container">
+          <!-- 지도 표시 예정 -->
+        </div>
+      </section>
+
+      <!-- 검색 필터 -->
+      <section>
+        <h2>검색 필터</h2>
+        <ul>
+          <li><button type="button">필터</button></li>
+          <li><button type="button">내 주변</button></li>
+          <li><button type="button">지역별</button></li>
+          <li><button type="button">가격대</button></li>
+          <li><button type="button">업종 선택</button></li>
+        </ul>
+      </section>
+
+      <!-- 검색 결과 -->
+      <section>
+        <h2>검색 결과</h2>
+        <div class="store-list">
+          <!-- 매장 카드 -->
+          <article class="store-card">
+            <figure>
+              <img src="store-image.jpg" alt="매장 이미지" />
+            </figure>
+            <div class="store-info">
+              <h3>매장 이름</h3>
+              <p>위치: 서울 강남구</p>
+              <p>영업 시간: 10:00 - 22:00</p>
+              <a href="#">예약하러 가기</a>
+            </div>
+          </article>
+
+          <article class="store-card">
+            <figure>
+              <img src="store-image2.jpg" alt="매장 이미지" />
+            </figure>
+            <div class="store-info">
+              <h3>매장 이름2</h3>
+              <p>위치: 서울 마포구</p>
+              <p>영업 시간: 11:00 - 23:00</p>
+              <a href="#">예약하러 가기</a>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      // 검색 입력 필드 초기화
+      function clearSearch() {
+        document.getElementById("searchInput").value = "";
+      }
+    </script>
+  </body>
+</html>

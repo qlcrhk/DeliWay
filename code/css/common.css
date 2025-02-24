@@ -1,0 +1,30 @@
+/* 기초 셋팅 */
+:root {
+    /* Color design */
+    --primary: #834EC3;
+    --primary-light: #E0D3F0;
+    --black: #000000;
+    --white: #FFFFFF;
+    --err: #ff0000;
+    --text-grey: #6F6F6F;
+    --background-grey: #EDEDED;
+
+    /* Font Sizes */
+    --login-font-size: 24px;
+    --title-font-size: 20px;
+    --login-placeholder-font-size:400 20px;
+    --sub-title2-font-size: 18px;
+    --sub-title1-font-size: 16px;
+    --body2-font-size: 16px;
+    --body1-font-size: 14px;
+    --small-font-size: 12px;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body,h1,h2,h3,h4,h5,h6,a,ul,li,dl,dt,dd,p,div,form{
+    margin: 0;
+    padding: 0;
+}
