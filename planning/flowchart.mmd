@@ -1,0 +1,126 @@
+---
+config:
+  theme: neutral
+  layout: elk
+  look: classic
+---
+flowchart TB
+ subgraph Auth["인증 페이지"]
+        Login["로그인"]
+        Register["회원가입"]
+        Terms["이용약관 동의"]
+        UserInfoInput["회원정보 입력"]
+        FoodPreference["관심 음식 선택"]
+        PasswordReset["비밀번호 재설정"]
+        SNSConnect["SNS 계정 연동"]
+        Splash["스플래시 스크린"]
+  end
+ subgraph Category["업종"]
+        kr["한식"]
+        jp["일식"]
+        cn["중식"]
+        yk["양식"]
+        cafe["카페 & 디저트"]
+        buffet["뷔페"]
+        vegan["비건"]
+        omakase["오마카세"]
+        pickup["픽업가능맛집"]
+  end
+ subgraph FilterOptions["필터 옵션"]
+        Region["지역"]
+        Category
+        Menu["메뉴"]
+        Rating["평점"]
+        PickupOption["픽업 서비스 가능 여부"]
+  end
+ subgraph lnb["상단바"]
+        LocationSetting["위치 설정"]
+        Notification["알림"]
+  end
+ subgraph Mainpage["홈페이지"]
+        RecommendList["추천 맛집 리스트"]
+        LocationList["지역별 맛집"]
+        lnb
+  end
+ subgraph Navbar["네비게이션"]
+        Home["홈"]
+        Search["검색"]
+        Like["찜"]
+        Reservation["예약 내역"]
+        MyPage["마이페이지"]
+  end
+ subgraph Reservationpage["예약 내역"]
+        WriteReview["리뷰 작성"]
+        prevBooking["방문완료"]
+        currentBookinginfo["예약정보"]
+        currentBooking["예약중"]
+        canceledBookinginfo["취소정보"]
+        canceledBooking["취소내역"]
+        RatingInput["평점 입력"]
+        ReviewText["리뷰 텍스트 작성"]
+        ReviewPhoto["리뷰 사진 업로드"]
+  end
+ subgraph Support["고객지원"]
+        Notice["공지사항"]
+        FAQ["FAQ"]
+        Inquiry["1:1 문의"]
+        Terms2["서비스 이용약관"]
+        Privacy["개인정보 처리방침"]
+  end
+ subgraph Info["정보"]
+        CompanyInfo["회사 소개"]
+        ServiceInfo["서비스 소개"]
+        UserGuide["이용 가이드"]
+  end
+ subgraph Mypage["마이페이지"]
+        Profile["프로필 관리"]
+        Favorites["즐겨찾기 맛집"]
+        MyReviews["내 리뷰 관리"]
+        NotificationSettings["알림 설정"]
+        PersonalInfo["개인정보 수정"]
+        Setting["설정"]
+        Store["매장 등록"]
+        Support_MP["고객지원"]
+        Info_MP["Info"]
+        Support
+        Info
+  end
+ subgraph RestaurantDetail["맛집 상세 페이지"]
+        ReviewSection["리뷰 섹션"]
+        MapView["지도 뷰"]
+        Bookmark["찜하기"]
+        BasicInfo["기본 정보"]
+        reseve["예약하기"]
+  end
+ subgraph Main["전체 서비스"]
+        Mainpage
+        SearchResult["검색 결과 페이지"]
+        FilterOptions
+        RestaurantDetail
+        Navbar
+        Mypage
+        Reservationpage
+  end
+    prevBooking --> WriteReview
+    currentBooking --> currentBookinginfo
+    canceledBooking --> canceledBookinginfo
+    MyPage --> Mypage
+    Splash --> Login
+    Login --> Register
+    Register --> Terms
+    Terms --> UserInfoInput
+    UserInfoInput --> FoodPreference
+    Login -- 비밀번호 찾기 --> PasswordReset
+    Login -- SNS 로그인 --> SNSConnect
+    Home --> Mainpage
+    RestaurantDetail --> BasicInfo & ReviewSection & Favorites & MapView
+    WriteReview --> RatingInput & ReviewText & ReviewPhoto
+    Setting --> Support & Info
+    Login -- 로그인 성공 --> Mainpage
+    FoodPreference -- 가입 완료 --> Login
+    RecommendList --> RestaurantDetail
+    Like --> Favorites
+    Search --> FilterOptions
+    SearchResult --> RestaurantDetail
+    FilterOptions --> SearchResult
+    Reservation --> Reservationpage
