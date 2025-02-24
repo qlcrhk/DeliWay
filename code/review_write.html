@@ -1,74 +1,122 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>리뷰작성</title>
     <style>
-        button {
-            margin: 5px;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            background-color: #f9f9f9;
-            cursor: pointer;
-        }
-        button.selected {
-            background-color: #007bff;
-            color: white;
-        }
+      button {
+        margin: 5px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        cursor: pointer;
+      }
+      button.selected {
+        background-color: #007bff;
+        color: white;
+      }
     </style>
     <script>
-        function toggleSelection(event) {
-            event.target.classList.toggle('selected');
-        }
+      function toggleSelection(event) {
+        event.target.classList.toggle("selected");
+      }
     </script>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <h1>리뷰 작성하기</h1>
-        <a href="#">뒤로가기</a>
+      <h1>리뷰 작성하기</h1>
+      <a href="#">뒤로가기</a>
     </header>
 
     <main>
-        <section>
-            <h2>매장 이름</h2>
+      <section>
+        <h2>매장 이름</h2>
 
-            <form>
-                <fieldset>
-                    <fieldset>
-                        <legend>방문 목적을 알려주세요</legend>
-                        <button type="button" onclick="toggleSelection(event)">혼밥</button>
-                        <button type="button" onclick="toggleSelection(event)">데이트</button>
-                        <button type="button" onclick="toggleSelection(event)">가족 외식</button>
-                        <button type="button" onclick="toggleSelection(event)">친구 모임</button>
-                        <button type="button" onclick="toggleSelection(event)">출장/업무</button>
-                    </fieldset>
-                    
+        <form>
+          <fieldset>
+            <fieldset>
+              <legend>방문 목적을 알려주세요</legend>
+              <button type="button" onclick="toggleSelection(event)">
+                혼밥
+              </button>
+              <button type="button" onclick="toggleSelection(event)">
+                데이트
+              </button>
+              <button type="button" onclick="toggleSelection(event)">
+                가족 외식
+              </button>
+              <button type="button" onclick="toggleSelection(event)">
+                친구 모임
+              </button>
+              <button type="button" onclick="toggleSelection(event)">
+                출장/업무
+              </button>
+            </fieldset>
 
-                    <legend>어떤 점이 좋았나요?</legend>
-                    <button type="button" onclick="toggleSelection(event)">서비스</button>
-                    <button type="button" onclick="toggleSelection(event)">청결도</button>
-                    <button type="button" onclick="toggleSelection(event)">음식 맛</button>
-                    <button type="button" onclick="toggleSelection(event)">가격</button>
-                    <button type="button" onclick="toggleSelection(event)">분위기</button>
-                </fieldset>
-                
-                <label for="review-image">사진 업로드</label>
-                <input type="text" id="review-image" name="review-image" required>
+            <legend>어떤 점이 좋았나요?</legend>
+            <button type="button" onclick="toggleSelection(event)">
+              서비스
+            </button>
+            <button type="button" onclick="toggleSelection(event)">
+              청결도
+            </button>
+            <button type="button" onclick="toggleSelection(event)">
+              음식 맛
+            </button>
+            <button type="button" onclick="toggleSelection(event)">가격</button>
+            <button type="button" onclick="toggleSelection(event)">
+              분위기
+            </button>
+          </fieldset>
 
-                <label for="rating">별점</label>
-                <input type="number" id="rating" name="rating" min="1" max="5" required>
+          <label for="review-image">사진 업로드</label>
+          <input type="text" id="review-image" name="review-image" required />
 
-                <label for="title">제목</label>
-                <input type="text" id="title" name="title" required>
+          <label for="rating">별점</label>
+          <input
+            type="number"
+            id="rating"
+            name="rating"
+            min="1"
+            max="5"
+            required
+          />
 
-                <label for="content">내용</label>
-                <textarea id="content" name="content" rows="10" placeholder="리뷰를 작성해주세요" required></textarea>
+          <label for="title">제목</label>
+          <input type="text" id="title" name="title" required />
 
-                <button type="submit">리뷰 등록하기</button>
-            </form>
-        </section>
+          <label for="content">내용</label>
+          <textarea
+            id="content"
+            name="content"
+            rows="10"
+            placeholder="리뷰를 작성해주세요"
+            required
+          ></textarea>
+
+          <button type="submit">리뷰 등록하기</button>
+        </form>
+      </section>
     </main>
-</body>
+
+    <div>
+      <p>
+        정확하고 유익한 정보를 나누어 쾌적한 리뷰 문화를 경험할 수 있도록 아래
+        사항을 유의해주세요. 실제 방문 경험과 다르거나 확인되지 않은 내용을
+        작성하지 말아주세요. 무단 촬영 및 인물 노출에 주의해주세요. 다른
+        손님이나 직원의 모습이 동의 없이 포함되지 않도록 유의해 주세요. 비방,
+        모욕적인 표현 금지, 악의적인 비난, 무례한 언어, 인격을 침해하는 표현은
+        작성하지 말아주세요. 리뷰를 보는 다른 이용자와 사업자에게 상처를 주거나
+        법적 분쟁의 소지가 있는 발언을 삼가해 주세요.
+      </p>
+      <button>확인</button>
+    </div>
+
+    <div>
+      <p>리뷰등록이 완료되었습니다</p>
+      <button>확인</button>
+    </div>
+  </body>
 </html>
