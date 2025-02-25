@@ -30,6 +30,8 @@ body,h1,h2,h3,h4,h5,h6,a,ul,li,dl,dt,dd,p,div,form{
 }
 
 .hidden {
+    display: inline-block;
+    position: abosolute;
     overflow: hidden;
     width: 1px;
     height: 1px;
