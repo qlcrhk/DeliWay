@@ -28,3 +28,10 @@ body,h1,h2,h3,h4,h5,h6,a,ul,li,dl,dt,dd,p,div,form{
     margin: 0;
     padding: 0;
 }
+
+.hidden {
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    clip: rect(0,0,0,0);
+}
