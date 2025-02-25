@@ -1,71 +1,99 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>예약내역</title>
-  </head>
-  <body>
-    <header>
-      <h1>예약 내역</h1>
-      <a href="#">뒤로가기</a>
 
-      <nav>
-        <h2>주 메뉴</h2>
-        <ul>
-          <li><a href="#">홈</a></li>
-          <li><a href="#">검색</a></li>
-          <li><a href="#">찜한 맛집</a></li>
-          <li><a href="#">예약내역</a></li>
-          <li><a href="#">마이페이지</a></li>
-        </ul>
-      </nav>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>예약내역</title>
+</head>
 
-    <main>
-      <section>
-        <h2>좋아요 카테고리 폴더 만들기</h2>
-        <!-- 각각 클릭시 정보만 바뀌게 작성 ui동일하기 떄문 -->
+<body>
+  <header>
+    <h1>예약 내역</h1>
+    <a href="#">뒤로가기</a>
+
+    <nav>
+      <h2>주 메뉴</h2>
+      <ul>
+        <li><a href="#">홈</a></li>
+        <li><a href="#">검색</a></li>
+        <li><a href="#">찜한 맛집</a></li>
+        <li><a href="#">예약내역</a></li>
+        <li><a href="#">마이페이지</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>좋아요 카테고리 폴더 만들기</h2>
+      <!-- 각각 클릭시 정보만 바뀌게 작성 ui동일하기 떄문 -->
+      <ul>
+        <li>
+          <p>찜 목록</p>
+        </li>
+        <li>
+          <p>델리스트</p>
+        </li>
+      </ul>
+
+      <!-- 예약 카드 영역 -->
+      <div>
+        <p>제주고씨 든렙지 레스토랑</p>
+        <p>매장의 위치 정보</p>
+        <p>2025.0.-15 14:00 2명</p>
+
+        <a href="#">매장 자세히 보기</a>
+      </div>
+
+      <!-- 델리스트 스타일 -->
+      <div>
+        <div>
+          <!-- 폴더 이미지가 들어갈 공간 -->
+        </div>
+        <p>나만의 델리스트</p>
+        <p>n 개 저장됨</p>
         <ul>
           <li>
-            <p>찜 목록</p>
-          </li>
-          <li>
-            <p>델리스트</p>
+            ...
           </li>
         </ul>
+      </div>
 
-        <!-- 예약 카드 영역 -->
-        <div>
-          <p>제주고씨 든렙지 레스토랑</p>
-          <p>매장의 위치 정보</p>
-          <p>2025.0.-15 14:00 2명</p>
+      <a href="#">델리스트 추가하기</a>
 
-          <a href="#">매장 자세히 보기</a>
-        </div>
+      <p>잦은 외식으로 VIP의 삶을 지금 바로 체험해 보세요</p>
+    </section>
+  </main>
 
-        <!-- 델리스트 스타일 -->
-        <div>
-          <div>
-            <!-- 폴더 이미지가 들어갈 공간 -->
-          </div>
-          <p>나만의 델리스트</p>
-          <p>n 개 저장됨</p>
-          <ul>
-            <li>
-              ...
-            </li>
-          </ul>
-        </div>
+  <!-- 삭제 수정 모달창 -->
+  <div>
+    <p>나만의 델리스트</p>
+    <p>4개 저장됨</p>
+    <button>삭제</button>
+    <button>수정</button>
+  </div>
 
-        <a href="#">델리스트 추가하기</a>
+  <!-- 수정 모달창 -->
+  <div>
+    <p>변경 내용을 입력해주세요</p>
+    <p>4개 저장됨</p>
+    <button>취소</button>
+    <button>저장하기</button>
+  </div>
 
-        <p>잦은 외식으로 VIP의 삶을 지금 바로 체험해 보세요</p>
-      </section>
-    </main>
+  <!-- 삭제 확인 모달창 -->
+  <div>
+    <p>정말 삭제하시겠습니까?</p>
+    <button>삭제</button>
+    <button>수정</button>
+  </div>
 
-    <div>
-        <!-- 삭제 수정 모달창 -->
-    </div>
-  </body>
+  <!-- 삭제 완료 모달창 -->
+  <div>
+    <p>선택하긴 플레이리스트가<br>삭제되었습니다.</p>
+    <button>확인</button>
+  </div>
+</body>
+
 </html>
