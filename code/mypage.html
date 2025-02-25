@@ -3,40 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>마이페이지지</title>
+    <title>마이페이지</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/webfont.css">
+    <link rel="stylesheet" href="./css/mypage.css">
 </head>
 <body>
     <header>
-        <h1>마이페이지</h1>
-        <a href="#">back</a>
-        <a href="#">설정</a>
-
-        <nav>
-            <h2>주 메뉴</h2>
+            <div class="page-header">
+                <a href="#"><i class="fa fa-angle-left icon" style="font-size:24px"></i><span class="hidden">뒤로가기</span></a>
+                <h1 class="title">마이페이지</h1>
+                <a href="#"><i class="fas fa-cog icon" style="font-size:24px"></i><span class="hidden">설정</span></a>
+            </div>
+        <nav id="gnb">
+            <h2 class="hidden">메인 메뉴</h2>
             <ul>
-                <li><a href="#">홈</a></li>
-                <li><a href="#">검색</a></li>
-                <li><a href="#">찜한 맛집</a></li>
-                <li><a href="#">예약내역</a></li>
-                <li><a href="#">마이페이지</a></li>
+                <li><a href="#" class="home">홈</a></li>
+                <li><a href="#" class="search">검색</a></li>
+                <li><a href="#" class="like">찜한 맛집</a></li>
+                <li><a href="#" class="reservation">예약내역</a></li>
+                <li><a href="#" class="mypage">마이페이지</a></li>
             </ul>
         </nav>
     </header>
-
     <main>
-        <section>
-            <h2>내 정보</h2>
-            <dl>
-                <dt>닉네임</dt>
-                <dd>팔로워</dd>
-                <dd>팔로잉</dd>
-            </dl>
-
-            <a href="#">프로필 수정</a>
-            <a href="#">내 정보 수정</a>
+        <section class="myinfo">
+            <h2 class="hidden">내 정보</h2>
+            <div class="myprofile">
+            <img src="https://placehold.co/80" alt="">
+                <dl>
+                    <dt class="hidden">닉네임</dt>
+                    <dd class="title">닉네임</dd>
+                </dl>
+                <dl>
+                    <dt>팔로워</dt>
+                    <dd>0</dd>
+                </dl>
+                <dl>
+                    <dt>팔로잉</dt>
+                    <dd>0</dd>
+                </dl>
+            </div>
+            <div class="myinfo-btn">
+                <a href="#">프로필 수정</a>
+                <a href="#">내 정보 수정</a>
+            </div>
         </section>
-        <section>
-            <h2>나의 예약 리뷰 찜 관리</h2>
+        <section class="myhistory">
+            <h2 class="title">나의 예약 리뷰 찜 관리</h2>
             <nav>
                 <h3>관리 메뉴</h3>
                 <ul>
@@ -46,9 +61,9 @@
                 </ul>
             </nav>
         </section>
-        <section>
-            <h2>최근활동</h2>
-            <a href="#">전체보기</a>
+        <section class="activities">
+            <h2 class="title">최근활동</h2>
+            <a href="#" class="body1">전체보기</a>
             <p>최근 정보 글<span>10분전</span></p>
         </section>
     </main>
