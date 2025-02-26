@@ -1,25 +1,33 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>미식의 길의 시작 델리웨이</title>
-    <link rel="stylesheet" href="./style.css">
-</head>
-<body>
-    <header>
-        <h1>맛있는 길의 시작 델리웨이</h1>
-        <!-- gnb -->
-        <section>
-            <h2>위치 및 알림</h2>
-            <ul>
-                <li><p>gps</p></li>
-                <li><a href="#">알림</a></li>
-            </ul>
-        </section>
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
 
-        <nav>
-            <h2>메인 메뉴</h2>
+    <script src="../slider2.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1 class="hidden">맛있는 길의 시작 델리웨이</h1>
+      <!-- gnb -->
+      <section>
+        <h2 class="hidden">위치 및 알림</h2>
+        <ul>
+          <li><span class="gps">gps</span> <span>지역 위치</span></li>
+          <li><a href="#" class="notice">알림</a></li>
+        </ul>
+      </section>
+<!-- 
+      <nav>
+            <h2 class="hidden">메인 메뉴</h2>
             <ul>
                 <li><a href="#">홈</a></li>
                 <li><a href="#">검색</a></li>
@@ -27,116 +35,277 @@
                 <li><a href="#">예약내역</a></li>
                 <li><a href="#">마이페이지</a></li>
             </ul>
-        </nav>
+        </nav> -->
         
-        <section>
-            <h2>광고 슬라이드 1 플러그인 사용 예정</h2>
-        </section>
+      <section class="main-slider-section">
+        <h2 class="hidden">메인 배너</h2>
+        <div class="main-slider-container">
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="./asset/image/event_1.png" alt="main-slider1" />
+             </div>
+              <div class="swiper-slide">
+                <img src="./asset/image/event_3.png" alt="main-slider2" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./asset/image/event_4.png" alt="main-slider3" />
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+
+          <!-- Swiper JS -->
+
+          <!-- Initialize Swiper -->
+          <script>
+            var swiper = new Swiper(".mySwiper", {
+              spaceBetween: 30,
+              centeredSlides: true,
+              autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+              },
+              pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+              },
+            });
+          </script>
+        </div>
+      </section>
     </header>
     <!-- 메인페이지 시작 -->
     <main>
-        <section>
-            <h2>업종별 카테고리</h2>
-            <div>
-                <ul>
-                    <li><a href="#">한식</a></li>
-                    <li><a href="#">일식</a></li>
-                    <li><a href="#">중식</a></li>
-                    <li><a href="#">양식</a></li>
-                    <li><a href="#">디저트</a></li>
-                    <li><a href="#">뷔페</a></li>
-                    <li><a href="#">레스토랑</a></li>
-                    <li><a href="#">오마카세</a></li>
-                </ul>
-            </div>
-        </section>
-        <section>
-            <!-- 여기도 슬라이더 사용할건지 대화 필요 -->
-            <h2>고객님이 좋아할만한 맛집</h2>
-            <a href="#">전체보기</a>
-            <div>
-                <ul>
-                    <li>
-                        <a href="#">
-                            <dl>
-                                <dt>샤브 20 상인점</dt>
-                                <dd>평점</dd>
-                                <dd>지역 위치</dd>
-                                <dd>좋아요</dd>
-                            </dl>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </section>
-        <section>
-            <h2>거리별 맛집 찾기</h2>
-            <ul>
-                <li><a href="#">내 주변</a></li>
-                <li><a href="#">1km</a></li>
-                <li><a href="#">3km</a></li>
-                <li><a href="#">5km</a></li>
-                <li><a href="#">10km</a></li>
-            </ul>
-        </section>
-        <section>
-            <h2>광고2 슬라이더 플러그인 사용</h2>
-            <div>
-            </div>
-        </section>
+      <section>
+        <h2 class="hidden">업종별 카테고리</h2>
+        <div class="category-container">
+          <ul>
+            <li>
+                <a href="#">
+                    <div>
+                        <img src="./asset/icon/krfood.png" alt="한식" />
+                    </div>
+                    <p>한식</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div>
+                        <img src="./asset/icon/jpfood.png" alt="일식" />
+                    </div>
+                    <p>일식</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div>
+                        <img src="./asset/icon/chfood.png" alt="중식" />
+                    </div>
+                    <p>중식</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div>
+                        <img src="./asset/icon/usfood.png" alt="양식" />
+                    </div>
+                    <p>양식</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div>
+                        <img src="./asset/icon/coffee.png" alt="카페와 디저트" />
+                    </div>
+                    <p>카페&디저트</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div>
+                        <img src="./asset/icon/began.png" alt="채식" />
+                    </div>
+                    <p>채식</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div>
+                        <img src="./asset/icon/bupe.png" alt="뷔페" />
+                    </div>
+                    <p>뷔페</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div>
+                        <img src="./asset/icon/chobab.png" alt="오마카세" />
+                    </div>
+                    <p>오마카세</p>
+                </a>
+            </li>
+            
+          </ul>
+        </div>
+      </section>
 
-        <section>
-            <h2>두 번째 맛집 정보</h2>
-            <article>
-                <h3>믿거 듣보잡 델리 픽 핫 플레이스</h3>
-                <p>단 한번의 성공도 없었습니다.</p>
+      <section class="recomand-section">
+        <div class="title-container">
+          <div class="recomend-title">
+            <h2 >고객님이 좋아할 맛집</h2>
+            <p>궁예도 한 수 접는 독심술</p>
+           </div>
+          <div class="all-btn">
+            <a href="#">전체보기 <span class="all-arr"></span></a>
+          </div>
+         </div>
+  
+        <div class="store-container" id="slider">
+          <ul>
+            <li><a href="#"><dl><div><dt>맛집 1</dt><div class="rec-content"><dd>평점</dd><dd>위치</dd></div></div><div>좋아요</div></dl></a></li>
+            <li><a href="#"><dl><div><dt>맛집 1</dt><div class="rec-content"><dd>평점</dd><dd>위치</dd></div></div><div>좋아요</div></dl></a></li>
+            <li><a href="#"><dl><div><dt>맛집 1</dt><div class="rec-content"><dd>평점</dd><dd>위치</dd></div></div><div>좋아요</div></dl></a></li>
+            <li><a href="#"><dl><div><dt>맛집 1</dt><div class="rec-content"><dd>평점</dd><dd>위치</dd></div></div><div>좋아요</div></dl></a></li>            
+        </div>
+      </section>
 
-                <div>
-                    <ul>
-                        <li>
-                            <a href="#">
-                                <dl>
-                                    <dt>샤브 20 상인점</dt>
-                                    <dd>평점</dd>
-                                    <dd>지역 위치</dd>
-                                    <dd>좋아요</dd>
-                                </dl>
-                            </a>
-                        </li>
-                    </ul>
+      <section class="distance-section">
+        <h2 class="title-container">거리별 맛집 찾기</h2>
+        <ul>
+          <li><a href="#">내 주변</a></li>
+          <li><a href="#">1km<br>이내</a></li>
+          <li><a href="#">3km<br>이내</a></li>
+          <li><a href="#">5km<br>이내</a></li>
+          <li><a href="#">10km<br>이내</a></li>
+        </ul>
+      </section>
+
+      <section class="banner-slider-section">
+        <h2 class="hidden">광고</h2>
+        <div class="banner-slider-container">
+          <div class="swiper mySwiper2">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="./asset/image/banner_1.png" alt="main-slider1" />
+             </div>
+              <div class="swiper-slide">
+                <img src="./asset/image/banner_2.png" alt="main-slider2" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./asset/image/banner_3.png" alt="main-slider3" />
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+
+          <!-- Swiper JS -->
+
+          <!-- Initialize Swiper -->
+          <script>
+            var swiper = new Swiper(".mySwiper2", {
+              spaceBetween: 30,
+              centeredSlides: true,
+              autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+              },
+              pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+              },
+            });
+          </script>
+        </div>
+      </section>
+
+      <section class="recomand-section">
+        <div class="title-container">
+          <div class="recomend-title">
+            <h2 >고객님이 좋아할 맛집</h2>
+            <p>궁예도 한 수 접는 독심술</p>
+           </div>
+          <div class="all-btn">
+            <a href="#">전체보기 <span class="all-arr"></span></a>
+          </div>
+         </div>
+  
+        <div class="store-container" id="slider2">
+          <ul>
+            <li><a href="#"><dl><div><dt>맛집 1</dt><div class="rec-content"><dd>평점</dd><dd>위치</dd></div></div><div>좋아요</div></dl></a></li>
+            <li><a href="#"><dl><div><dt>맛집 1</dt><div class="rec-content"><dd>평점</dd><dd>위치</dd></div></div><div>좋아요</div></dl></a></li>
+            <li><a href="#"><dl><div><dt>맛집 1</dt><div class="rec-content"><dd>평점</dd><dd>위치</dd></div></div><div>좋아요</div></dl></a></li>
+            <li><a href="#"><dl><div><dt>맛집 1</dt><div class="rec-content"><dd>평점</dd><dd>위치</dd></div></div><div>좋아요</div></dl></a></li> 
+        </div>
+      </section>
+
+      <section class="recomand-section">
+        <div class="title-container">
+          <div class="recomend-title">
+            <h2 >고객님이 좋아할 맛집</h2>
+            <p>궁예도 한 수 접는 독심술</p>
+           </div>
+          <div class="all-btn">
+            <a href="#">전체보기 <span class="all-arr"></span></a>
+          </div>
+         </div>
+  
+        <div class="store-container" id="slider3">
+          <ul>
+              <li><a href="#"><dl><div><dt>맛집 1</dt><div class="rec-content"><dd>평점</dd><dd>위치</dd></div></div><div>좋아요</div></dl></a></li>
+              <li><a href="#"><dl><div><dt>맛집 1</dt><div class="rec-content"><dd>평점</dd><dd>위치</dd></div></div><div>좋아요</div></dl></a></li>
+              <li><a href="#"><dl><div><dt>맛집 1</dt><div class="rec-content"><dd>평점</dd><dd>위치</dd></div></div><div>좋아요</div></dl></a></li>
+              <li><a href="#"><dl><div><dt>맛집 1</dt><div class="rec-content"><dd>평점</dd><dd>위치</dd></div></div><div>좋아요</div></dl></a></li> 
+        </div>
+      </section>
+
+      
+
+      <section>
+        <div>
+        <!-- slider plugin 사용 -->
+        <h2 class="title-container">델리 매거진</h2>
+          <div class="magazine-slider-container">
+            <div class="swiper mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="./asset/image/pexels-can-i-gdeli-624966221-30748532.jpg" alt="main-slider1" />
+               </div>
+                <div class="swiper-slide">
+                  <img src="./asset/image/pexels-yunus-kilic-55235055-30722200.jpg" alt="main-slider2" />
                 </div>
-            </article>
-            <article>
-                <h3>응애 신입 매장</h3>
-                <p>지루한 일상에 지방을 불어넣는</p>
-                <a href="#">전체보기</a>
-                <div>
-                    <ul>
-                        <li>
-                            <a href="#">
-                                <dl>
-                                    <dt>샤브 20 상인점</dt>
-                                    <dd>평점</dd>
-                                    <dd>지역 위치</dd>
-                                    <dd>좋아요</dd>
-                                </dl>
-                            </a>
-                        </li>
-                    </ul>
+                <div class="swiper-slide">
+                  <img src="./asset/image/pexels-othmane-ettalbi-2148497459-30374243.jpg" alt="main-slider3" />
                 </div>
-            </article>
-        </section>
-
-        <section>
-            <!-- slider plugin 사용 -->
-            <h2>델리 매거진</h2>
-            <div>
-
+              </div>
+              <div class="swiper-pagination"></div>
             </div>
-        </section>
+        </div>
+
+  
+            <!-- Swiper JS -->
+  
+            <!-- Initialize Swiper -->
+            <script>
+              var swiper = new Swiper(".mySwiper", {
+                spaceBetween: 30,
+                centeredSlides: true,
+                autoplay: {
+                  delay: 2500,
+                  disableOnInteraction: false,
+                },
+                pagination: {
+                  el: ".swiper-pagination",
+                  clickable: true,
+                },
+              });
+            </script>
+          </div>
+      </section>
     </main>
     <div>
-        <!-- 알림 모달창 들어갈 공간 -->
+      <!-- 알림 모달창 들어갈 공간 -->
     </div>
-</body>
+  </body>
 </html>
+

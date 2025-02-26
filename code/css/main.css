@@ -1,0 +1,212 @@
+body{
+  padding-bottom: 300px;
+}
+
+section{
+  padding-bottom: 28px;
+}
+
+/* 상단 알림 및 gps */
+
+header ul{
+    display: flex;
+    justify-content: space-between;
+    padding: 18px;
+    align-items: center;
+}
+
+header ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header ul li span:nth-child(2){
+    font-size: 20px;
+    margin-top: -10px;
+}
+
+header ul li .gps, header ul li .notice{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(../asset/icon/gps.png) no-repeat top / cover;
+    overflow: hidden;
+    text-indent: 100%; /* 텍스트를 화면 밖으로 이동 */
+    white-space: nowrap; /* 줄바꿈 방지 */
+}
+
+header ul li .notice{
+    width: 26px;
+    height: 26px;
+    background: url(../asset/icon/notice.png) no-repeat top / cover;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+/* main slider1 */
+.main-slider-section, .-slider-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 18px;
+}
+
+.main-slider-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* 음식 카테고리 */
+.category-container ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    list-style: none;
+    padding: 20px;
+  }
+
+  .category-container li {
+    padding: 10px;
+    text-align: center;
+    border-radius: 8px;
+    font-weight: bold;
+  }
+
+  .category-container a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    font-size: var(--body1-font-size);
+    white-space: nowrap;
+  }
+
+  /* 손님이 좋아할 만한 집집 */
+
+  .title-container
+  {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 0 15px 18px;
+  }
+
+  .all-arr{
+    display: inline-block;
+    cursor: pointer;
+    background: url(../asset/icon/arrow.png) no-repeat center / contain;
+    width: 12px;
+    height: 12px;
+  }
+
+  h2{
+    font-size: var(--title-font-size);
+  }
+  p{
+    font-size: var(--body2-font-size);
+  }
+
+  .recomand-section{
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  .store-container{
+    width: 1320px;
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .recomand-section ul{
+    display: flex;
+    gap: 1em;
+    padding-left: 18px;
+    margin: 0;
+    list-style: none;
+  }
+
+  dl{
+    width: 250px;
+    height: 170px;
+    border-radius: 10px;
+    background-color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    padding: 1em;
+    margin-top:1em;
+  }
+
+  .rec-content{
+    display: flex;
+    gap: 1em;
+  }
+
+.distance-section ul{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+}
+
+.distance-section ul li{
+  width: 80px;
+  height: 80px;
+  background-color: #333;
+  border-radius: 50%;
+}
+
+.distance-section ul li a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+}
+/* 광고 2 */
+
+
+.magazine-slider-container{
+  overflow: hidden;
+  border-radius: 10px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.magazine-slider-container img{
+  border-radius: 10px;
+}
+

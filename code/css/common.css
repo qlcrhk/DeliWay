@@ -22,6 +22,8 @@
 
 *{
     box-sizing: border-box;
+    list-style:none;
+    text-decoration: none;
 }
 
 body,h1,h2,h3,h4,h5,h6,a,ul,li,dl,dt,dd,p,div,form{
@@ -30,8 +32,52 @@ body,h1,h2,h3,h4,h5,h6,a,ul,li,dl,dt,dd,p,div,form{
 }
 
 .hidden {
+    display: inline-block;
+    position: abosolute;
     overflow: hidden;
     width: 1px;
     height: 1px;
     clip: rect(0,0,0,0);
+}
+
+/* 폰트 */
+.body {
+    font-family: 'Pretendard-Medium';
+    font-size: 16px;
+}
+
+.login {
+    font-family: 'Pretendard-Bold';
+    font-size: 24px;
+}
+.login-placeholder {
+    font-family: 'Pretendard-Medium';
+    font-size: 20px;
+}
+
+.title {
+    font-family: 'Pretendard-Bold';
+    font-size: 20px;
+}
+.sub-title1 {
+    font-family: 'Pretendard-Bold';
+    font-size: 16px;
+}
+.sub-title2 {
+    font-family: 'Pretendard-Bold';
+    font-size: 16px;
+}
+
+.body1 {
+    font-family: 'Pretendard-Medium';
+    font-size: 14px;
+}
+
+.small {
+    font-family: 'Pretendard-Medium';
+    font-size: 12px;
+}
+
+a{
+    color: black;
 }
