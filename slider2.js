@@ -19,7 +19,6 @@ class Slider {
     this.slider.addEventListener('touchstart', (e) => this.startMove(e.touches[0]));
 
     document.addEventListener('mouseup', (e) => this.endMove(e));
-    document.addEventListener('mouseleave', () => this.endMove(e));
     document.addEventListener('touchend', (e) => this.endMove(e));
 
     this.slider.addEventListener("click", (e) => this.handleClick(e), true); // 클릭 이벤트 추가

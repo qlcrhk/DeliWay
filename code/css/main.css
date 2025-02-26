@@ -129,49 +129,86 @@ main{
     height: 12px;
   }
 
-  h2{
-    font-size: var(--title-font-size);
-  }
-  p{
-    font-size: var(--body2-font-size);
-  }
+.store-container ul{
+  display: flex;
+  align-items: center;
+  padding-left: 18px;
+  gap: 10px;
+  padding: 18px;
+}
 
-  .recomand-section{
-    width: 100%;
-    margin: 0 auto;
-    overflow: hidden;
-  }
+.store-container li a dl{
+  width: 250px;
+  height: 180px;
+  background-color: #333;
+  padding: 120px 0 0 20px;
+  color: white;
+  border-radius: 10px;
+  position: relative;
+  background: url("../asset/image/pexels-othmane-ettalbi-2148497459-30374243.jpg") no-repeat center;
+}
 
-  .store-container{
-    width: 1320px;
-    display: flex;
-    transition: transform 0.3s ease-in-out;
-  }
+dd{
+  display: inline-block;
+  padding-right: 10px;
+}
 
-  .recomand-section ul{
-    display: flex;
-    gap: 1em;
-    padding-left: 18px;
-    margin: 0;
-    list-style: none;
-  }
+dd:nth-of-type(3){
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  padding-right: 0px;
+  margin-left: 20px;
+  border-radius: 10px 0 0;
 
-  dl{
-    width: 250px;
-    height: 170px;
-    border-radius: 10px;
-    background-color: #333;
-    display: flex;
-    justify-content: space-between;
-    align-items: end;
-    padding: 1em;
-    margin-top:1em;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  .rec-content{
-    display: flex;
-    gap: 1em;
-  }
+dd:nth-of-type(3) img{
+  width: 30px;
+  z-index: 999;
+}
+
+
+dd:nth-of-type(3)::after{
+  position: absolute;
+  content: "";
+  display: block;
+  width: 15px;
+  height: 15px;
+  background: url(../asset/round.png) no-repeat left bottom / cover;
+  bottom: 0;
+  right: 50px;
+
+}
+
+dd:nth-of-type(3)::before{
+  position: absolute;
+  content: "";
+  display: block;
+  width: 15px;
+  height: 15px;
+  background: url(../asset/round.png) no-repeat right top / cover;
+  bottom: 50px;
+  right: 0px;
+}
+
+.like-icon1 {
+  display: none; /* 기본적으로 채워진 하트 숨김 */
+}
+
+.like-icon2 {
+  display: none; /* 기본적으로 채워진 하트 숨김 */
+}
+
+.active{
+  display: block;
+}
 
 .distance-section ul{
   display: flex;
