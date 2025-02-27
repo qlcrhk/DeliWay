@@ -85,4 +85,5 @@ document.addEventListener("DOMContentLoaded", () => {
   new Slider('slider');
   new Slider('slider2');
   new Slider('slider3');
+  new Slider('slider4');
 });

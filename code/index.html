@@ -19,6 +19,18 @@
     <header>
       <h1 class="hidden">맛있는 길의 시작 델리웨이</h1>
       <!-- gnb -->
+
+      <nav id="gnb">
+        <h2 class="hidden">주 메뉴</h2>
+        <ul>
+            <li><a href="#" class="home">홈</a></li>
+            <li><a href="#" class="search">검색</a></li>
+            <li><a href="#" class="like">찜한 맛집</a></li>
+            <li><a href="#" class="reservation">예약내역</a></li>
+            <li><a href="#" class="mypage">마이페이지</a></li>
+        </ul>
+    </nav>
+    
       <section>
         <h2 class="hidden">위치 및 알림</h2>
         <ul>
@@ -26,17 +38,6 @@
           <li><a href="#" class="notice">알림</a></li>
         </ul>
       </section>
-      <!-- 
-      <nav>
-            <h2 class="hidden">메인 메뉴</h2>
-            <ul>
-                <li><a href="#">홈</a></li>
-                <li><a href="#">검색</a></li>
-                <li><a href="#">찜한 맛집</a></li>
-                <li><a href="#">예약내역</a></li>
-                <li><a href="#">마이페이지</a></li>
-            </ul>
-        </nav> -->
 
       <section class="main-slider-section">
         <h2 class="hidden">메인 배너</h2>
@@ -143,7 +144,7 @@
             <p>궁예도 한 수 접는 독심술</p>
           </div>
           <div class="all-btn">
-            <a href="#">전체보기 <span class="all-arr"></span></a>
+            <a href="#"><span class="hidden">전체보기</span> <span class="all-arr"></span></a>
           </div>
         </div>
 
@@ -240,24 +241,17 @@
       </section>
 
       <section class="distance-section">
-        <h2 class="title-container">거리별 맛집 찾기</h2>
-        <ul>
+        <h2 class="title-container">주변 맛집 부수기</h2>
+        <ul id="slider4">
           <li><a href="#">내 주변</a></li>
-          <li>
-            <a href="#">1km<br>이내</a>
-          </li>
-          <li>
-            <a href="#">3km<br>이내</a>
-          </li>
-          <li>
-            <a href="#">5km<br>이내</a>
-          </li>
-          <li>
-            <a href="#">10km<br>이내</a>
-          </li>
+          <li><a href="#">1km이내</a></li>
+          <li><a href="#">3km이내</a></li>
+          <li><a href="#">5km이내</a></li>
+          <li><a href="#">10km이내</a></li>
         </ul>
       </section>
 
+      
       <section class="banner-slider-section">
         <h2 class="hidden">광고</h2>
         <div class="banner-slider-container">
@@ -288,7 +282,7 @@
             <p>궁예도 한 수 접는 독심술</p>
           </div>
           <div class="all-btn">
-            <a href="#">전체보기 <span class="all-arr"></span></a>
+            <a href="#"><span class="hidden">전체보기</span><span class="all-arr"></span></a>
           </div>
         </div>
 
@@ -389,7 +383,7 @@
             <p>궁예도 한 수 접는 독심술</p>
           </div>
           <div class="all-btn">
-            <a href="#">전체보기 <span class="all-arr"></span></a>
+            <a href="#"><span class="hidden">전체보기</span> <span class="all-arr"></span></a>
           </div>
         </div>
 
@@ -530,6 +524,9 @@
           </script>
         </div>
       </section>
+
+      
+
     </main>
     <div>
       <!-- 알림 모달창 들어갈 공간 -->

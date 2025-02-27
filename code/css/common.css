@@ -3,6 +3,7 @@
     /* Color design */
     --primary: #834EC3;
     --primary-light: #E0D3F0;
+    --primary-dark: #613991;
     --black: #000000;
     --white: #FFFFFF;
     --err: #ff0000;
@@ -80,4 +81,43 @@ body,h1,h2,h3,h4,h5,h6,a,ul,li,dl,dt,dd,p,div,form{
 
 a{
     color: black;
+}
+
+#gnb ul {
+    position: fixed;
+    bottom:0;
+    display: flex;
+    width: 100%;
+    height: 100px;
+    background: #fff;
+    z-index: 999;
+}
+#gnb ul li {
+    width: 20%;
+}
+
+#gnb ul li a {
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 100%;
+    height: 100%;
+    text-indent: -100%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.home {
+    background-image: url(../image/home.png);
+}
+.search {
+    background-image: url(../image/search.png);
+}
+.likeBtn {
+    background-image: url(../image/likeBtn.png);
+}
+.reservation {
+    background-image: url(../image/reservation.png);
+}
+.mypage {
+    background-image: url(../image/mypage.png);
 }
