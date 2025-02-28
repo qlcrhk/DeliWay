@@ -2,8 +2,8 @@
 <html lang="ko">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>리뷰 댓글 확인</title>
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/review_detail.css">
@@ -17,16 +17,6 @@
             <h1 class="title">매장 이름</h1>
             <div class="header-placeholder"></div>
         </div>
-        <!-- <nav id="gnb">
-            <h2 class="hidden">주 메뉴</h2>
-            <ul>
-                <li><a href="#" class="home">홈</a></li>
-                <li><a href="#" class="search">검색</a></li>
-                <li><a href="#" class="likeBtn">찜한 맛집</a></li>
-                <li><a href="#" class="reservation">예약내역</a></li>
-                <li><a href="#" class="mypage">마이페이지</a></li>
-            </ul>
-        </nav> -->
     </header>
 
     <main>
@@ -63,12 +53,12 @@
             </div>
             <div class="review-actions">
                 <button class="like-btn sub-title1">
-                    <img class="like-icon1 active" src="./image/like-active.png" alt="좋아요">
-                    <img class="like-icon2" src="./image/liked.png" alt="좋아요">
+                    <img class="like-icon1 active" src="../icon/likeBtn-active.png" alt="좋아요">
+                    <img class="like-icon2" src="../icon/liked.png" alt="좋아요">
                     <span class="like-count">10</span>
                 </button>
                 <button class="comment-btn sub-title1">
-                    <img src="./image/comment.png" alt="comment-icon">
+                    <img src="../icon/comment.png" alt="comment-icon">
                     <span class="comment-count">3</span>
                 </button>
             </div>
@@ -124,9 +114,10 @@
     </main>
     <!-- 댓글 입력창 -->
     <section class="comment-form-section">
+        <h2 class="hidden">댓글 입력창</h2>
         <form class="comment-form" action="#" method="post">
                 <input type="text" id="comment" name="comment" placeholder="댓글을 입력하세요..." class="comment-input">
-                <button type="submit" class="submit-btn"><img src="./image/send.png" alt="전송"><span class="hidden">등록</span></button>
+                <button type="submit" class="submit-btn"><img src="../icon/send.png" alt="전송"><span class="hidden">등록</span></button>
         </form>
     </section>
     <script>
@@ -141,8 +132,8 @@
                     e.preventDefault();
                     e.stopPropagation();
 
-                    const icon1 = this.querySelector(".like-icon1"); //빈 하트
-                    const icon2 = this.querySelector(".like-icon2"); //채워진 하트
+                    const icon1 = this.querySelector(".like-icon1");//빈 하트
+                    const icon2 = this.querySelector(".like-icon2");//채워진 하트
 
                     icon1.classList.toggle('active');
                     icon2.classList.toggle('active');

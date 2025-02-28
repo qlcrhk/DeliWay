@@ -59,7 +59,8 @@ button {
 .modal .roundBox {
     flex-wrap: wrap;
     margin-bottom: 40px;
-}
+    padding: 0 20px;
+ }
 .modal p {
     margin-bottom: 20px;
 }
@@ -70,7 +71,7 @@ button {
 
 /* 가격대 거리순 슬라이더바 */
 .range-slider {
-    margin: 0 15px;
+    margin: 0 15px 15px;
 }
 
 .slider-container {

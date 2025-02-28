@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./css/search.css">
     <link rel="stylesheet" href="./css/search-modal.css">
     <script src="./js/search-modal.js" defer></script>
+    <script src="./js/review_write.js"></script>
 </head>
 <body>
     <header>
@@ -26,13 +27,13 @@
         <section class="searchFilter">
             <h2 class="title">검색 필터</h2>
             <ul class="roundBox">
-                <li><button type="button">필터</button></li>
-                <li><button type="button">내 주변</button></li>
-                <li><button type="button">거리별</button></li>
-                <li><button type="button">지역별</button></li>
-                <li><button type="button">가격대별</button></li>
-                <li><button type="button">업종 선택</button></li>
-                <li><button type="button">픽업서비스 가능</button></li>
+                <li><button type="button" class="tag" onclick="toggleSelection(event)">필터</button></li>
+                <li><button type="button" class="tag" onclick="toggleSelection(event)">내 주변</button></li>
+                <li><button type="button" class="tag" onclick="toggleSelection(event)">거리별</button></li>
+                <li><button type="button" class="tag" onclick="toggleSelection(event)">지역별</button></li>
+                <li><button type="button" class="tag" onclick="toggleSelection(event)">가격대별</button></li>
+                <li><button type="button" class="tag" onclick="toggleSelection(event)">업종 선택</button></li>
+                <li><button type="button" class="tag" onclick="toggleSelection(event)">픽업서비스 가능</button></li>
             </ul>
         </section>
 
@@ -167,44 +168,44 @@
             <div>
                 <p class="sub-title2">정렬</p>
                 <ul class="roundBox">
-                    <li><button type="button">별점순</button></li>
-                    <li><button type="button">가격순</button></li>
-                    <li><button type="button">거리순</button></li>
+                    <li><button type="button" class="tag" onclick="toggleSelection(event)">별점순</button></li>
+                    <li><button type="button" class="tag" onclick="toggleSelection(event)">가격순</button></li>
+                    <li><button type="button" class="tag" onclick="toggleSelection(event)">거리순</button></li>
                 </ul>
             </div>
             <div>
                 <p class="sub-title2">업종 선택</p>
                 <ul class="roundBox">
-                    <li><button type="button">한식</button></li>
-                    <li><button type="button">중식</button></li>
-                    <li><button type="button">양식</button></li>
-                    <li><button type="button">일식</button></li>
-                    <li><button type="button">채식</button></li>
-                    <li><button type="button">오마카세</button></li>
-                    <li><button type="button">뷔페</button></li>
-                    <li><button type="button">카페&디저트</button></li>
+                    <li><button type="button" class="tag" onclick="toggleSelection(event)">한식</button></li>
+                    <li><button type="button" class="tag" onclick="toggleSelection(event)">중식</button></li>
+                    <li><button type="button" class="tag" onclick="toggleSelection(event)">양식</button></li>
+                    <li><button type="button" class="tag" onclick="toggleSelection(event)">일식</button></li>
+                    <li><button type="button" class="tag" onclick="toggleSelection(event)">채식</button></li>
+                    <li><button type="button" class="tag" onclick="toggleSelection(event)">오마카세</button></li>
+                    <li><button type="button" class="tag" onclick="toggleSelection(event)">뷔페</button></li>
+                    <li><button type="button" class="tag" onclick="toggleSelection(event)">카페&디저트</button></li>
                 </ul>
             </div>
             <div>
                 <p class="sub-title2">지역 선택</p>
                 <ul class="roundBox">
-                    <li><button type="button">서울</button></li>
-                    <li><button type="button">인천</button></li>
-                    <li><button type="button">부산</button></li>
-                    <li><button type="button">대구</button></li>
-                    <li><button type="button">대전</button></li>
-                    <li><button type="button">광주</button></li>
-                    <li><button type="button">울산</button></li>
-                    <li><button type="button">세종</button></li>
-                    <li><button type="button">강원</button></li>
-                    <li><button type="button">경북</button></li>
-                    <li><button type="button">경남</button></li>
-                    <li><button type="button">전북</button></li>
-                    <li><button type="button">전남</button></li>
-                    <li><button type="button">충북</button></li>
-                    <li><button type="button">충남</button></li>
-                    <li><button type="button">제주</button></li>
-                    <li><button type="button">전국</button></li>
+                    <li><button type="button" class="tag" onclick="toggleSelection(event)">서울</button></li>
+                    <li><button type="button" class="tag" onclick="toggleSelection(event)">인천</button></li>
+                    <li><button type="button" class="tag" onclick="toggleSelection(event)">부산</button></li>
+                    <li><button type="button" class="tag" onclick="toggleSelection(event)">대구</button></li>
+                    <li><button type="button" class="tag" onclick="toggleSelection(event)">대전</button></li>
+                    <li><button type="button" class="tag" onclick="toggleSelection(event)">광주</button></li>
+                    <li><button type="button" class="tag" onclick="toggleSelection(event)">울산</button></li>
+                    <li><button type="button" class="tag" onclick="toggleSelection(event)">세종</button></li>
+                    <li><button type="button" class="tag" onclick="toggleSelection(event)">강원</button></li>
+                    <li><button type="button" class="tag" onclick="toggleSelection(event)">경북</button></li>
+                    <li><button type="button" class="tag" onclick="toggleSelection(event)">경남</button></li>
+                    <li><button type="button" class="tag" onclick="toggleSelection(event)">전북</button></li>
+                    <li><button type="button" class="tag" onclick="toggleSelection(event)">전남</button></li>
+                    <li><button type="button" class="tag" onclick="toggleSelection(event)">충북</button></li>
+                    <li><button type="button" class="tag" onclick="toggleSelection(event)">충남</button></li>
+                    <li><button type="button" class="tag" onclick="toggleSelection(event)">제주</button></li>
+                    <li><button type="button" class="tag" onclick="toggleSelection(event)">전국</button></li>
                 </ul>
             </div>
             <div class="filter-range">
@@ -243,14 +244,14 @@
                 <p class="sub-title2">업종 선택</p>
             </div>
             <ul class="roundBox">
-                <li><button type="button">한식</button></li>
-                <li><button type="button">중식</button></li>
-                <li><button type="button">양식</button></li>
-                <li><button type="button">일식</button></li>
-                <li><button type="button">채식</button></li>
-                <li><button type="button">오마카세</button></li>
-                <li><button type="button">뷔페</button></li>
-                <li><button type="button">카페&디저트</button></li>
+                <li><button type="button" class="tag" onclick="toggleSelection(event)">한식</button></li>
+                <li><button type="button" class="tag" onclick="toggleSelection(event)">중식</button></li>
+                <li><button type="button" class="tag" onclick="toggleSelection(event)">양식</button></li>
+                <li><button type="button" class="tag" onclick="toggleSelection(event)">일식</button></li>
+                <li><button type="button" class="tag" onclick="toggleSelection(event)">채식</button></li>
+                <li><button type="button" class="tag" onclick="toggleSelection(event)">오마카세</button></li>
+                <li><button type="button" class="tag" onclick="toggleSelection(event)">뷔페</button></li>
+                <li><button type="button" class="tag" onclick="toggleSelection(event)">카페&디저트</button></li>
             </ul>
             <button class="apply-button title">적용하기</button>
         </div>
@@ -263,23 +264,23 @@
                 <p class="sub-title2">지역 선택</p>
             </div>
             <ul class="roundBox">
-                <li><button type="button">서울</button></li>
-                <li><button type="button">인천</button></li>
-                <li><button type="button">부산</button></li>
-                <li><button type="button">대구</button></li>
-                <li><button type="button">대전</button></li>
-                <li><button type="button">광주</button></li>
-                <li><button type="button">울산</button></li>
-                <li><button type="button">세종</button></li>
-                <li><button type="button">강원</button></li>
-                <li><button type="button">경북</button></li>
-                <li><button type="button">경남</button></li>
-                <li><button type="button">전북</button></li>
-                <li><button type="button">전남</button></li>
-                <li><button type="button">충북</button></li>
-                <li><button type="button">충남</button></li>
-                <li><button type="button">제주</button></li>
-                <li><button type="button">전국</button></li>
+                <li><button type="button" class="tag" onclick="toggleSelection(event)">서울</button></li>
+                <li><button type="button" class="tag" onclick="toggleSelection(event)">인천</button></li>
+                <li><button type="button" class="tag" onclick="toggleSelection(event)">부산</button></li>
+                <li><button type="button" class="tag" onclick="toggleSelection(event)">대구</button></li>
+                <li><button type="button" class="tag" onclick="toggleSelection(event)">대전</button></li>
+                <li><button type="button" class="tag" onclick="toggleSelection(event)">광주</button></li>
+                <li><button type="button" class="tag" onclick="toggleSelection(event)">울산</button></li>
+                <li><button type="button" class="tag" onclick="toggleSelection(event)">세종</button></li>
+                <li><button type="button" class="tag" onclick="toggleSelection(event)">강원</button></li>
+                <li><button type="button" class="tag" onclick="toggleSelection(event)">경북</button></li>
+                <li><button type="button" class="tag" onclick="toggleSelection(event)">경남</button></li>
+                <li><button type="button" class="tag" onclick="toggleSelection(event)">전북</button></li>
+                <li><button type="button" class="tag" onclick="toggleSelection(event)">전남</button></li>
+                <li><button type="button" class="tag" onclick="toggleSelection(event)">충북</button></li>
+                <li><button type="button" class="tag" onclick="toggleSelection(event)">충남</button></li>
+                <li><button type="button" class="tag" onclick="toggleSelection(event)">제주</button></li>
+                <li><button type="button" class="tag" onclick="toggleSelection(event)">전국</button></li>
             </ul>
             <button class="apply-button title">적용하기</button>
         </div>

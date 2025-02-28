@@ -2,13 +2,15 @@
 :root {
     /* Color design */
     --primary: #834EC3;
+    --primary-dark: #613991;
     --primary-light: #E0D3F0;
     --black: #000000;
     --white: #FFFFFF;
     --err: #ff0000;
     --text-grey: #6F6F6F;
+    --text-grey-dark: #272727;
     --background-grey: #EDEDED;
-    
+
     /* Font Sizes */
     --login-font-size: 24px;
     --title-font-size: 20px;
@@ -24,16 +26,23 @@
     box-sizing: border-box;
     list-style:none;
     text-decoration: none;
-    max-width: 440px;
 }
 
-body,h1,h2,h3,h4,h5,h6,a,ul,li,dl,dt,dd,p,div,form,button{
+body,h1,h2,h3,h4,h5,h6,a,ul,li,ol,dl,dt,dd,p,div,form,fieldset,button{
     margin: 0;
     padding: 0;
 }
 
+::-webkit-scrollbar {
+    display: none;
+  }
+
 a {
     color: var(--black);
+}
+
+fieldset {
+    border :none;
 }
 
 .hidden {
@@ -53,7 +62,7 @@ body {
 
 .login {
     font-family: 'Pretendard-Bold';
-    font-size: 24px;
+    font-size: 26px;
 }
 .login-placeholder {
     font-family: 'Pretendard-Medium';
@@ -78,9 +87,14 @@ body {
     font-size: 14px;
 }
 
+.body1-bold {
+    font-family: 'Pretendard-Bold';
+    font-size: 14px;
+}
+
 .small {
     font-family: 'Pretendard-Medium';
-    font-size: 12px;
+    font-size: 11px;
 }
 
 
@@ -88,10 +102,11 @@ body {
 #gnb ul {
     position: fixed;
     bottom:0;
-    width: 100%;
-    
     display: flex;
+    width: 100%;
     height: 100px;
+    background: #fff;
+    z-index: 999;
 }
 #gnb ul li {
     width: 20%;
@@ -101,24 +116,40 @@ body {
     display: block;
     background-repeat: no-repeat;
     background-position: center center;
+    background-size: 28px;
     width: 100%;
     height: 100%;
     text-indent: -100%;
     overflow: hidden;
     white-space: nowrap;
 }
-.home {
-    background-image: url(../image/home.png);
+.homeBtn {
+    background-image: url(../../icon/homeBtn.png);
 }
-.search {
-    background-image: url(../image/search.png);
+.homeBtn.active {
+    background-image: url(../../icon/homeBtn-active.png);
 }
-.like {
-    background-image: url(../image/like.png);
+.searchBtn {
+    background-image: url(../../icon/searchBtn.png);
 }
-.reservation {
-    background-image: url(../image/reservation.png);
+.searchBtn.active {
+    background-image: url(../../icon/searchBtn-active.png);
 }
-.mypage {
-    background-image: url(../image/mypage.png);
+.likeBtn {
+    background-image: url(../../icon/likeBtn.png);
+}
+.linkBtn.active {
+    background-image: url(../../icon/likeBtn-active.png);
+}
+.reservationBtn {
+    background-image: url(../../icon/reservationBtn.png);
+}
+.reservationBtn.active {
+    background-image: url(../../icon/reservationBtn-active.png);
+}
+.mypageBtn {
+    background-image: url(../../icon/mypageBtn.png);
+}
+.mypageBtn.active {
+    background-image: url(../../icon/mypageBtn-active.png);
 }

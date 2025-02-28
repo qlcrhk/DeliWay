@@ -105,6 +105,10 @@ input[type="checkbox"]:checked::before {
 }
 
 /* customer service */
+.service {
+    border-bottom: 0;
+}
+
 .service > p {
     padding: 20px 0;
 }

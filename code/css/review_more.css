@@ -144,6 +144,10 @@ header {
     color: var(--primary);
 }
 
+.like-icon1 {
+    width: 20px;
+}
+
 .like-icon1,
 .like-icon2 {
     display: none;

@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 main {
-    margin: 0 25px;
+    margin: 0 25px 100px;
 }
 
 .page-header {
@@ -76,7 +76,7 @@ section div:first-child {
     width: 100px;
     height: 100px;
     cursor: pointer;
-    background: url(../image/imgUpload.png) no-repeat top / cover;
+    background: url(../../icon/imgUpload.png) no-repeat top / cover;
 }
 
 /* 내 소개 텍스트 영역 */

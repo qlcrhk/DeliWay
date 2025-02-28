@@ -26,6 +26,10 @@
 }
 
 /* Main Content Styles */
+main {
+    padding-bottom: 107px;
+}
+
 section {
     padding: 0px 25px;
     border-bottom: 6px solid var(--background-grey);

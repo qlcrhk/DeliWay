@@ -258,3 +258,9 @@ button {
 .active {
     display: block;
 }
+
+button.tag.selected {
+    background-color: var(--primary);
+    color: var(--white);
+    border-color: var(--primary);
+}

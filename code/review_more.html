@@ -2,8 +2,8 @@
 <html lang="ko">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>매장이름 리뷰</title>
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/review_more.css">
@@ -17,15 +17,6 @@
             <h1 class="title">리뷰</h1>
             <div class="header-placeholder"></div>
         </div>
-        <!-- <nav id="gnb">
-            <ul>
-                <li><a href="#" class="home">홈</a></li>
-                <li><a href="#" class="search">검색</a></li>
-                <li><a href="#" class="likeBtn">좋아요</a></li>
-                <li><a href="#" class="reservation">예약</a></li>
-                <li><a href="#" class="mypage">마이페이지</a></li>
-            </ul>
-        </nav> -->
     </header>
     <main>
         <section class="review-container">
@@ -61,12 +52,12 @@
             </div>
             <div class="review-actions">
                 <button class="like-btn sub-title1">
-                    <img class="like-icon1 active" src="./image/like-active.png" alt="좋아요">
-                    <img class="like-icon2" src="./image/liked.png" alt="좋아요">
+                    <img class="like-icon1 active" src="../icon/like.png" alt="좋아요">
+                    <img class="like-icon2" src="../icon/liked.png" alt="좋아요">
                     <span class="like-count">10</span>
                 </button>
                 <button class="comment-btn sub-title1">
-                    <img src="./image/comment.png" alt="comment-icon">
+                    <img src="../icon/comment.png" alt="comment-icon">
                     <span class="comment-count">3</span>
                 </button>
             </div>
@@ -104,12 +95,12 @@
             </div>
             <div class="review-actions">
                 <button class="like-btn sub-title1">
-                    <img class="like-icon1 active" src="./image/like-active.png" alt="좋아요">
-                    <img class="like-icon2" src="./image/liked.png" alt="좋아요">
+                    <img class="like-icon1 active" src="../icon/like.png" alt="좋아요">
+                    <img class="like-icon2" src="../icon/liked.png" alt="좋아요">
                     <span class="like-count">10</span>
                 </button>
                 <button class="comment-btn sub-title1">
-                    <img src="./image/comment.png" alt="comment-icon">
+                    <img src="../icon/comment.png" alt="comment-icon">
                     <span class="comment-count">3</span>
                 </button>
             </div>
@@ -147,12 +138,12 @@
             </div>
             <div class="review-actions">
                 <button class="like-btn sub-title1">
-                    <img class="like-icon1 active" src="./image/like-active.png" alt="좋아요">
-                    <img class="like-icon2" src="./image/liked.png" alt="좋아요">
+                    <img class="like-icon1 active" src="../icon/like.png" alt="좋아요">
+                    <img class="like-icon2" src="../icon/liked.png" alt="좋아요">
                     <span class="like-count">10</span>
                 </button>
                 <button class="comment-btn sub-title1">
-                    <img src="./image/comment.png" alt="comment-icon">
+                    <img src="../icon/comment.png" alt="comment-icon">
                     <span class="comment-count">3</span>
                 </button>
             </div>
@@ -170,8 +161,8 @@
                     e.preventDefault();
                     e.stopPropagation();
 
-                    const icon1 = this.querySelector(".like-icon1"); //빈 하트
-                    const icon2 = this.querySelector(".like-icon2"); //채워진 하트
+                    const icon1 = this.querySelector(".like-icon1");//빈 하트
+                    const icon2 = this.querySelector(".like-icon2");//채워진 하트
 
                     icon1.classList.toggle('active');
                     icon2.classList.toggle('active');

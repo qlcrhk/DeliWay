@@ -128,18 +128,18 @@
 }
 
 .mymenuWrap li:nth-child(1) a{
-    background-image: url(../image/myreservation.png);
+    background-image: url(../../icon/myreservation.png);
 }
 
 .mymenuWrap li:nth-child(2) a {
     background-position-x: 11px;
-    background-image: url(../image/myreview.png);
+    background-image: url(../../icon/myreview.png);
     background-size: 35px;
 }
 
 .mymenuWrap li:nth-child(3) a{
     background-position-y: 3px;
-    background-image: url(../image/mylike.png);
+    background-image: url(../../icon/mylike.png);
     background-size: 35px;
 }
 

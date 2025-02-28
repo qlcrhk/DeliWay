@@ -1,6 +1,4 @@
 /* 공통 스타일 import */
-@charset "utf-8";
-
 @import url('./common.css');
 
 /* 레이아웃 기본 설정 */
@@ -30,65 +28,6 @@ header a {
     left: 20px;
     font-size: 22px;
     color: var(--black);
-}
-
-/* 내비게이션 스타일 */
-nav {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    max-width: 440px;
-    background-color: var(--white);
-    border-top: 1px solid var(--background-grey);
-    z-index: 10;
-}
-
-nav ul {
-    display: flex;
-    height: 80px;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li {
-    width: 20%;
-    text-align: center;
-}
-
-nav ul li a {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    color: var(--text-grey);
-    font-family: 'Pretendard-Medium';
-    padding-top: 36px;
-    background-repeat: no-repeat;
-    background-position: top 16px center;
-    background-size: 24px;
-}
-
-nav ul li:nth-child(1) a {
-    background-image: url('../image/home.png');
-}
-
-nav ul li:nth-child(2) a {
-    background-image: url('../image/search.png');
-}
-
-nav ul li:nth-child(3) a {
-    background-image: url('../image/like.png');
-    color: var(--primary);
-    background-image: url('../image/like-active.png');
-}
-
-nav ul li:nth-child(4) a {
-    background-image: url('../image/reservation.png');
-}
-
-nav ul li:nth-child(5) a {
-    background-image: url('../image/mypage.png');
 }
 
 .tab-menu {
@@ -276,7 +215,7 @@ main section ul {
 }
 
 .add-card .plus {
-    scale: 130%;
+    transform: scale(130);
     color: var(--black);
 }
 

@@ -1,86 +1,170 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>이용 내역 상세</title>
-</head>
-<body>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/slider.css">
+    <link rel="stylesheet" href="./css/reservation.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="./css/reservation_detail.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./js/calander.js" defer></script>
+    <script src="./js/modal.js" defer></script>
+
+  </head>
+  <body>
     <header>
-        <h1>store title</h1>
-        <a href="#">back</a>
-    </header>
+      <h1 class="title">제주 고씨 든렘지 레스토랑</h1>
+      <a href="#" class="back"><i class="fa fa-angle-left" aria-hidden="true" style="color: black;"></i><span
+              class="hidden">뒤로가기</span></a>
+  </header>
+
     <main>
-        <section>
-            <h2>예약정보</h2>
-            <dl>
-                <dt>예약일시</dt>
-                <dd>예약일자 나타나는 영역</dd>
-                <dt>예약자</dt>
-                <dd>예약자 이름 나타나는 영역</dd>
-                <dt>예약인원</dt>
-                <dd>101명</dd>
-                <dt>요청사항</dt>
-                <dd>비건세트에서 채소 빼고 주세요</dd>
-            </dl>
-        </section>
-        <section>
-            <h2>오시는 길</h2>
-            <div>
-                <!-- 지도 나오는 영역 -->
-            </div>
-            <p>가게의 위치가 나오는 영영</p><span>복사</span>
-            <p>길안내 정보</p>
-        </section>
-        <section>
-            <h2>픽업 정보</h2>
-            <dl>
-                <dt>차량 모델</dt>
-                <dd>경운기 (차량번호)</dd>
-            </dl>
-            <dl>
-                <dt>도착 예정</dt>
-                <dd>오후 11:59</dd>
-            </dl>
-            <dl>
-                <dt>연락처</dt>
-                <dd>reservation_tel</dd>
-            </dl>
-        </section>
-        <section>
-            <h2>상세 정보</h2>
-            <article>
-                <h3>전화번호</h3>
-                <p>tel. 012-123-1234</p>
-            </article>
-            <article>
-                <h3>안내 및 유의사항</h3>
-                <p>* 영업시간은 매장 사정에 따라 변경될 수 있습니다.</p>
-            </article>
-        </section>
-        <section>
-            <h2>환불정책</h2>
-            <p>방문 1~3시간 전 취소 &rarr; 50% 환불</p>
-            <p>방문 시간 당일 2시간 전 &rarr; 환불 불가</p>
-            <p>* 단 기상님이 이동을 시작한 이후에는 일부 추가비용이 발생합니다.</p>
-            <p>선결제 (앱 내 결제) &rarr; 결제 취소 후 카드사 경제 서비스 규정에 따라 3~5일 내 환불</p>
-            <p>현장 결제 &rarr; 매장 자체 환불 규정에 따름 (DELIWAY 직접 환불 불가)</p>
-            <p>포인트/쿠폰 사용 예약 &rarr; 포인트는 즉시 반환, 쿠폰은 복구 불가 할 수도 있음</p>
-            <p>간편 결제 (카카오페이, 네이버페이 등) &rarr; 취소 후 1~2일 내 환불</p>
-        </section>
+      <section class="reser-section">
+        <h2>예약 정보</h2>
+        <div class="container">
+            <!-- Flatpickr 버튼 -->
+            <div class="dateAndTime">
+                <label for="datetimePicker">
+                  <img src="../icon/reservation.png" alt="예약 아이콘">
+                  <span>예약일시</span>
+                </label>
+                <input type="text" id="datetimePicker" class="hidden-input" aria-describedby="selectedDateTime">
+                <button class="flatpickr-button" id="openPicker" type="button">선택하기</button>
+              </div>
+              <button id="confirmDate" class="confirm-btn" style="display: none;">확인</button>
 
-        <div>
-            <a href="#">예약 취소</a>
-            <a href="#">예약 변경</a>    
+              <div class="modal-overlay" id="modalOverlay"></div>
+
+              <!-- 날짜 나오는 부분 -->
+              <p class="date-display">
+                <span id="selectedDateTime">날짜와 시간을 선택해주세요</span>
+              </p>
+          </div>
+
+          <label for="user-name"><img src="../icon/user.png" alt=""><span>예약자</span></label>
+          <input type="text" id="user-name" placeholder="이름을 입력해주세요" >
+
+          <label class="user-count" for="user-count"><img src="../icon/people.png" alt=""><span>예약인원</span></label>
+          <input type="number" id="user-count">
+
+
+
+          <label for="request-box"><i class="fa-solid fa-pen-to-square square"></i><span>요청사항</span></label>
+          <textarea id="request-box" maxlength="100" placeholder="100자 내로 작성해주세요"></textarea>
+
+          <label for="usePickup" class="pickup-title">
+            <img src="../icon/car.png" alt="픽업 서비스 아이콘"> 픽업 서비스 이용
+            <input type="checkbox" id="usePickup">
+          </label>
+          
+
+
+          <div id="pickupLocationContainer" style="display: none;">
+            <label for="pickupLocation"><img src="../icon/car.png" alt="">탑승 장소</label>
+            <input type="text" id="pickupLocation" placeholder="탑승 장소를 입력하세요">
+          </div>
+      </section>
+      <script>
+        const usePickup = document.getElementById("usePickup");
+        const pickupLocationContainer = document.getElementById("pickupLocationContainer");
+      
+        usePickup.addEventListener("change", () => {
+          if (usePickup.checked) {
+            pickupLocationContainer.style.display = "block";// 체크하면 입력창 표시
+          } else {
+            pickupLocationContainer.style.display = "none";// 체크 해제하면 입력창 숨김
+          }
+        });
+      </script>
+      <!-- 오시는 길 -->
+      <section class="map-section">
+        <h2>오시는 길</h2>
+        <div class="map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.3350067188517!2d127.03155294984232!3d37.50001615612253!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca3fe3854fd13%3A0xdbb2d70b1648d2ce!2z6rWs6riA7L2U66as7JWEIOuzuOyCrA!5e0!3m2!1sko!2skr!4v1740631602548!5m2!1sko!2skr"
+            width="600"
+            height="450"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
         </div>
-   </main>
+        <div class="store-location">
+          <div class="location-text">
+            <div class="gps"></div>
+            <p>가게의 위치가 나오는 영영</p>
+          </div>
+          <button>
+            <i class="fa-regular fa-copy"><span class="hidden">복사</span></i>
+          </button>
+        </div>
+        <!-- 지하철 넘버 -->
+        <div class="subway-container">
+          <div class="subway">
+            <div class="subway-1"></div>
+            <div class="subway-2"></div>
+            <p>서면역에서 352KM</p>
+          </div>
+          <div class="subway">
+            <div class="subway-1"></div>
+            <p>부암역에서 32KM</p>
+          </div>
+        </div>
 
-   <!-- 예약완료 창 -->
-   <div>
-    <p>예약이 완료되었습니다!</p>
-    <span>2025.02.22(토) · 18:00시</span>
-    <span>2명</span>
-    <p>예약자명 :</p><span>김엘리베이터</span>
-   </div>
-</body>
+        <a href="#"
+          ><i class="fa-solid fa-paper-plane"></i><span>길찾기</span></a
+        >
+      </section>
+
+      <div id="do-reser">
+        <ul>
+          <li><button onclick="showCompletionModal(event)" style="color:white">예약하기</button></li>
+        </ul>
+      </div>
+    </main>
+
+    <footer>
+      <dl>
+        <dt>안내 및 유의사항</dt>
+        <dd>&#42; 영업시간은 매장 사정에 따라 변경될 수 있습니다.</dd>
+
+        <dt>환불정책</dt>
+        <dd>방문 1~3시간 전 취소 &rarr; 50% 환불</dd>
+        <dd>방문 시간 당일 2시간 전 &rarr; 환불 불가</dd>
+        <dd>
+          * 단 기상님이 이동을 시작한 이후에는 일부 추가비용이 발생합니다.
+        </dd>
+        <dd>
+          선결제 (앱 내 결제) &rarr; 결제 취소 후 카드사 경제 서비스 규정에 따라
+          3~5일 내 환불
+        </dd>
+        <dd>
+          현장 결제 &rarr; 매장 자체 환불 규정에 따름 (DELIWAY 직접 환불 불가)
+        </dd>
+        <dd>
+          포인트/쿠폰 사용 예약 &rarr; 포인트는 즉시 반환, 쿠폰은 복구 불가 할
+          수도 있음
+        </dd>
+        <dd>
+          간편 결제 (카카오페이, 네이버페이 등) &rarr; 취소 후 1~2일 내 환불
+        </dd>
+      </dl>
+    </footer>
+
+    <div id="completionModal" class="modal">
+      <div class="modal-content">
+        <p>예약이 완료 되었습니다.</p>
+        <button onclick="closeModal('completionModal')">확인</button>
+      </div>
+    </div>
+  </body>
 </html>
