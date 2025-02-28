@@ -3,13 +3,12 @@
     /* Color design */
     --primary: #834EC3;
     --primary-light: #E0D3F0;
-    --primary-dark: #613991;
     --black: #000000;
     --white: #FFFFFF;
     --err: #ff0000;
     --text-grey: #6F6F6F;
     --background-grey: #EDEDED;
-
+    
     /* Font Sizes */
     --login-font-size: 24px;
     --title-font-size: 20px;
@@ -27,14 +26,18 @@
     text-decoration: none;
 }
 
-body,h1,h2,h3,h4,h5,h6,a,ul,li,dl,dt,dd,p,div,form{
+body,h1,h2,h3,h4,h5,h6,a,ul,li,dl,dt,dd,p,div,form,button{
     margin: 0;
     padding: 0;
 }
 
+a {
+    color: var(--black);
+}
+
 .hidden {
     display: inline-block;
-    position: abosolute;
+    position: absolute;
     overflow: hidden;
     width: 1px;
     height: 1px;
@@ -42,7 +45,7 @@ body,h1,h2,h3,h4,h5,h6,a,ul,li,dl,dt,dd,p,div,form{
 }
 
 /* 폰트 */
-.body {
+body {
     font-family: 'Pretendard-Medium';
     font-size: 16px;
 }
@@ -66,7 +69,7 @@ body,h1,h2,h3,h4,h5,h6,a,ul,li,dl,dt,dd,p,div,form{
 }
 .sub-title2 {
     font-family: 'Pretendard-Bold';
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .body1 {
@@ -79,18 +82,15 @@ body,h1,h2,h3,h4,h5,h6,a,ul,li,dl,dt,dd,p,div,form{
     font-size: 12px;
 }
 
-a{
-    color: black;
-}
 
+/* navibar */
 #gnb ul {
     position: fixed;
     bottom:0;
-    display: flex;
     width: 100%;
+    
+    display: flex;
     height: 100px;
-    background: #fff;
-    z-index: 999;
 }
 #gnb ul li {
     width: 20%;
@@ -112,8 +112,8 @@ a{
 .search {
     background-image: url(../image/search.png);
 }
-.likeBtn {
-    background-image: url(../image/likeBtn.png);
+.like {
+    background-image: url(../image/like.png);
 }
 .reservation {
     background-image: url(../image/reservation.png);

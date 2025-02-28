@@ -12,10 +12,6 @@ section {
   padding-bottom: 28px;
 }
 
-/* 상단 알림 및 GPS */
-header{
-  margin-top: -50px;
-}
 
 header ul {
   display: flex;
@@ -195,13 +191,13 @@ dd:nth-of-type(3)::before {
 }
 
 dd:nth-of-type(3)::after {
-  background: url(../asset/round.png) no-repeat left bottom / cover;
+  background: url(../asset/icon/round.png) no-repeat left bottom / cover;
   bottom: 0;
   right: 50px;
 }
 
 dd:nth-of-type(3)::before {
-  background: url(../asset/round.png) no-repeat right top / cover;
+  background: url(../asset/icon/round.png) no-repeat right top / cover;
   bottom: 50px;
   right: 0px;
 }

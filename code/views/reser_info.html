@@ -1,177 +1,258 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>이용 내역 상세</title>
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="../css/common.css">
-    <link rel="stylesheet" href="../css/slider.css">
-    <link rel="stylesheet" href="../css/reservation.css">
+
     <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../css/common.css" />
+    <link rel="stylesheet" href="../css/slider.css" />
+    <link rel="stylesheet" href="../css/reservation.css" />
+    <link rel="stylesheet" href="../css/modal.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
 
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-</head>
-<body>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  </head>
+  <body>
     <header>
-        <h1 class="hidden">이용내역 정보</h1>
-        <div class="header-btns">
-            <a href="#" class="back-btn">back</a>
-            <button class="like">찜</button>
-            <i class="fa-solid fa-arrow-up-right-from-square share-btn"><span class="hidden">공유하기</span></i>
-        </div>
-        
-            <div class="store-container">
-                <div class="swiper mySwiper">
-                  <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                      <img
-                        src="../asset/image/pexels-can-i-gdeli-624966221-30748532.jpg"
-                        alt="main-slider1"
-                     >
-                    </div>
-                    <div class="swiper-slide">
-                      <img
-                        src="../asset/image/pexels-yunus-kilic-55235055-30722200.jpg"
-                        alt="main-slider2"
-                     >
-                    </div>
-                    <div class="swiper-slide">
-                      <img
-                        src="../asset/image/pexels-othmane-ettalbi-2148497459-30374243.jpg"
-                        alt="main-slider3"
-                     >
-                    </div>
-                  </div>
-                  <div class="swiper-pagination"></div>
-                </div>
-        
-                <script>
-                  var swiper = new Swiper(".mySwiper", {
-                    slidesPerView: 1,
-                    spaceBetween: 0,
-                    loop: true,
-                    pagination: {
-                      el: ".swiper-pagination",
-                      clickable: true,
-                    },
-                  });
-                </script>
+      <h1 class="hidden">이용내역 정보</h1>
+      <div class="header-btns">
+        <a href="#" class="back-btn">back</a>
+        <button class="like">찜</button>
+        <i class="fa-solid fa-arrow-up-right-from-square share-btn"
+          ><span class="hidden">공유하기</span></i
+        >
+      </div>
+
+      <div class="store-container">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img
+                src="../asset/image/pexels-can-i-gdeli-624966221-30748532.jpg"
+                alt="main-slider1"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="../asset/image/pexels-yunus-kilic-55235055-30722200.jpg"
+                alt="main-slider2"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="../asset/image/pexels-othmane-ettalbi-2148497459-30374243.jpg"
+                alt="main-slider3"
+              />
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
         </div>
 
-        <nav id="gnb">
-          <h2 class="hidden">주 메뉴</h2>
-          <ul>
-              <li><a href="#" class="home">홈</a></li>
-              <li><a href="#" class="search">검색</a></li>
-              <li><a href="#" class="like">찜한 맛집</a></li>
-              <li><a href="#" class="reservation">예약내역</a></li>
-              <li><a href="#" class="mypage">마이페이지</a></li>
-          </ul>
+        <script>
+          var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 1,
+            spaceBetween: 0,
+            loop: true,
+            pagination: {
+              el: ".swiper-pagination",
+              clickable: true,
+            },
+          });
+        </script>
+      </div>
+
+      <nav id="gnb">
+        <h2 class="hidden">주 메뉴</h2>
+        <ul>
+          <li><a href="#" class="home">홈</a></li>
+          <li><a href="#" class="search">검색</a></li>
+          <li><a href="#" class="like">찜한 맛집</a></li>
+          <li><a href="#" class="reservation">예약내역</a></li>
+          <li><a href="#" class="mypage">마이페이지</a></li>
+        </ul>
       </nav>
     </header>
 
     <main>
-        <section class="title-section">
-            <h2>메타몽은 메타버스에서</h2>
-            <dl>
-                <dt><img src="../asset/icon/star.png" alt=""><span class="hidden">평점</span></dt>
-                <dd>1.4</dd>
-                <dt>리뷰</dt>
-                <dd>1,000</dd>
-            </dl>
-            <a href="#">상세보기</a>
-        </section>
+      <section class="title-section">
+        <h2>메타몽은 메타버스에서</h2>
+        <dl>
+          <dt>
+            <img src="../asset/icon/star.png" alt="" /><span class="hidden"
+              >평점</span
+            >
+          </dt>
+          <dd>1.4</dd>
+          <dt>리뷰</dt>
+          <dd>1,000</dd>
+        </dl>
+        <a href="#">상세보기</a>
+      </section>
 
-        <section class="reser-section">
-            <h2 class="hidden">예약정보</h2>
-            <dl>
-                <dt><img src="../asset/icon/reservation.png" alt=""><span>예약일시</span></dt>
-                <dd>취소된 예약</dd>
-                <dt><img src="../asset/icon/user.png" alt=""><span>예약자</span></dt>
-                <dd>예약자 이름 나타나는 영역</dd>
-                <dt><img src="../asset/icon/people.png" alt=""><span>예약인원</span></dt>
-                <dd>101명</dd>
-                <dt><i class="fa-solid fa-pen-to-square"></i><span>요청사항</span></dt>
-                <dd>비건세트에서 채소 빼고 주세요</dd>
-            </dl>
-        </section>
-        <!-- 오시는 길 -->
-        <section class="map-section">
-          <h2>오시는 길</h2>
-          <div class="map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.3350067188517!2d127.03155294984232!3d37.50001615612253!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca3fe3854fd13%3A0xdbb2d70b1648d2ce!2z6rWs6riA7L2U66as7JWEIOuzuOyCrA!5e0!3m2!1sko!2skr!4v1740631602548!5m2!1sko!2skr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </div>
-          <div class="store-location">
-            <div class="location-text">
-              <div class="gps"></div><p>가게의 위치가 나오는 영영</p>
-            </div>
-            <button><i class="fa-regular fa-copy"><span class="hidden">복사</span></i></button>  
-          </div>
-          <!-- 지하철 넘버 -->
-          <div class="subway-container">
-            <div class="subway">
-              <div class="subway-1"></div>
-              <div class="subway-2"></div>
-              <p>서면역에서 352KM</p>
-            </div>
-            <div class="subway">
-              <div class="subway-1"></div>
-              <p>부암역에서 32KM</p>
-            </div>
-          </div>
-
-          <a href="#"><i class="fa-solid fa-paper-plane"></i><span>길찾기</span></a>
-        
-        </section>
-
-        <!-- 픽업정보 -->
-        <section class="pickup-section">
-          <h2>픽업 정보</h2>
-          <div class="pickup-car-info">
-            <dl>
-              <dt>차량 모델</dt>
-              <dd>경운기 (차량번호)</dd>
-            </dl>
-            <dl>
-              <dt>도착 예정</dt>
-              <dd>오후 11:59</dd>
-            </dl>
-          </div>
-
-          <dl>
-            <dt>연락처</dt>
-            <dd>000-0000-0000</dd>
-          </dl>
-        </section>
-
-        <div id="reservation-btns">
-          <ul>
-            <li><button href="#">예약취소</button></li>
-            <li><button href="#">예약변경</button></li>
-          </ul>
+      <section class="reser-section">
+        <h2 class="hidden">예약정보</h2>
+        <dl>
+          <dt>
+            <img src="../asset/icon/reservation.png" alt="" /><span
+              >예약일시</span
+            >
+          </dt>
+          <dd>취소된 예약</dd>
+          <dt>
+            <img src="../asset/icon/user.png" alt="" /><span>예약자</span>
+          </dt>
+          <dd>예약자 이름 나타나는 영역</dd>
+          <dt>
+            <img src="../asset/icon/people.png" alt="" /><span>예약인원</span>
+          </dt>
+          <dd>101명</dd>
+          <dt>
+            <i class="fa-solid fa-pen-to-square"></i><span>요청사항</span>
+          </dt>
+          <dd>비건세트에서 채소 빼고 주세요</dd>
+        </dl>
+      </section>
+      <!-- 오시는 길 -->
+      <section class="map-section">
+        <h2>오시는 길</h2>
+        <div class="map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.3350067188517!2d127.03155294984232!3d37.50001615612253!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca3fe3854fd13%3A0xdbb2d70b1648d2ce!2z6rWs6riA7L2U66as7JWEIOuzuOyCrA!5e0!3m2!1sko!2skr!4v1740631602548!5m2!1sko!2skr"
+            width="600"
+            height="450"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
         </div>
-      </main>
+        <div class="store-location">
+          <div class="location-text">
+            <div class="gps"></div>
+            <p>가게의 위치가 나오는 영영</p>
+          </div>
+          <button>
+            <i class="fa-regular fa-copy"><span class="hidden">복사</span></i>
+          </button>
+        </div>
+        <!-- 지하철 넘버 -->
+        <div class="subway-container">
+          <div class="subway">
+            <div class="subway-1"></div>
+            <div class="subway-2"></div>
+            <p>서면역에서 352KM</p>
+          </div>
+          <div class="subway">
+            <div class="subway-1"></div>
+            <p>부암역에서 32KM</p>
+          </div>
+        </div>
 
+        <a href="#"
+          ><i class="fa-solid fa-paper-plane"></i><span>길찾기</span></a
+        >
+      </section>
+
+      <!-- 픽업정보 -->
+      <section class="pickup-section">
+        <h2>픽업 정보</h2>
+        <div class="pickup-car-info">
+          <dl>
+            <dt>차량 모델</dt>
+            <dd>경운기 (차량번호)</dd>
+          </dl>
+          <dl>
+            <dt>도착 예정</dt>
+            <dd>오후 11:59</dd>
+          </dl>
+        </div>
+
+        <dl>
+          <dt>연락처</dt>
+          <dd>000-0000-0000</dd>
+        </dl>
+      </section>
+
+      <div id="reservation-btns">
+        <ul>
+          <li><button onclick=showConfirmModal(event)>예약취소</button></li>
+          <li><button href="#">예약변경</button></li>
+        </ul>
+      </div>
+    </main>
 
     <footer>
-        <dl>
-            <dt>안내 및 유의사항</dt>
-            <dd>&#42; 영업시간은 매장 사정에 따라 변경될 수 있습니다.</dd> 
+      <dl>
+        <dt>안내 및 유의사항</dt>
+        <dd>&#42; 영업시간은 매장 사정에 따라 변경될 수 있습니다.</dd>
 
-            <dt>환불정책</dt>
-            <dd>방문 1~3시간 전 취소 &rarr; 50% 환불</dd>
-            <dd>방문 시간 당일 2시간 전 &rarr; 환불 불가</dd>
-            <dd>* 단 기상님이 이동을 시작한 이후에는 일부 추가비용이 발생합니다.</dd>
-            <dd>선결제 (앱 내 결제) &rarr; 결제 취소 후 카드사 경제 서비스 규정에 따라 3~5일 내 환불</dd>
-            <dd>현장 결제 &rarr; 매장 자체 환불 규정에 따름 (DELIWAY 직접 환불 불가)</dd>
-            <dd>포인트/쿠폰 사용 예약 &rarr; 포인트는 즉시 반환, 쿠폰은 복구 불가 할 수도 있음</dd>
-            <dd>간편 결제 (카카오페이, 네이버페이 등) &rarr; 취소 후 1~2일 내 환불</dd>
-        </dl>
+        <dt>환불정책</dt>
+        <dd>방문 1~3시간 전 취소 &rarr; 50% 환불</dd>
+        <dd>방문 시간 당일 2시간 전 &rarr; 환불 불가</dd>
+        <dd>
+          * 단 기상님이 이동을 시작한 이후에는 일부 추가비용이 발생합니다.
+        </dd>
+        <dd>
+          선결제 (앱 내 결제) &rarr; 결제 취소 후 카드사 경제 서비스 규정에 따라
+          3~5일 내 환불
+        </dd>
+        <dd>
+          현장 결제 &rarr; 매장 자체 환불 규정에 따름 (DELIWAY 직접 환불 불가)
+        </dd>
+        <dd>
+          포인트/쿠폰 사용 예약 &rarr; 포인트는 즉시 반환, 쿠폰은 복구 불가 할
+          수도 있음
+        </dd>
+        <dd>
+          간편 결제 (카카오페이, 네이버페이 등) &rarr; 취소 후 1~2일 내 환불
+        </dd>
+      </dl>
     </footer>
+
+
+    <div id="cautionModal" class="modal">
+      <div class="modal-content">
+        <p class="small">
+          예약을 취소하시겠습니까>
+        </p>
+        <button onclick="closeModal('cautionModal'); showCompletionModal()">
+          확인
+        </button>
+
+        <button onclick="closeModal('cautionModal')">
+          취소
+        </button>
+      </div>
+    </div>
+
+    <div id="completionModal" class="modal">
+      <div class="modal-content">
+        <p>예약취소가 완료 되었습니다.</p>
+        <button onclick="closeModal('completionModal')">확인</button>
+      </div>
+    </div>
+
+    <script>
+      function showConfirmModal(event) {
+        event.preventDefault();
+        document.getElementById("cautionModal").style.display = "flex";
+      }
+
+      function showCompletionModal() {
+        document.getElementById("completionModal").style.display = "flex";
+      }
+
+      function closeModal(modalId) {
+        document.getElementById(modalId).style.display = "none";
+      }
+    </script>
   </body>
 </html>

@@ -1,11 +1,43 @@
-/* 공통 */
-body .modal-on{
-    background-color: rgba(0, 0, 0, 0.3);
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(-50%);
 }
 
-.modal{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.modal-content {
+    background-color: var(--white);
+    border-radius: 16px;
+    padding: 24px;
+    width: 75%;
+    max-width: 400px;
+    text-align: center;
+
+}
+
+.modal p {
+    padding-bottom: 40px;
+    line-height: 1.4;
+    color: var(--text-grey);
+    font-size: var(--body1-font-size);
+    margin: 0 auto;
+}
+
+.modal button {
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Pretendard-Bold', sans-serif;
+    font-size: var(--sub-title1-font-size);
+    cursor: pointer;
+    width: 100%;
 }
