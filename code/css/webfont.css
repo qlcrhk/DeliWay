@@ -13,3 +13,15 @@
     font-weight: 600;
     font-style: normal;
 }
+
+@font-face {
+    font-family: 'DelmonDelicate';
+    src: url(../../font/DelmonDelicate.ttf),url(../../font/DelmonDelicate.woff);
+}
+
+@font-face {
+    font-family: 'Chosunilbo_myungjo';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Chosunilbo_myungjo.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}

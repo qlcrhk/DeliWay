@@ -1,0 +1,406 @@
+/* 공통 스타일 import */
+@charset "utf-8";
+
+@import url('./common.css');
+
+/* 레이아웃 기본 설정 */
+body {
+    max-width: 440px;
+    margin: 0 auto;
+    background-color: var(--white);
+}
+
+/* 헤더 스타일 */
+header {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 56px;
+    padding: 0 20px;
+}
+
+header h1 {
+    font-family: 'Pretendard-Bold';
+    color: var(--black);
+}
+
+header a {
+    position: absolute;
+    left: 20px;
+    font-size: 22px;
+    color: var(--black);
+}
+
+/* 내비게이션 스타일 */
+nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    max-width: 440px;
+    background-color: var(--white);
+    border-top: 1px solid var(--background-grey);
+    z-index: 10;
+}
+
+nav ul {
+    display: flex;
+    height: 80px;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    width: 20%;
+    text-align: center;
+}
+
+nav ul li a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: var(--text-grey);
+    font-family: 'Pretendard-Medium';
+    padding-top: 36px;
+    background-repeat: no-repeat;
+    background-position: top 16px center;
+    background-size: 24px;
+}
+
+nav ul li:nth-child(1) a {
+    background-image: url('../image/home.png');
+}
+
+nav ul li:nth-child(2) a {
+    background-image: url('../image/search.png');
+}
+
+nav ul li:nth-child(3) a {
+    background-image: url('../image/like.png');
+    color: var(--primary);
+    background-image: url('../image/like-active.png');
+}
+
+nav ul li:nth-child(4) a {
+    background-image: url('../image/reservation.png');
+}
+
+nav ul li:nth-child(5) a {
+    background-image: url('../image/mypage.png');
+}
+
+.tab-menu {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid var(--background-grey);
+  padding: 30px 0 0px 0;
+}
+
+.like {
+  width: 50%;
+  height: 50px;
+  text-align: center;
+  border-bottom: 3px solid var(--primary);
+}
+
+.delist {
+  width: 50%;
+  height: 50px;
+  text-align: center;
+}
+
+/* 메인 영역 스타일 */
+main {
+    padding: 40px 25px 0px;
+    margin-bottom: 150px; /* 내비게이션 높이 + 여백 */
+}
+
+main section ul {
+    padding: 0;
+    margin: 0;
+}
+
+/* 찜목록 */
+.reservation-card {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    margin-bottom: 20px;
+    background-color: var(--white);
+}
+
+.rest-info {
+  display: flex;
+  padding: 20px 25px 30px 25px;
+  border-bottom: 1px solid var(--background-grey);
+}
+
+.reservation-card img {
+    width: 90px;
+    height: 90px;
+    border-radius: 10px;
+    object-fit: cover;
+    background-color: var(--background-grey); /* 이미지 로딩 전 배경색 */
+    margin-right: 20px;
+}
+
+.rest {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.rest-place {
+  width: 100%;
+}
+
+.restaurant-name {
+    font-family: 'Pretendard-Bold';
+    color: var(--black);
+    margin: 0 0 5px 0;
+
+}
+
+.restaurant-location {
+    font-family: 'Pretendard-Medium';
+    color: var(--text-grey);
+    margin: 0 0 10px 0;
+    
+}
+
+.rest-time {
+  font-family: 'Pretendard-Medium';
+  color: var(--black);
+  display: flex;
+}
+
+.clock {
+   width: 20px;
+   height: 20px;
+}
+
+.all-day {
+  margin-left: 10px;
+}
+
+.view-details {
+    display: block;
+    text-align: center;
+    background-color: var(--white);
+    color: var(--black);
+    font-family: 'Pretendard-Medium';
+    padding: 20px 0;
+}
+
+.right {
+  color: var(--black);
+  margin-left: 5px;
+}
+
+/* 델리스트 */
+
+#section {
+    position: relative;
+}
+
+.delist-wrap {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.delist-card {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    margin-bottom: 20px;
+    background-color: var(--white);
+}
+
+.delist-card img {
+    width: 75px;
+    height: 75px;
+    border-radius: 10px;
+    object-fit: cover;
+    background-color: var(--background-grey);
+    /* 이미지 로딩 전 배경색 */
+    margin-right: 20px;
+}
+
+.delist-info {
+    display: flex;
+    padding: 20px 25px 20px 25px;
+    border-bottom: 1px solid var(--background-grey);
+    align-items: center;
+}
+
+.delist-place {
+    width: 100%;
+}
+
+.delist-name {
+    font-family: 'Pretendard-Bold';
+    color: var(--black);
+    margin: 0 0 5px 0;
+
+}
+
+.delist-count {
+    font-family: 'Pretendard-Medium';
+    color: var(--text-grey);
+}
+
+.delist-add {
+    font-family: 'Pretendard-Bold';
+    color: var(--black);
+}
+
+.add-card {
+    width: 75px;
+    height: 75px;
+    border-radius: 10px;
+    background-color: var(--background-grey);
+    /* 이미지 로딩 전 배경색 */
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-card .plus {
+    scale: 130%;
+    color: var(--black);
+}
+
+/* VIP 프로모션 텍스트 */
+.vip-promo {
+    margin: 40px 25px 60px;
+    border-radius: 8px;
+    color: var(--text-grey);
+    font-family: 'Pretendard-Medium';
+    text-align: center;
+    line-height: 1.4;
+}
+
+/* 모달 스타일 */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal {
+    background-color: var(--white);
+    border-radius: 16px;
+    width: 280px;
+    padding: 24px;
+    text-align: center;
+}
+
+.modal-title {
+    font-family: 'Pretendard-Bold';
+    color: var(--black);
+    margin-bottom: 8px;
+}
+
+.modal-subtitle {
+    font-family: 'Pretendard-Medium';
+    color: var(--text-grey);
+    margin-bottom: 24px;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.modal-button {
+    flex: 1;
+    height: 40px;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Pretendard-Medium';
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+.btn-danger {
+    background-color: var(--err);
+    color: var(--white);
+}
+
+.btn-cancel {
+    background-color: var(--background-grey);
+    color: var(--text-grey);
+}
+
+/* 수정 모달 */
+.edit-modal {
+    text-align: left;
+}
+
+.edit-modal .modal-title {
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.edit-modal input {
+    width: 100%;
+    height: 48px;
+    padding: 0 12px;
+    margin-bottom: 24px;
+    border: 1px solid #E0E0E0;
+    border-radius: 8px;
+    font-family: 'Pretendard-Medium';
+    box-sizing: border-box;
+}
+
+/* 삭제 확인 모달 */
+.delete-confirm-modal .modal-title {
+    margin-bottom: 24px;
+}
+
+/* 삭제 완료 모달 */
+.delete-complete-modal .modal-title {
+    margin-bottom: 24px;
+    line-height: 1.4;
+}
+
+.delete-complete-modal .modal-buttons {
+    justify-content: center;
+}
+
+.delete-complete-modal .btn-primary {
+    width: 100%;
+}
+
+/* 모달 표시 */
+.modal-overlay.active {
+    display: flex;
+}
+
+/* 반응형 스타일 */
+@media screen and (max-width: 440px) {
+    nav {
+        width: 100%;
+    }
+}

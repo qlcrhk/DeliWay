@@ -2,98 +2,183 @@
 <html lang="ko">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>예약내역</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./css/like_list.css">
+    <title>내가 찜한 맛집</title>
 </head>
 
 <body>
-  <header>
-    <h1>예약 내역</h1>
-    <a href="#">뒤로가기</a>
+    <header>
+        <h1 class="title">내가 찜한 맛집</h1>
+        <a href="#"><i class="fa fa-angle-left" aria-hidden="true"></i><span class="hidden">뒤로가기</span></a>
 
-    <nav>
-      <h2>주 메뉴</h2>
-      <ul>
-        <li><a href="#">홈</a></li>
-        <li><a href="#">검색</a></li>
-        <li><a href="#">찜한 맛집</a></li>
-        <li><a href="#">예약내역</a></li>
-        <li><a href="#">마이페이지</a></li>
-      </ul>
-    </nav>
-  </header>
+        <nav id="gnb">
+            <h2 class="hidden">주 메뉴</h2>
+            <ul>
+                <li><a href="#" class="small home">홈</a></li>
+                <li><a href="#" class="small search">검색</a></li>
+                <li><a href="#" class="small like">찜한 맛집</a></li>
+                <li><a href="#" class="small reservation">예약내역</a></li>
+                <li><a href="#" class="small mypage">마이페이지</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <main>
-    <section>
-      <h2>좋아요 카테고리 폴더 만들기</h2>
-      <!-- 각각 클릭시 정보만 바뀌게 작성 ui동일하기 떄문 -->
-      <ul>
-        <li>
-          <p>찜 목록</p>
+    <!-- 카테고리 탭 -->
+    <ul class="tab-menu">
+        <li class="like active">
+            <p class="title">찜 목록</p>
         </li>
-        <li>
-          <p>델리스트</p>
+        <li class="delist">
+            <p class="title">델리스트</p>
         </li>
-      </ul>
+    </ul>
 
-      <!-- 예약 카드 영역 -->
-      <div>
-        <p>제주고씨 든렙지 레스토랑</p>
-        <p>매장의 위치 정보</p>
-        <p>2025.0.-15 14:00 2명</p>
+    <main>
+        <section id="section">
+            <h2 class="hidden">저장된 맛집 목록</h2>
 
-        <a href="#">매장 자세히 보기</a>
-      </div>
+            <!-- 예약 카드 영역 -->
+            <div class="reservation-card">
+                <div class="rest-info">
+                    <img src="../images/food.png" alt="">
+                    <div class="rest">
+                        <div class="rest-place">
+                            <p class="restaurant-name sub-title2">제주고씨 든렘지 레스토랑</p>
+                            <p class="restaurant-location small">양식 · 대구 동구 신천동</p>
+                        </div>
+                        <div class="rest-time">
+                            <p class="restaurant-time"><i class="far fa-clock clock" aria-hidden="true"></i><span>11:30
+                                    - 21:00</span></p>
+                            <p class="all-day">연중무휴</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="view-details">예약하러 가기 <i class="fa fa-angle-right right" aria-hidden="true"></i></a>
+            </div>
 
-      <!-- 델리스트 스타일 -->
-      <div>
-        <div>
-          <!-- 폴더 이미지가 들어갈 공간 -->
+            <!-- 예약 카드 영역 -->
+            <div class="reservation-card">
+                <div class="rest-info">
+                    <img src="../images/food.png" alt="">
+                    <div class="rest">
+                        <div class="rest-place">
+                            <p class="restaurant-name sub-title2">제주고씨 든렘지 레스토랑</p>
+                            <p class="restaurant-location small">양식 · 대구 동구 신천동</p>
+                        </div>
+                        <div class="rest-time">
+                            <p class="restaurant-time"><i class="far fa-clock clock" aria-hidden="true"></i><span>11:30
+                                    - 21:00</span></p>
+                            <p class="all-day">연중무휴</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="view-details">예약하러 가기 <i class="fa fa-angle-right right" aria-hidden="true"></i></a>
+            </div>
+
+            <!-- 델리스트 영역 -->
+            <div class="delist-wrap">
+
+                <!-- 예약 카드 영역 -->
+                <div class="delist-card">
+                    <div class="delist-info">
+                        <img src="../images/food.png" alt="">
+                        <div class="rest">
+                            <div class="delist-place">
+                                <p class="delist-name sub-title2">나만의 델리스트</p>
+                                <p class="delist-count">38개 저장됨</p>
+                            </div>
+                        </div>
+                        <a href="#" class="view-details"><i class="material-icons">more_vert</i></a>
+                    </div>
+                </div>
+
+
+                <!-- 델리스트 영역 -->
+
+                <!-- 예약 카드 영역 -->
+                <div class="delist-card">
+                    <div class="delist-info">
+                        <img src="../images/food.png" alt="">
+                        <div class="rest">
+                            <div class="delist-place">
+                                <p class="delist-name sub-title2">델리 픽</p>
+                                <p class="delist-count">2개 저장됨</p>
+                            </div>
+                        </div>
+                        <a href="#" class="view-details"><i class="material-icons">more_vert</i></a>
+                    </div>
+                </div>
+
+                <a href="#" class="add-delist">
+                    <div class="delist-card">
+                        <div class="delist-info">
+                            <div class="add-card"><i class='fas fa-plus plus'></i></div>
+                            <div>
+                                <div class="delist-place">
+                                    <p class="delist-add sub-title2">델리스트 추가하기</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <p class="vip-promo body1">잦은 외식으로 VIP의 삶을 지금 바로 체험해 보세요</p>
+        </section>
+    </main>
+
+    <!-- 삭제 수정 모달창 -->
+    <div class="modal-overlay" id="editDeleteModal">
+        <div class="modal">
+            <p class="modal-title sub-title2">나만의 델리스트</p>
+            <p class="modal-subtitle">4개 저장됨</p>
+            <div class="modal-buttons">
+                <button class="modal-button btn-danger">삭제</button>
+                <button class="modal-button btn-primary">수정</button>
+            </div>
         </div>
-        <p>나만의 델리스트</p>
-        <p>n 개 저장됨</p>
-        <ul>
-          <li>
-            ...
-          </li>
-        </ul>
-      </div>
+    </div>
 
-      <a href="#">델리스트 추가하기</a>
+    <!-- 수정 모달창 -->
+    <div class="modal-overlay" id="editModal">
+        <div class="modal edit-modal">
+            <p class="modal-title sub-title2">변경 내용을 입력해주세요</p>
+            <input type="text" value="나만의 델리스트" class="sub-title1">
+            <div class="modal-buttons">
+                <button class="modal-button btn-cancel">취소</button>
+                <button class="modal-button btn-primary">저장하기</button>
+            </div>
+        </div>
+    </div>
 
-      <p>잦은 외식으로 VIP의 삶을 지금 바로 체험해 보세요</p>
+    <!-- 삭제 확인 모달창 -->
+    <div class="modal-overlay" id="deleteConfirmModal">
+        <div class="modal delete-confirm-modal">
+            <p class="modal-title sub-title2">정말 삭제하시겠습니까?</p>
+            <div class="modal-buttons">
+                <button class="modal-button btn-cancel">취소</button>
+                <button class="modal-button btn-danger">삭제</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 삭제 완료 모달창 -->
+    <div class="modal-overlay" id="deleteCompleteModal">
+        <div class="modal delete-complete-modal">
+            <p class="modal-title sub-title2">선택하신 델리스트가<br>삭제되었습니다.</p>
+            <div class="modal-buttons">
+                <button class="modal-button btn-primary">확인</button>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
     </section>
-  </main>
-
-  <!-- 삭제 수정 모달창 -->
-  <div>
-    <p>나만의 델리스트</p>
-    <p>4개 저장됨</p>
-    <button>삭제</button>
-    <button>수정</button>
-  </div>
-
-  <!-- 수정 모달창 -->
-  <div>
-    <p>변경 내용을 입력해주세요</p>
-    <p>4개 저장됨</p>
-    <button>취소</button>
-    <button>저장하기</button>
-  </div>
-
-  <!-- 삭제 확인 모달창 -->
-  <div>
-    <p>정말 삭제하시겠습니까?</p>
-    <button>삭제</button>
-    <button>수정</button>
-  </div>
-
-  <!-- 삭제 완료 모달창 -->
-  <div>
-    <p>선택하긴 플레이리스트가<br>삭제되었습니다.</p>
-    <button>확인</button>
-  </div>
+    </main>
 </body>
 
 </html>
