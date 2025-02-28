@@ -1,0 +1,260 @@
+@charset "utf-8";
+
+/* search-modal.css 에 필터버튼 스타일 */
+
+main {
+    padding: 0 25px;
+    position: relative;
+}
+
+/* icon size & color */
+.icon {
+    font-size: 15px;
+    color: var(--text-grey);
+}
+
+/* page-header */
+.page-header {
+    position: relative;
+    margin: 30px 25px 0;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    background-color: var(--white);
+}
+
+.page-header form {
+    flex: 1;
+    position: relative;
+}
+
+.page-header input[type="text"] {
+    width: 100%;
+    height: 50px;
+    padding: 10px 15px;
+    border-radius: 20px;
+    border: 1px solid var(--background-grey);
+    background-color: var(--background-grey);
+}
+
+.page-header input:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.page-header input[type="text"]::placeholder {
+    color: var(--text-grey);
+}
+/* search bar reset btn */
+.page-header button {
+    position: absolute;
+    top: 14px;
+    right: 12px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.page-header h1 {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.page-header a .icon {
+    font-size: 22px;
+    color: var(--black);
+}
+
+/* section */
+section {
+    padding: 20px 0;
+}
+
+section h2 {
+    margin-bottom: 20px;
+}
+/* 버튼 font-size */
+button {
+    font-size: 16px;
+}
+
+/* 전체보기 전체삭제 정렬 */
+.seemoreWrap {
+    display: flex;
+    justify-content: space-between;
+}
+.seemoreWrap a {
+    color: var(--text-grey);
+}
+
+/* 추천 검색어*/
+.recommended .icon {
+    padding-left: 5px;
+}
+
+/* 최근 검색어 */
+.recent {
+    position: relative;
+}
+
+/* 인기 검색어 */
+.popular li {
+    counter-increment: popular-counter;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--background-grey);
+}
+.popular li:before {
+    content: counter(popular-counter);
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    margin-right: 10px;
+}
+.popular a {
+    color: var(--black);
+}
+
+/* 추천 맛집 슬라이더 스타일 */
+.recomand-section {
+    margin-bottom: 30px;
+}
+
+.title-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 0 15px 0;
+}
+
+.recomend-title p {
+    margin-top: 5px;
+    color: var(--text-grey);
+    font-size: 14px;
+}
+
+.all-btn a {
+    color: var(--text-grey);
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+.all-arr {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: url(../asset/icon/arrow.png) no-repeat center / contain;
+    margin-left: 5px;
+}
+
+/* 맛집 슬라이더 컨테이너 */
+.store-container {
+    position: relative;
+    overflow: hidden;
+    margin: 0 -25px; /* 네거티브 마진으로 부모 패딩 상쇄 */
+    padding: 0 25px; /* 좌우 패딩 추가 */
+}
+
+.store-container ul {
+    display: flex;
+    gap: 15px;
+    padding: 10px 0;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+.store-container ul::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+.store-container li {
+    flex: 0 0 auto;
+    width: 250px;
+}
+
+.store-container li a {
+    display: block;
+}
+
+.rec-container {
+    width: 250px;
+    height: 180px;
+    border-radius: 10px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    padding: 130px 0 0 20px;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.rec-container dt {
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 18px;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.rec-content {
+    display: inline-block;
+    padding-right: 15px;
+    font-size: 14px;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+/* 좋아요 버튼 스타일 */
+.like {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    border-radius: 10px 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.like::after {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 15px;
+    height: 15px;
+    background: url(../image/round.png) no-repeat left bottom / cover;
+    bottom: 0;
+    right: 50px;
+}
+
+.like::before {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 15px;
+    height: 15px;
+    background: url(../image/round.png) no-repeat right top / cover;
+    bottom: 50px;
+    right: 0px;
+}
+
+.like img {
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+}
+
+.like-icon1, .like-icon2 {
+    display: none;
+}
+
+.active {
+    display: block;
+}
