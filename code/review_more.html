@@ -1,75 +1,183 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>리뷰 더보기</title>
-  </head>
-  <body>
+    <title>매장이름 리뷰</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/review_more.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
     <header>
-      <h1>매장 이름</h1>
-      <a href="#">back</a>
+        <div class="page-header">
+            <a href="#" class="back-btn"><i class="fa fa-angle-left icon"></i><span class="hidden">뒤로가기</span></a>
+            <h1 class="title">리뷰</h1>
+            <div class="header-placeholder"></div>
+        </div>
+        <!-- <nav id="gnb">
+            <ul>
+                <li><a href="#" class="home">홈</a></li>
+                <li><a href="#" class="search">검색</a></li>
+                <li><a href="#" class="likeBtn">좋아요</a></li>
+                <li><a href="#" class="reservation">예약</a></li>
+                <li><a href="#" class="mypage">마이페이지</a></li>
+            </ul>
+        </nav> -->
     </header>
-
     <main>
-
-        <section>
-            <h2>리뷰에 대한 댓글</h2>
-            <dl>
-                <dt>닉네임</dt>
-                <dd>헤르미온느</dd>
-                <dt>평점</dt>
-                <dd>별이 5개</dd>
-                <dt>리뷰</dt>
-                <dd>리뷰 글</dd>
-                <dt>리뷰 이미지</dt>
-                <dd>
-                    <!-- 리뷰 이미지 영역 -->
-                </dd>
-            </dl>
-
-            <a href="#">좋아요</a>
-            <a href="#">review 댓글 확인</a>
+        <section class="review-container">
+            <div class="review-header">
+                <div class="user-info">
+                    <div class="profile-image">
+                        <img src="https://placehold.co/40" alt="프로필 이미지">
+                    </div>
+                    <div class="detail-wrap">
+                        <div class="user-details">
+                            <p class="username sub-title1">헤르미온느</p>
+                            <span class="review-date body1">2023.12.19</span>
+                        </div>
+                        <div class="star-rating">
+                            ★★★★★
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="review-content">
+                <p class="review-text body2">
+                    처음에 들어갔을때 예쁜 공간이 눈에 들어와요. 음식 맛도 좋고 특히 조명에서 나오는 빛이 너무 예뻐 몽환적인 분위기로 데이트 필수코스입니다!
+                    인테리어가 정말 예쁘네요. 최고에요!
+                </p>
+                <div class="review-images">
+                    <img src="https://placehold.co/120" alt="리뷰 이미지 1">
+                    <img src="https://placehold.co/120" alt="리뷰 이미지 2">
+                    <img src="https://placehold.co/120" alt="리뷰 이미지 3">
+                    <img src="https://placehold.co/120" alt="리뷰 이미지 4">
+                    <img src="https://placehold.co/120" alt="리뷰 이미지 5">
+                    <img src="https://placehold.co/120" alt="리뷰 이미지 6">
+                </div>
+            </div>
+            <div class="review-actions">
+                <button class="like-btn sub-title1">
+                    <img class="like-icon1 active" src="./image/like-active.png" alt="좋아요">
+                    <img class="like-icon2" src="./image/liked.png" alt="좋아요">
+                    <span class="like-count">10</span>
+                </button>
+                <button class="comment-btn sub-title1">
+                    <img src="./image/comment.png" alt="comment-icon">
+                    <span class="comment-count">3</span>
+                </button>
+            </div>
         </section>
-        <section>
-            <h2>댓글 입력 영역</h2>
-            <form action="#" method="post">
-                <label for="comment">댓글 입력하기</label>
-                <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
-                <button type="submit">입력</button>
-            </form>
+        <section class="review-container">
+            <div class="review-header">
+                <div class="user-info">
+                    <div class="profile-image">
+                        <img src="https://placehold.co/40" alt="프로필 이미지">
+                    </div>
+                    <div class="detail-wrap">
+                        <div class="user-details">
+                            <p class="username sub-title1">헤르미온느</p>
+                            <span class="review-date body1">2023.12.19</span>
+                        </div>
+                        <div class="star-rating">
+                            ★★★★★
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="review-content">
+                <p class="review-text body2">
+                    처음에 들어갔을때 예쁜 공간이 눈에 들어와요. 음식 맛도 좋고 특히 조명에서 나오는 빛이 너무 예뻐 몽환적인 분위기로 데이트 필수코스입니다!
+                    인테리어가 정말 예쁘네요. 최고에요!
+                </p>
+                <div class="review-images">
+                    <img src="https://placehold.co/120" alt="리뷰 이미지 1">
+                    <img src="https://placehold.co/120" alt="리뷰 이미지 2">
+                    <img src="https://placehold.co/120" alt="리뷰 이미지 3">
+                    <img src="https://placehold.co/120" alt="리뷰 이미지 4">
+                    <img src="https://placehold.co/120" alt="리뷰 이미지 5">
+                    <img src="https://placehold.co/120" alt="리뷰 이미지 6">
+                </div>
+            </div>
+            <div class="review-actions">
+                <button class="like-btn sub-title1">
+                    <img class="like-icon1 active" src="./image/like-active.png" alt="좋아요">
+                    <img class="like-icon2" src="./image/liked.png" alt="좋아요">
+                    <span class="like-count">10</span>
+                </button>
+                <button class="comment-btn sub-title1">
+                    <img src="./image/comment.png" alt="comment-icon">
+                    <span class="comment-count">3</span>
+                </button>
+            </div>
         </section>
-        <section>
-            <h2>리뷰 댓글</h2>
-            <dl>
-                <dt>리뷰 댓글</dt>
-                <dd>마동석</dd>
-                <dd>리뷰에 대한 댓글 내용</dd>
-            </dl>
+        <section class="review-container">
+            <div class="review-header">
+                <div class="user-info">
+                    <div class="profile-image">
+                        <img src="https://placehold.co/40" alt="프로필 이미지">
+                    </div>
+                    <div class="detail-wrap">
+                        <div class="user-details">
+                            <p class="username sub-title1">헤르미온느</p>
+                            <span class="review-date body1">2023.12.19</span>
+                        </div>
+                        <div class="star-rating">
+                            ★★★★★
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="review-content">
+                <p class="review-text body2">
+                    처음에 들어갔을때 예쁜 공간이 눈에 들어와요. 음식 맛도 좋고 특히 조명에서 나오는 빛이 너무 예뻐 몽환적인 분위기로 데이트 필수코스입니다!
+                    인테리어가 정말 예쁘네요. 최고에요!
+                </p>
+                <div class="review-images">
+                    <img src="https://placehold.co/120" alt="리뷰 이미지 1">
+                    <img src="https://placehold.co/120" alt="리뷰 이미지 2">
+                    <img src="https://placehold.co/120" alt="리뷰 이미지 3">
+                    <img src="https://placehold.co/120" alt="리뷰 이미지 4">
+                    <img src="https://placehold.co/120" alt="리뷰 이미지 5">
+                    <img src="https://placehold.co/120" alt="리뷰 이미지 6">
+                </div>
+            </div>
+            <div class="review-actions">
+                <button class="like-btn sub-title1">
+                    <img class="like-icon1 active" src="./image/like-active.png" alt="좋아요">
+                    <img class="like-icon2" src="./image/liked.png" alt="좋아요">
+                    <span class="like-count">10</span>
+                </button>
+                <button class="comment-btn sub-title1">
+                    <img src="./image/comment.png" alt="comment-icon">
+                    <span class="comment-count">3</span>
+                </button>
+            </div>
         </section>
-
-
-      <section>
-        <h2>상세 정보</h2>
-        <article>
-            <h3>전화번호</h3>
-            <p>tel. 012-123-1234</p>
-        </article>
-        <article>
-            <h3>안내 및 유의사항</h3>
-            <p>* 영업시간은 매장 사정에 따라 변경될 수 있습니다.</p>
-        </article>
-    </section>
-    <section>
-        <h2>환불정책</h2>
-        <p>방문 1~3시간 전 취소 &rarr; 50% 환불</p>
-        <p>방문 시간 당일 2시간 전 &rarr; 환불 불가</p>
-        <p>* 단 기상님이 이동을 시작한 이후에는 일부 추가비용이 발생합니다.</p>
-        <p>선결제 (앱 내 결제) &rarr; 결제 취소 후 카드사 경제 서비스 규정에 따라 3~5일 내 환불</p>
-        <p>현장 결제 &rarr; 매장 자체 환불 규정에 따름 (DELIWAY 직접 환불 불가)</p>
-        <p>포인트/쿠폰 사용 예약 &rarr; 포인트는 즉시 반환, 쿠폰은 복구 불가 할 수도 있음</p>
-        <p>간편 결제 (카카오페이, 네이버페이 등) &rarr; 취소 후 1~2일 내 환불</p>
-    </section>
     </main>
-  </body>
+    <script>
+        document.addEventListener('DOMContentLoaded', function(){
+            initializeLikeButtons();
+        })
+        function initializeLikeButtons() {
+            const likeButtons = document.querySelectorAll('.like-btn');
+
+            likeButtons.forEach(likeButtons => {
+                likeButtons.addEventListener('click', function(e){
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    const icon1 = this.querySelector(".like-icon1"); //빈 하트
+                    const icon2 = this.querySelector(".like-icon2"); //채워진 하트
+
+                    icon1.classList.toggle('active');
+                    icon2.classList.toggle('active');
+                })
+            })
+        }
+    </script>
+</body>
 </html>

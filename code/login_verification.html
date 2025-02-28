@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>본인인증</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/login_verification.css">
+</head>
+
+<body>
+    <header>
+        <a href="#"><i class="fas fa-angle-left" aria-hidden="true"></i><span class="hidden">뒤로가기</span></a>
+        <h1 class="hidden">본인인증</h1>
+    </header>
+    <main>
+        <form>
+            <div>
+                <label class="login">이메일 주소를 입력해주세요</label>
+                <input type="email" placeholder="example@email.com">
+                <button class="title">인증 메일 발송</button>
+            </div>
+            <div>
+                <label class="login">전화번호를 입력해주세요</label>
+                <input type="text" placeholder="010-0000-0000">
+                <button class="title">인증 문자 발송</button>
+            </div>
+            <div>
+                <label class="login">비밀번호를 입력해주세요</label>
+                <input type="password" placeholder="비밀번호 입력">
+                <p class="body1 hidden">비밀번호는 문자 숫자 특수문자의 조합으로 8자리 이상 입력해주세요.</p>
+                <input type="password" placeholder="비밀번호 확인">
+                <p class="body1 hidden">비밀번호가 맞지 않습니다. 다시 입력해주세요.</p>
+            </div>
+            <button class="next title">다음</button>
+        </form>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // 전화번호 인증 관련 변수
+            const phoneInput = document.querySelector('input[placeholder="010-0000-0000"]');
+            const smsButton = phoneInput.nextElementSibling;
+            let verificationTimer;
+            let isVerificationSent = false;
+
+            // 비밀번호 유효성 검사 관련 변수
+            const passwordInput = document.querySelector('input[placeholder="비밀번호 입력"]');
+            const passwordConfirmInput = document.querySelector('input[placeholder="비밀번호 확인"]');
+            const passwordErrorMsg = passwordInput.nextElementSibling;
+            const passwordConfirmErrorMsg = passwordConfirmInput.nextElementSibling;
+
+            // input 박스 focus 되었을 때 border 색상 변경 (CSS에 이미 정의되어 있음)
+
+            // 전화번호 인증 버튼 클릭 이벤트
+            smsButton.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                if (!phoneInput.value) {
+                    alert('전화번호를 입력해주세요.');
+                    return;
+                }
+
+                // 인증 문자 발송 로직
+                if (!isVerificationSent) {
+                    isVerificationSent = true;
+                    smsButton.textContent = '인증번호 확인';
+
+                    // 1분 타이머 시작
+                    let seconds = 60;
+                    verificationTimer = setInterval(function () {
+                        seconds--;
+
+                        if (seconds <= 0) {
+                            clearInterval(verificationTimer);
+                            smsButton.textContent = '인증문자 재발송';
+                            isVerificationSent = false;
+                        }
+                    }, 1000);
+
+                    // 인증번호 입력란 추가
+                    const verificationInput = document.createElement('input');
+                    verificationInput.type = 'text';
+                    verificationInput.placeholder = '인증번호 6자리 입력';
+                    verificationInput.className = 'verification-code';
+
+                    // 인증번호 입력란을 버튼 앞에 삽입
+                    phoneInput.parentNode.insertBefore(verificationInput, smsButton);
+                } else {
+                    // 인증번호 확인 로직
+                    const verificationInput = document.querySelector('.verification-code');
+
+                    if (!verificationInput.value) {
+                        alert('인증번호를 입력해주세요.');
+                        return;
+                    }
+
+                    // 인증 성공 가정 (실제로는 서버 검증 필요)
+                    alert('인증이 완료되었습니다.');
+                    clearInterval(verificationTimer);
+                    smsButton.disabled = true;
+                    smsButton.textContent = '인증 완료';
+                    smsButton.style.backgroundColor = '#ccc';
+                }
+            });
+
+            // 비밀번호 유효성 검사
+            passwordInput.addEventListener('input', validatePassword);
+            passwordInput.addEventListener('blur', validatePassword);
+
+            function validatePassword() {
+                const password = passwordInput.value;
+                const hasLetter = /[a-zA-Z]/.test(password);
+                const hasNumber = /[0-9]/.test(password);
+                const hasSpecial = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(password);
+                const isLongEnough = password.length >= 8;
+
+                if (password && (!isLongEnough || !hasLetter || !hasNumber || !hasSpecial)) {
+                    passwordErrorMsg.classList.remove('hidden');
+                } else {
+                    passwordErrorMsg.classList.add('hidden');
+                }
+            }
+
+            // 비밀번호 일치 여부 확인
+            passwordConfirmInput.addEventListener('input', validatePasswordMatch);
+            passwordConfirmInput.addEventListener('blur', validatePasswordMatch);
+
+            function validatePasswordMatch() {
+                const password = passwordInput.value;
+                const confirmPassword = passwordConfirmInput.value;
+
+                if (confirmPassword && password !== confirmPassword) {
+                    passwordConfirmErrorMsg.classList.remove('hidden');
+                } else {
+                    passwordConfirmErrorMsg.classList.add('hidden');
+                }
+            }
+
+            // 다음 버튼 클릭 이벤트
+            const nextButton = document.querySelector('.next');
+            nextButton.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                // 이메일 검증
+                const emailInput = document.querySelector('input[placeholder="example@email.com"]');
+                if (!emailInput.value) {
+                    alert('이메일을 입력해주세요.');
+                    emailInput.focus();
+                    return;
+                }
+
+                // 전화번호 인증 완료 여부 확인
+                if (smsButton.textContent !== '인증 완료') {
+                    alert('전화번호 인증을 완료해주세요.');
+                    return;
+                }
+
+                // 비밀번호 유효성 검사
+                const password = passwordInput.value;
+                const confirmPassword = passwordConfirmInput.value;
+
+                const hasLetter = /[a-zA-Z]/.test(password);
+                const hasNumber = /[0-9]/.test(password);
+                const hasSpecial = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(password);
+                const isLongEnough = password.length >= 8;
+
+                if (!password) {
+                    alert('비밀번호를 입력해주세요.');
+                    passwordInput.focus();
+                    return;
+                }
+
+                if (!isLongEnough || !hasLetter || !hasNumber || !hasSpecial) {
+                    alert('비밀번호는 문자, 숫자, 특수문자의 조합으로 8자리 이상 입력해주세요.');
+                    passwordInput.focus();
+                    return;
+                }
+
+                if (!confirmPassword) {
+                    alert('비밀번호 확인을 입력해주세요.');
+                    passwordConfirmInput.focus();
+                    return;
+                }
+
+                if (password !== confirmPassword) {
+                    alert('비밀번호가 일치하지 않습니다.');
+                    passwordConfirmInput.focus();
+                    return;
+                }
+
+                // 모든 유효성 검사 통과 시 다음 단계로 진행
+                alert('본인인증이 완료되었습니다. 다음 단계로 진행합니다.');
+                // 실제로는 form.submit() 또는 다음 페이지로 이동
+            });
+        });
+    </script>
+</body>
+
+</html>

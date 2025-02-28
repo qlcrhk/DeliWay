@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>약관동의</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/login_terms.css">
+</head>
+
+<body>
+    <header>
+        <a href="#"><i class="fas fa-angle-left" aria-hidden="true"></i><span class="hidden">뒤로가기</span></a>
+        <h2>서비스 이용을 위해<br>약관에 동의해주세요</h2>
+    </header>
+    <main>
+        <label id="agree">
+            <input type="checkbox" name="agree_all" id="agree_all">
+            <div>
+                <span>만 14세 이상입니다.</span><p>(필수)</p>
+            </div>
+        </label>
+        <label>
+            <input type="checkbox" name="agree" value="1">
+            <div>
+                <span>만 14세 이상입니다.</span><p>(필수)</p>
+            </div>
+        </label>
+        <label>
+            <input type="checkbox" name="agree" value="2">
+            <div>
+                <span>서비스 이용약관 동의</span><p>(필수)</p>
+            </div>
+        </label>
+        <label>
+            <input type="checkbox" name="agree" value="3">
+            <div>
+                <span>개인정보 제3자 제공 동의</span>
+                <p class="select_disable">(선택)</p>
+            </div>
+        </label>
+        <label>
+            <input type="checkbox" name="agree" value="4">
+            <div>
+                <span>개인정보 제3자 제공 동의</span>
+                <p class="select_disable">(선택)</p>
+            </div>
+        </label>
+        <button class="title">다음</button>
+    </main>
+    <script>
+        // 동의 모두 선택 or 해제
+        const agreeChkAll = document.querySelector('input[name=agree_all]');
+        agreeChkAll.addEventListener('change', (e) => {
+            let agreeChk = document.querySelectorAll('input[name=agree]');
+            for (let i = 0; i < agreeChk.length; i++) {
+                agreeChk[i].checked = e.target.checked;
+            }
+        });
+    </script>
+</body>
+
+</html>

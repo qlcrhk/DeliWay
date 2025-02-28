@@ -1,58 +1,94 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>마이페이지 - 설정</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/mypage_setting.css">
 </head>
+
 <body>
     <header>
-        <h1>설정</h1>
-        <a href="#">뒤로가기</a>
-
-        <nav>
-            <h2>주 메뉴</h2>
+        <div class="page-header">
+            <a href="#" class="back"><i class="fa fa-angle-left icon"></i><span class="hidden">뒤로가기</span></a>
+            <h1 class="title">설정</h1>
+        </div>
+        <nav id="gnb">
+            <h2 class="hidden">메인 메뉴</h2>
             <ul>
-                <li><a href="#">홈</a></li>
-                <li><a href="#">검색</a></li>
-                <li><a href="#">찜한 맛집</a></li>
-                <li><a href="#">예약내역</a></li>
-                <li><a href="#">마이페이지</a></li>
+                <li><a href="#" class="home">홈</a></li>
+                <li><a href="#" class="search">검색</a></li>
+                <li><a href="#" class="like">찜한 맛집</a></li>
+                <li><a href="#" class="reservation">예약내역</a></li>
+                <li><a href="#" class="mypage">마이페이지</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <section>
-            <h2>알림설정</h2>
+        <section class="notification">
+            <h2 class="title">알림설정</h2>
             <form>
-                <label for="#">댓글알림</label>
-                <input type="checkbox" id="comment-alarm" name="comment-alarm" checked>
-                <label for="#">좋아요 알림</label>
-                <input type="checkbox" id="like-alarm" name="like-alarm" checked>
-                <label for="#">예약 내역 알림</label>
-                <input type="checkbox" id="reservation-alarm" name="reservation-alarm" checked>
-                <label for="#">이벤트 및 마케팅 알림림 알림</label>
-                <input type="checkbox" id="event-alarm" name="event-alarm" checked>
+                <div>
+                    <label>댓글알림</label>
+                    <input type="checkbox" id="comment-alarm" name="comment-alarm" checked>
+                </div>
+                <div>
+                    <label>좋아요 알림</label>
+                    <input type="checkbox" id="like-alarm" name="like-alarm" checked>
+                </div>
+                <div>
+                    <label>예약 내역 알림</label>
+                    <input type="checkbox" id="reservation-alarm" name="reservation-alarm" checked>
+                </div>
+                <div>
+                    <label>이벤트 및 마케팅 알림림 알림</label>
+                    <input type="checkbox" id="event-alarm" name="event-alarm" checked>
+                </div>
             </form>
         </section>
-        <section>
-            <h2>고객지원</h2>
-
-            <a href="#">공지사항</a>
-            <a href="#">이용가이드</a>
-            <a href="#">자주 묻는 질문</a>
-            <a href="#">1:1 문의</a>
+        <section class="customer">
+            <h2 class="title">고객지원</h2>
+            <a href="">
+                <p>공지사항</p>
+                <i class="fa fa-angle-right	"></i>
+            </a>
+            <a href="">
+                <p>이용가이드</p>
+                <i class="fa fa-angle-right	"></i>
+            </a>
+            <a href="">
+                <p>자주 묻는 질문</p>
+                <i class="fa fa-angle-right	"></i>
+            </a>
+            <a href="">
+                <p>1:1 문의</p>
+                <i class="fa fa-angle-right	"></i>
+            </a>
         </section>
-
-        <section>
-            <h2>서비스 안내</h2>
-            
-            <a href="#">회사정보</a>
-            <a href="#">이용약관</a>
-            <a href="#">개인정보 처리방침</a>
-            <a href="#">위치 기반 서비스 이용약관</a>
+        <section class="service">
+            <h2 class="title">서비스 안내</h2>
+            <a href="#">
+                <p>회사정보</p>
+                <i class="fa fa-angle-right	"></i>
+            </a>
+            <a href="#">
+                <p>이용약관</p>
+                <i class="fa fa-angle-right	"></i>
+            </a>
+            <a>
+                <p>개인정보 처리방침</p>
+                <i class="fa fa-angle-right	"></i>
+            </a>
+            <a href="#">
+                <p>위치 기반 서비스 이용약관</p>
+                <i class="fa fa-angle-right	"></i>
+            </a>
             <p>버전정보 <span>1.0.0</span></p>
         </section>
     </main>
 </body>
+
 </html>

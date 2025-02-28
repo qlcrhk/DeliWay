@@ -2,11 +2,13 @@
 :root {
     /* Color design */
     --primary: #834EC3;
+    --primary-dark: #613991;
     --primary-light: #E0D3F0;
     --black: #000000;
     --white: #FFFFFF;
     --err: #ff0000;
     --text-grey: #6F6F6F;
+    --text-grey-dark: #272727;
     --background-grey: #EDEDED;
 
     /* Font Sizes */
@@ -22,18 +24,21 @@
 
 *{
     box-sizing: border-box;
-    /* width: 440px; */
-    list-style: none;
+    list-style:none;
     text-decoration: none;
-    margin: 0 auto;
 }
 
-body,h1,h2,h3,h4,h5,h6,a,ul,li,dl,dt,dd,p,div,form{
+body,h1,h2,h3,h4,h5,h6,a,ul,li,ol,dl,dt,dd,p,div,form,fieldset,button{
     margin: 0;
     padding: 0;
 }
 
+fieldset {
+    border :none;
+}
+
 .hidden {
+    display: inline-block;
     position: absolute;
     overflow: hidden;
     width: 1px;
@@ -42,14 +47,14 @@ body,h1,h2,h3,h4,h5,h6,a,ul,li,dl,dt,dd,p,div,form{
 }
 
 /* 폰트 */
-.body {
+body {
     font-family: 'Pretendard-Medium';
     font-size: 16px;
 }
 
 .login {
     font-family: 'Pretendard-Bold';
-    font-size: 24px;
+    font-size: 26px;
 }
 .login-placeholder {
     font-family: 'Pretendard-Medium';
@@ -66,7 +71,7 @@ body,h1,h2,h3,h4,h5,h6,a,ul,li,dl,dt,dd,p,div,form{
 }
 .sub-title2 {
     font-family: 'Pretendard-Bold';
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .body1 {
@@ -74,43 +79,69 @@ body,h1,h2,h3,h4,h5,h6,a,ul,li,dl,dt,dd,p,div,form{
     font-size: 14px;
 }
 
+.body1-bold {
+    font-family: 'Pretendard-Bold';
+    font-size: 14px;
+}
+
 .small {
     font-family: 'Pretendard-Medium';
-    font-size: 12px;
+    font-size: 11px;
 }
 
 
 /* navibar */
-
 #gnb ul {
-    position:fixed;
+    position: fixed;
     bottom:0;
     display: flex;
+    width: 100%;
     height: 100px;
+    background: #fff;
+    z-index: 999;
+}
+#gnb ul li {
+    width: 20%;
 }
 
 #gnb ul li a {
+    display: block;
     background-repeat: no-repeat;
     background-position: center center;
-    display: block;
+    background-size: 28px;
     width: 100%;
     height: 100%;
     text-indent: -100%;
     overflow: hidden;
     white-space: nowrap;
 }
-.home {
-    background-image: url(../image/home.png);
+.homeBtn {
+    background-image: url(../image/homeBtn.png);
 }
-.search {
-    background-image: url(../image/search.png);
+.homeBtn.active {
+    background-image: url(../image/homeBtn-active.png);
 }
-.like {
-    background-image: url(../image/like.png);
+.searchBtn {
+    background-image: url(../image/searchBtn.png);
 }
-.reservation {
-    background-image: url(../image/reservation.png);
+.searchBtn.active {
+    background-image: url(../image/searchBtn-active.png);
 }
-.mypage {
-    background-image: url(../image/mypage.png);
+.likeBtn {
+    background-image: url(../image/likeBtn.png);
+}
+.linkBtn.active {
+    background-image: url(../image/likeBtn-active.png);
+}
+.reservationBtn {
+    background-image: url(../image/reservationBtn.png);
+}
+.reservationBtn.active {
+    background-image: url(../image/reservationBtn-active.png);
+}
+.mypageBtn {
+    background-image: url(../image/mypageBtn.png);
+}
+.mypageBtn.active {
+    background-image: url(../image/mypageBtn-active.png);
 }

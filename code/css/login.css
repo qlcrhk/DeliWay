@@ -1,0 +1,53 @@
+@charset "utf-8";
+
+html,body {
+    height: 100%;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
+
+h1{
+    align-items: center;
+    text-align: center;
+}
+header h1 a{
+    font-family: 'Delmon Delicate';
+    text-decoration: none;
+    font-weight: normal;
+    font-size: 60px;
+    color: var(--primary);
+}
+
+main {
+    width: 100%;
+    padding: 0 25px;
+}
+
+.loginWay {
+    display: block;
+    width: 100%;
+    text-align: center;
+    line-height: 70px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.loginWay:nth-child(1) {
+    background: #fee500;
+    color:var(--black);
+}
+.loginWay:nth-child(2) {
+    background: #03c75a;
+    color: var(--white);
+}
+.loginWay:nth-child(3) {
+    background: var(--primary);
+    color: var(--white);
+    margin-bottom: 0;
+}

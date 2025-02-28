@@ -1,0 +1,135 @@
+@charset "utf-8";
+/* 초기화 */
+* {box-sizing: border-box;}
+
+.hidden{
+    overflow: hidden;
+    position: absolute;
+    width: 1px; 
+    height: 1px;
+    margin: -1px;
+    clip:rect(0,0,0,0);
+}
+body{
+    display: flex;
+    width: 440px;
+    margin: 0px 25px;
+    flex-direction: column;
+}
+
+dl{
+    position: relative;
+    border-bottom: 1px solid #e7e7e7;     
+    padding-bottom: 30px;  
+}
+dt{
+    font-size: 16px;
+    font-weight: bold;
+    /* padding-bottom: 10px; */
+}
+dd{
+    padding: 3px 0px;
+    margin: 0;
+}
+
+/* 헤더 */
+header{
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+}
+header h2{
+    font-size: 20px;
+    order:1;
+}
+header a{
+    position: absolute;
+    left: 2%;
+    text-decoration: none;
+    font-size: 40px;
+    color: #000;
+}
+
+/* 메인 */
+#container{
+    position: relative;
+    margin: 20px auto;
+}
+section{
+    position: relative;
+    border-bottom: 6px solid #d9d9d9;
+}
+.age{
+    /* position: absolute;
+    left: 0%; */
+    font-size: 14px;
+    color: #b6b6b6;
+}
+.price{
+    /* position: absolute;
+    left: 0%; */
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+}
+.photo{
+    position: absolute;
+    top: -20%;
+    right: 0%;
+}
+.photo img{
+    width: 100px; height: 100px;
+}
+
+#tel{
+    color: #000;
+}
+#guid{
+    color: #000;
+}
+/* 예약하기 */
+.button_container{
+    display: flex;
+    flex-direction: row;
+    
+    /* align-items: center; */
+    /* justify-content: center; */
+}
+.button_call{
+    font-weight: bold;
+    height: 50px; width: 106px;
+    border: none;
+    margin: 0 10px;
+    text-align: center;
+}
+.button_call img{
+    width: 24px; height: 24px;
+    
+}
+.button_reservation{
+    width: 304px;
+    height: 50px;
+    /* width: 390px;
+    height: 70px;
+    margin-top: 338px;
+    font-size: 20px; */
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    background: #834ec3;
+    cursor: pointer;
+}
+
+/* 풋터 */
+footer{
+    color: #727272;
+}
+footer ul{
+    list-style-type: none;
+    padding: 0 0px;
+}
+footer li{
+    padding: 5px 0;
+}
