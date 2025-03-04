@@ -38,11 +38,16 @@ header > a {
   padding: 30px 0 0px 0;
 }
 
+.tab-menu .active {
+    border-bottom: 3px solid var(--primary);
+    font-weight: bold;
+}
+
 .notice {
   width: 50%;
   height: 50px;
   text-align: center;
-  border-bottom: 3px solid var(--primary);
+  /* border-bottom: 3px solid var(--primary); */
 }
 
 .activity {
@@ -79,11 +84,16 @@ span {
     position: relative;
 }
 
+.noticeArea {
+    display: flex;
+    flex-direction: column;
+}
+
 .activityArea {
     position: absolute;
     width: 100%;
     top: 0;
     left: 0;
-    display: none;
+    /* display: none; */
 }
 
