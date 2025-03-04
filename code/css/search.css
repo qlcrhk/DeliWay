@@ -1,7 +1,5 @@
 @charset "utf-8";
 
-/* search-modal.css 에 필터버튼 스타일 */
-
 main {
     padding: 0 25px;
     position: relative;
@@ -147,7 +145,7 @@ button {
     display: inline-block;
     width: 12px;
     height: 12px;
-    background: url(../asset/icon/arrow.png) no-repeat center / contain;
+    background: url(../../icon/arrow.png) no-repeat center / contain;
     margin-left: 5px;
 }
 
@@ -176,23 +174,31 @@ button {
 .store-container li {
     flex: 0 0 auto;
     width: 250px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 250px;
+    height: 180px;
+    border-radius: 10px 10px 20px 10px;
+    position: relative;
+    padding: 130px 0 0 20px;
+    color: white;
 }
 
 .store-container li a {
     display: block;
+    color: white;
 }
 
-.rec-container {
-    width: 250px;
-    height: 180px;
-    border-radius: 10px;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: relative;
-    padding: 130px 0 0 20px;
-    color: white;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+
+.store-container ul li:nth-child(1) {
+    background-image: url(../../images/restaurant1.png) ;
+}
+.store-container ul li:nth-child(2){
+    background-image: url(../../images/restaurant2.png) ;
+}
+.store-container ul li:nth-child(3){
+    background-image: url(../../images/restaurant3.png) ;
 }
 
 .rec-container dt {
@@ -212,10 +218,10 @@ button {
 /* 좋아요 버튼 스타일 */
 .like {
     position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 50px;
-    height: 50px;
+    bottom: -1px;
+    right: -1px;
+    width: 51px;
+    height: 51px;
     background-color: #fff;
     border-radius: 10px 0 10px;
     display: flex;
@@ -229,7 +235,7 @@ button {
     display: block;
     width: 15px;
     height: 15px;
-    background: url(../image/round.png) no-repeat left bottom / cover;
+    background: url(../../icon/round.png) no-repeat left bottom / cover;
     bottom: 0;
     right: 50px;
 }
@@ -240,7 +246,7 @@ button {
     display: block;
     width: 15px;
     height: 15px;
-    background: url(../image/round.png) no-repeat right top / cover;
+    background: url(../../icon/round.png) no-repeat right top / cover;
     bottom: 50px;
     right: 0px;
 }
