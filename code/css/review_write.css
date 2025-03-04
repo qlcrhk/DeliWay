@@ -76,6 +76,7 @@ fieldset > .btns {
     gap: 20px;
     margin: 0 25px;
     padding-right: 25px;
+    overflow: scroll;
 }
 
 .menu-title {
