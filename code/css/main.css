@@ -1,3 +1,5 @@
+@charset "utf-8";
+
 :root {
   --gap-size: 10px;
   --padding-default: 25px;
@@ -16,7 +18,7 @@ section {
 header ul {
   display: flex;
   justify-content: space-between;
-  padding: var(--padding-default);
+  padding: 30px 25px 0;
   align-items: center;
 }
 
@@ -143,6 +145,7 @@ main {
   align-items: center;
   gap: var(--gap-size);
   padding: var(--padding-default);
+  overflow: scroll;
 }
 
 .store-container li a dl {
@@ -218,6 +221,7 @@ dd:nth-of-type(3)::before {
   padding-left: var(--padding-default);
   display: flex;
   gap: 15px;
+  overflow:scroll;
 }
 
 .distance-section ul li {
@@ -254,7 +258,3 @@ dd:nth-of-type(3)::before {
 .magazine-slider-container img {
   border-radius: 10px;
 }
-
-
-/* 테스트 */
-
