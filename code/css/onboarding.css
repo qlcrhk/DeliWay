@@ -1,5 +1,4 @@
-@import url('./common.css');
-@import url('./webfont.css');
+@charset "utf-8";
 
 html, body {
     height: 100%;
