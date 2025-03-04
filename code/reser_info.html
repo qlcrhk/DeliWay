@@ -81,7 +81,7 @@
         <dt>
           <img src="../icon/reservation.png" alt=""><span>예약일시</span>
         </dt>
-        <dd>취소된 예약</dd>
+        <dd>2025.03.04 14:30</dd>
         <dt>
           <img src="../icon/user.png" alt=""><span>예약자</span>
         </dt>
@@ -199,14 +199,14 @@
   <div id="completionModal" class="modal">
     <div class="modal-content">
       <p>환불요청이 완료 되었습니다.</p>
-      <button onclick="closeModal('completionModal')">확인</button>
+      <button onclick="closeModal('completionModal'); goBack(event)">확인</button>
     </div>
   </div>
 
   <div id="changeModal" class="modal">
     <div class="modal-content">
       <p>예약변경이 완료 되었습니다.</p>
-      <button onclick="closeModal('changeModal')">확인</button>
+      <button onclick="closeModal('changeModal'); goBack(event);">확인</button>
     </div>
   </div>
 

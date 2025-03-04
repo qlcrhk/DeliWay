@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="./css/common.css">
   <link rel="stylesheet" href="./css/review_write.css">
 
   <script src="./js/review_write.js" defer></script>
@@ -139,7 +140,7 @@
   <div id="completionModal" class="modal">
     <div class="modal-content">
       <p>리뷰등록이 완료되었습니다</p>
-      <button onclick="closeModal('completionModal')">확인</button>
+      <button onclick="closeModal('completionModal'); window.location.href='./review_detail.html'">확인</button>
     </div>
   </div>
 </body>
