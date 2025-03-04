@@ -51,7 +51,7 @@
             >(선택)</span
           >
         </label>
-        <button type="button" onclick="submitForm()" class="title">다음</button>
+        <button type="button" onclick="window.location.href = 'login_verification.html'" class="title">다음</button>
         <!-- <button type="submit" class="title">다음</button> //서버에서 이동시킬 예정 -->
       </form>
     </main>
@@ -67,7 +67,6 @@
 
       function submitForm() {
         document.getElementById("myForm").submit();
-        window.location.href = "login_verification.html";
       }
     </script>
   </body>
