@@ -15,6 +15,7 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="./js/common.js" defer></script>
 </head>
+
 <body>
   <header>
     <h1 class="hidden">매장 상세페이지</h1>
@@ -209,17 +210,17 @@
 
         <div class="review-actions">
           <button class="like-btn sub-title1">
-            <img class="like-icon1 active" src="./image/like.png" alt="좋아요">
-            <img class="like-icon2" src="./image/liked.png" alt="좋아요">
+            <img class="like-icon1 active" src="../icon/like.png" alt="좋아요">
+            <img class="like-icon2" src="../icon/liked.png" alt="좋아요">
             <span class="like-count">10</span>
           </button>
           <button class="comment-btn sub-title1">
-            <img src="./image/comment.png" alt="comment-icon">
+            <img src="../icon/comment.png" alt="comment-icon">
             <span class="comment-count">3</span>
           </button>
         </div>
       </div>
-      
+
       <!-- review 2 will be deprecated -->
       <div class="review-container">
         <div class="review-header">
@@ -254,12 +255,12 @@
         </div>
         <div class="review-actions">
           <button class="like-btn sub-title1">
-            <img class="like-icon1 active" src="./image/like.png" alt="좋아요">
-            <img class="like-icon2" src="./image/liked.png" alt="좋아요">
+            <img class="like-icon1 active" src="../icon/like.png" alt="좋아요">
+            <img class="like-icon2" src="../icon/liked.png" alt="좋아요">
             <span class="like-count">10</span>
           </button>
           <button class="comment-btn sub-title1">
-            <img src="./image/comment.png" alt="comment-icon">
+            <img src="../icon/comment.png" alt="comment-icon">
             <span class="comment-count">3</span>
           </button>
         </div>
@@ -358,6 +359,129 @@
       // 좋아요 기능 함수 호출
       initializeLikeButtons();
     });
+
+    // 네비게이션 바 고정 및 섹션 스크롤 기능
+document.addEventListener('DOMContentLoaded', function() {
+  // 네비게이션 바 요소 가져오기
+  const navbar = document.querySelector('.store-navbar');
+  const lnb = document.querySelector('#lnb');
+  const navLinks = document.querySelectorAll('#lnb ul li a');
+  
+  // 섹션 요소들 가져오기
+  const sections = {
+    '홈': document.querySelector('.store-info-section'),
+    '메뉴': document.querySelector('.store-menu-section'),
+    '소식': document.querySelector('.news-section'),
+    '리뷰': document.querySelector('.title + .review-container').parentElement,
+    '매장정보': document.querySelector('.map-section')
+  };
+  
+  // 네비게이션 바의 원래 위치 저장
+  const navbarOriginalOffset = navbar.offsetTop;
+  
+  // 스크롤 이벤트 리스너
+  window.addEventListener('scroll', function() {
+    // 현재 스크롤 위치가 네비게이션 바의 원래 위치를 넘어갔는지 확인
+    if (window.pageYOffset >= navbarOriginalOffset) {
+      // 네비게이션 바 고정
+      navbar.classList.add('fixed-nav');
+      // 본문 컨텐츠가 갑자기 위로 올라가는 것을 방지하기 위해 빈 공간 추가
+      document.body.style.paddingTop = navbar.offsetHeight + 'px';
+    } else {
+      // 네비게이션 바 고정 해제
+      navbar.classList.remove('fixed-nav');
+      // 추가한 패딩 제거
+      document.body.style.paddingTop = '0';
+    }
+    
+    // 현재 보이는 섹션에 따라 active 클래스 업데이트
+    updateActiveNavLink();
+  });
+  
+  // 각 링크에 클릭 이벤트 추가
+  navLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault(); // 기본 동작 방지
+      
+      // 클릭된 링크의 텍스트 가져오기
+      const linkText = this.textContent;
+      
+      // 해당 섹션으로 스크롤
+      if (sections[linkText]) {
+        const targetPosition = sections[linkText].offsetTop - navbar.offsetHeight;
+        
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+  
+  // 현재 보이는 섹션에 따라 active 클래스 업데이트하는 함수
+  function updateActiveNavLink() {
+    // 현재 스크롤 위치 + 네비게이션 바 높이
+    const scrollPosition = window.pageYOffset + navbar.offsetHeight + 10;
+    
+    // 각 섹션을 확인하고 현재 위치에 따라 active 클래스 업데이트
+    for (const [name, section] of Object.entries(sections)) {
+      if (section) {
+        const sectionTop = section.offsetTop;
+        const sectionBottom = sectionTop + section.offsetHeight;
+        
+        if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+          // 모든 링크에서 active 클래스 제거
+          navLinks.forEach(navLink => {
+            navLink.classList.remove('active');
+          });
+          
+          // 현재 섹션의 링크에 active 클래스 추가
+          const activeLink = document.querySelector(`#lnb ul li a[href=""]:contains('${name}')`);
+          if (activeLink) {
+            activeLink.classList.add('active');
+          }
+          
+          break;
+        }
+      }
+    }
+  }
+  
+  // 텍스트 내용으로 요소를 선택하기 위한 contains 셀렉터 추가
+  document.querySelector = document.querySelector || function(selector) {
+    if (selector.includes(':contains')) {
+      const [baseSelector, containsText] = selector.split(':contains');
+      const text = containsText.replace(/['"()]/g, '');
+      
+      const elements = document.querySelectorAll(baseSelector);
+      for (const element of elements) {
+        if (element.textContent.includes(text)) {
+          return element;
+        }
+      }
+      return null;
+    }
+    return document._querySelector(selector);
+  };
+  document._querySelector = document.querySelector;
+});
+
+// CSS 스타일 추가
+const style = document.createElement('style');
+style.textContent = `
+  .fixed-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: white;
+    border-bottom: 1px solid var(--background-grey);
+    transition: all 0.3s ease;
+    margin: 0
+  }
+`;
+document.head.appendChild(style);
   </script>
 </body>
 
