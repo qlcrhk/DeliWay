@@ -4,7 +4,6 @@ html,body {
     height: 100%;
 }
 main {
-    margin-top: 80px;
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -16,6 +15,7 @@ header a {
     margin: 30px 25px;
     font-size: 22px;
 }
+
 form {
     width: 100%;
 }
