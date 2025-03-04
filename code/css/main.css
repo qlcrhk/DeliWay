@@ -219,7 +219,7 @@ dd:nth-of-type(3)::before {
 
 /* 거리 선택 */
 .distance-section ul {
-  padding-left: var(--padding-default);
+  padding: 0 var(--padding-default);
   display: flex;
   gap: 15px;
   overflow:scroll;
