@@ -155,13 +155,15 @@
     display:flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 20px;
 }
 
 .activitiesContent {
-    margin-top: 40px;
+    padding: 20px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 1px solid var(--background-grey);
 }
 
 .activities p {

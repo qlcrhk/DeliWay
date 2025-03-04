@@ -3,7 +3,7 @@
 /* 레이아웃 기본 설정 */
 body {
     max-width: 440px;
-    margin: 0 auto;
+    margin: 0 auto 100px;
     background-color: var(--white);
 }
 
