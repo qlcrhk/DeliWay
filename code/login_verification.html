@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,11 +8,12 @@
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="css/webfont.css">
     <link rel="stylesheet" href="./css/login_verification.css">
-    <script src="./js/common.js" defer></script></head>
-
+    <script src="./js/common.js" defer></script>
+</head>
 <body>
     <header>
-        <a href="#" onclick="goBack(event)"><i class="fas fa-angle-left" aria-hidden="true"></i><span class="hidden">뒤로가기</span></a>
+        <a href="#" onclick="goBack(event)"><i class="fas fa-angle-left" aria-hidden="true"></i><span
+                class="hidden">뒤로가기</span></a>
         <h1 class="hidden">본인인증</h1>
     </header>
     <main>
@@ -22,13 +22,13 @@
                 <label class="login">이메일 주소를 입력해주세요
                     <input type="email" placeholder="example@email.com">
                 </label>
-                <button class="title">인증 메일 발송</button>
+                <button class="btn title">전송</button>
             </div>
             <div>
                 <label class="login">전화번호를 입력해주세요
                     <input type="text" placeholder="010-0000-0000">
                 </label>
-                <button class="title">인증 문자 발송</button>
+                <button class="btn title">전송</button>
             </div>
             <div>
                 <label class="login">비밀번호를 입력해주세요
@@ -43,6 +43,118 @@
             </div>
         </form>
     </main>
+    <script>
+        // DOM 요소 참조
+        const emailInput = document.querySelector('input[type="email"]');
+        const phoneInput = document.querySelector('input[type="text"]');
+        const passwordInput = document.querySelector('input[type="password"]:first-of-type');
+        const confirmPasswordInput = document.querySelector('input[type="password"]:last-of-type');
+        const sendEmailBtn = document.querySelectorAll('.btn.title')[0];
+        const sendPhoneBtn = document.querySelectorAll('.btn.title')[1];
+        const nextBtn = document.querySelector('.next.title');
+
+        // 에러 메시지 요소
+        const passwordErrorMsg = document.querySelectorAll('.body1.hidden')[0];
+        const confirmPasswordErrorMsg = document.querySelectorAll('.body1.hidden')[1];
+
+        // 이메일 유효성 검사
+        function validateEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        // 전화번호 유효성 검사 (010-0000-0000 형식)
+        function validatePhone(phone) {
+            const phoneRegex = /^010-\d{4}-\d{4}$/;
+            return phoneRegex.test(phone);
+        }
+
+        // 비밀번호 유효성 검사 (문자, 숫자, 특수문자 조합 8자리 이상)
+        function validatePassword(password) {
+            // 문자, 숫자, 특수문자 포함하는지 확인
+            const hasLetter = /[a-zA-Z]/.test(password);
+            const hasNumber = /\d/.test(password);
+            const hasSpecial = /[!@#$%^&*(),.?":{}|<>]/.test(password);
+            const isLongEnough = password.length >= 8;
+
+            return hasLetter && hasNumber && hasSpecial && isLongEnough;
+        }
+        // 이메일 검증 및 전송 기능
+        sendEmailBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+            const email = emailInput.value.trim();
+
+            if (!validateEmail(email)) {
+                alert('유효한 이메일 주소를 입력해주세요.');
+                emailInput.focus();
+                return;
+            }
+
+            // 이메일 인증 코드 전송 로직 추가 필요
+            alert('인증 코드가 이메일로 전송되었습니다.');
+        });
+
+        // 전화번호 검증 및 전송 기능
+        sendPhoneBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+            const phone = phoneInput.value.trim();
+
+            if (!validatePhone(phone)) {
+                alert('올바른 전화번호 형식(010-0000-0000)으로 입력해주세요.');
+                phoneInput.focus();
+                return;
+            }
+
+            // 전화번호 인증 코드 전송 로직 필요
+            alert('인증 코드가 전화번호로 전송되었습니다.');
+        });
+
+        // 전화번호 입력 형식 자동화 (숫자만 입력하면 하이픈 자동 추가)
+        phoneInput.addEventListener('input', function (e) {
+            let number = this.value.replace(/[^\d]/g, '');
+
+            if (number.length > 3 && number.length <= 7) {
+                number = number.slice(0, 3) + '-' + number.slice(3);
+            } else if (number.length > 7) {
+                number = number.slice(0, 3) + '-' + number.slice(3, 7) + '-' + number.slice(7, 11);
+            }
+
+            this.value = number;
+        });
+
+        // 비밀번호 검증
+        passwordInput.addEventListener('blur', function () {
+            if (this.value && !validatePassword(this.value)) {
+                passwordErrorMsg.classList.remove('hidden');
+            } else {
+                passwordErrorMsg.classList.add('hidden');
+            }
+        });
+
+        // 비밀번호 재입력 검증
+        confirmPasswordInput.addEventListener('input', function () {
+            if (this.value && this.value !== passwordInput.value) {
+                confirmPasswordErrorMsg.classList.remove('hidden');
+            } else {
+                confirmPasswordErrorMsg.classList.add('hidden');
+            }
+        });
+
+        // 다음 버튼 클릭 이벤트
+        nextBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            const email = emailInput.value.trim();
+            const phone = phoneInput.value.trim();
+            const password = passwordInput.value;
+            const confirmPassword = confirmPasswordInput.value;
+
+            // 모든 검증 통과 시 다음 단계로 이동
+            alert('본인인증이 완료되었습니다! 다음 단계로 이동합니다.');
+            // 여기에 다음 페이지 이동 로직 추가
+            window.location.href = "login_info.html";
+        });
+    </script>
 </body>
 
 </html>
