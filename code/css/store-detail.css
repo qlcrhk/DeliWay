@@ -92,9 +92,9 @@ header {
   
   .back-btn {
     left: 25px;
-    background-image: url("../image/back.png");
+    background-image: url("../../icon/back.png");
     background-position: center left 40%;
-    background-size: 20px;
+    background-size: 10px;
     text-indent: -100px;
   }
   
@@ -569,7 +569,7 @@ main {
 }
 
 .gps {
-    background-image: url("../asset/icon/gps.png");
+    background-image: url("../../icon/gps.png");
     background-size: 20px;
     background-position: center;
     width: 20px;
