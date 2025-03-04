@@ -1,5 +1,4 @@
-/* 델리스트 페이지 스타일 - Figma 디자인 정확히 구현 */
-@import url('./common.css');
+@charset "utf-8";
 
 body {
     background-color: var(--white);
