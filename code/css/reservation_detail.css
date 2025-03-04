@@ -1,0 +1,307 @@
+body {
+    background: var(--background-grey);
+}
+
+header{
+    top: 30px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 56px;
+    padding: 30px 20px 50px 20px;
+    background: var(--white);
+}
+
+header h1 {
+    color: var(--black);
+}
+
+header > .back {
+    position: absolute;
+    left: 20px;
+    font-size: 22px;
+    color: var(--black);
+}
+
+section {
+    background: var(--white);
+    
+}
+
+/* 예약 폼 */
+.reser-section {
+    padding-top: 30px;
+}
+
+.reser-section>h2 {
+    margin-bottom: 30px;
+}
+
+label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+label img {
+    display: block;
+    width: 20px;
+    height: 20px;
+}
+
+.dateAndTime {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+input {
+    display: inline-block;
+    font-size: 16px;
+    background-color: white;
+    border: 2px solid var(--background-grey);
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-left: 30px;
+    padding: 5px;
+    font-weight: normal;
+    width: 90%;
+}
+
+input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    appearance: none;
+    /* 기본 스타일 제거 */
+    border: 2px solid var(--primary-dark);
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    margin: 0;
+    border: 2px solid var(--background-grey);
+
+}
+
+input[type="checkbox"]:checked {
+    background-color: var(--primary);
+    border: 1px solid var(--primary);
+    /* 체크되었을 때 배경색 */
+}
+
+input[type="checkbox"]::before {
+    content: "✓";
+    /* 체크 표시 */
+    font-size: 14px;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    
+    /* 기본적으로 숨김 */
+}
+
+input[type="checkbox"]:checked::before {
+    display: block;
+    /* 체크되었을 때 표시 */
+}
+
+textarea {
+    display: block;
+    font-size: 16px;
+    background-color: white;
+    border: 2px solid var(--background-grey);
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-left: 30px;
+    padding: 10px;
+    font-weight: normal;
+    width: 90%;
+    height: 150px;
+    resize: none;
+}
+
+.user-count img{
+    width: 20px;
+    height: 20px;
+}
+
+.square { 
+    width: 20px;
+    height: 20px;
+}
+
+/* 달력 */
+.container {
+    width: 100%;
+    height: 100%;
+}
+
+.flatpickr-button {
+    display: inline-block;
+    font-size: 12px;
+    color: white;
+    padding: 5px 10px;
+    background-color: var(--primary);
+    border: 2px solid var(--primary);
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.flatpickr-time-separator:nth-of-type(2),
+.numInputWrapper:nth-of-type(3) {
+    display: none !important;
+}
+
+.date-display {
+    margin-left: 30px;
+    margin-top: 10px;
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+}
+
+.hidden-input {
+    display: none;
+}
+
+.flatpickr-day.today {
+    background-color: var(--primary-light);
+    border: none;
+}
+
+/* 선택된 날짜 기본 스타일 */
+.flatpickr-day.selected {
+    background-color: var(--primary) !important;
+    /* 선택된 날짜 배경색 */
+    color: white !important;
+    border: none;
+}
+
+/* 선택된 날짜에 마우스 올릴 때 스타일 */
+.flatpickr-day.selected:hover {
+    background-color: var(--primary-dark) !important;
+    /* 마우스 오버 시 더 어두운 색상 */
+    color: white !important;
+}
+
+#openPicker:active {
+    background-color: var(--primary-light);
+    /* 클릭 시 색상 */
+    color: white;
+    /* 클릭 시 글자 색상 */
+}
+
+
+#do-reser ul {
+    position: fixed;
+    bottom:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    width: 100%;
+    height: 100px;
+    background: #fff;
+    z-index: 998;
+    margin: 0 auto;
+    padding: 25px;
+  }
+  
+  
+  
+  #do-reser ul li{
+    padding: 0.3em;
+    width: 100%;
+    height: 50px;
+    border-radius: 5px;
+    transition: 0.2s;
+    border :2px solid var(--primary);
+  }
+  
+  
+  #do-reser ul li:nth-last-of-type(1){
+    background-color: var(--primary);
+  }
+  
+  #do-reser ul li button{
+    all: unset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: var(--primary);
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  #do-reser ul li:first-child:active{
+    background-color: var(--primary-light);
+  }
+  
+  
+  #do-reser ul li:nth-of-type(2) button{
+    background-color : var(--primary);
+  }
+  
+  #do-reser ul li:nth-of-type(2) button{
+    color: #fff;
+  }
+  
+  #do-reser ul li:nth-last-child(1) a:active{
+    background-color: var(--primary-dark);
+  }
+  
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* 반투명 어두운 배경 */
+    z-index: 999;
+    /* 달력보다 뒤에 배치 */
+    display: none;
+    /* 기본적으로 숨김 */
+    pointer-events: none;
+}
+
+
+.pickup-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.confirm-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1001;
+    width: 90%;
+    display: none;
+    /* 기본적으로 숨김 */
+}
+
+.confirm-btn:hover {
+    background-color: var(--primary-dark);
+}
+

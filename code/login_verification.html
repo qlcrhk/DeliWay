@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>본인인증</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/login_verification.css">
+    <script src="./js/common.js" defer></script></head>
+
+<body>
+    <header>
+        <a href="#" onclick="goBack(event)"><i class="fas fa-angle-left" aria-hidden="true"></i><span class="hidden">뒤로가기</span></a>
+        <h1 class="hidden">본인인증</h1>
+    </header>
+    <main>
+        <form>
+            <div>
+                <label class="login">이메일 주소를 입력해주세요
+                    <input type="email" placeholder="example@email.com">
+                </label>
+                <button class="title">인증 메일 발송</button>
+            </div>
+            <div>
+                <label class="login">전화번호를 입력해주세요
+                    <input type="text" placeholder="010-0000-0000">
+                </label>
+                <button class="title">인증 문자 발송</button>
+            </div>
+            <div>
+                <label class="login">비밀번호를 입력해주세요
+                    <input type="password" placeholder="비밀번호 입력">
+                    <span class="body1 hidden">비밀번호는 문자 숫자 특수문자의 조합으로 8자리 이상 입력해주세요.</span>
+                </label>
+                <label>
+                    <input type="password" placeholder="비밀번호 확인">
+                    <span class="body1 hidden">비밀번호가 맞지 않습니다. 다시 입력해주세요.</span>
+                </label>
+                <button class="next title">다음</button>
+            </div>
+        </form>
+    </main>
+</body>
+
+</html>

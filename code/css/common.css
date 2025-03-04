@@ -2,11 +2,13 @@
 :root {
     /* Color design */
     --primary: #834EC3;
+    --primary-dark: #613991;
     --primary-light: #E0D3F0;
     --black: #000000;
     --white: #FFFFFF;
     --err: #ff0000;
     --text-grey: #6F6F6F;
+    --text-grey-dark: #272727;
     --background-grey: #EDEDED;
     
     /* Font Sizes */
@@ -26,15 +28,33 @@
     text-decoration: none;
 }
 
+<<<<<<< HEAD
 body,h1,h2,h3,h4,h5,h6,a,ul,li,dl,dt,dd,p,div,form,button{
+=======
+body,h1,h2,h3,h4,h5,h6,a,ul,li,ol,dl,dt,dd,p,div,form,fieldset,button{
+>>>>>>> origin
     margin: 0;
     padding: 0;
 }
 
+<<<<<<< HEAD
+=======
+::-webkit-scrollbar {
+    display: none;
+  }
+
+>>>>>>> origin
 a {
     color: var(--black);
 }
 
+<<<<<<< HEAD
+=======
+fieldset {
+    border :none;
+}
+
+>>>>>>> origin
 .hidden {
     display: inline-block;
     position: absolute;
@@ -52,7 +72,11 @@ body {
 
 .login {
     font-family: 'Pretendard-Bold';
+<<<<<<< HEAD
     font-size: 24px;
+=======
+    font-size: 26px;
+>>>>>>> origin
 }
 .login-placeholder {
     font-family: 'Pretendard-Medium';
@@ -77,9 +101,20 @@ body {
     font-size: 14px;
 }
 
+<<<<<<< HEAD
 .small {
     font-family: 'Pretendard-Medium';
     font-size: 12px;
+=======
+.body1-bold {
+    font-family: 'Pretendard-Bold';
+    font-size: 14px;
+}
+
+.small {
+    font-family: 'Pretendard-Medium';
+    font-size: 11px;
+>>>>>>> origin
 }
 
 
@@ -87,10 +122,18 @@ body {
 #gnb ul {
     position: fixed;
     bottom:0;
+<<<<<<< HEAD
     width: 100%;
     
     display: flex;
     height: 100px;
+=======
+    display: flex;
+    width: 100%;
+    height: 100px;
+    background: #fff;
+    z-index: 999;
+>>>>>>> origin
 }
 #gnb ul li {
     width: 20%;
@@ -100,12 +143,17 @@ body {
     display: block;
     background-repeat: no-repeat;
     background-position: center center;
+<<<<<<< HEAD
+=======
+    background-size: 28px;
+>>>>>>> origin
     width: 100%;
     height: 100%;
     text-indent: -100%;
     overflow: hidden;
     white-space: nowrap;
 }
+<<<<<<< HEAD
 .home {
     background-image: url(../image/home.png);
 }
@@ -120,4 +168,35 @@ body {
 }
 .mypage {
     background-image: url(../image/mypage.png);
+=======
+.homeBtn {
+    background-image: url(../../icon/homeBtn.png);
+}
+.homeBtn.active {
+    background-image: url(../../icon/homeBtn-active.png);
+}
+.searchBtn {
+    background-image: url(../../icon/searchBtn.png);
+}
+.searchBtn.active {
+    background-image: url(../../icon/searchBtn-active.png);
+}
+.likeBtn {
+    background-image: url(../../icon/likeBtn.png);
+}
+.linkBtn.active {
+    background-image: url(../../icon/likeBtn-active.png);
+}
+.reservationBtn {
+    background-image: url(../../icon/reservationBtn.png);
+}
+.reservationBtn.active {
+    background-image: url(../../icon/reservationBtn-active.png);
+}
+.mypageBtn {
+    background-image: url(../../icon/mypageBtn.png);
+}
+.mypageBtn.active {
+    background-image: url(../../icon/mypageBtn-active.png);
+>>>>>>> origin
 }

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deliway - 로그인</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="./css/login_email.css">
+
+  <script src="./js/common.js" defer></script>
+</head>
+
+<body>
+  <header>
+      <a href="#" onclick="goBack(event)" class="back" aria-label="뒤로가기">
+        <i class="fas fa-angle-left" aria-hidden="true"></i>
+        <span class="hidden">뒤로가기</span>
+      </a>
+    <h1><a href="#">Deliway</a></h1>
+  </header>
+  
+  <main>
+    <section class="login-section">
+      <h2 class="login">로그인</h2>
+      <form id="login-form" method="post" action="#">
+        <div class="input-group">
+          <label for="email" class="hidden">이메일 주소</label>
+          <input class="login-placeholder" type="email" id="email" name="email" placeholder="이메일 주소를 입력하세요" required autocomplete="email">
+          <div class="error-message small">올바른 이메일 주소를 입력해주세요.</div>
+        </div>
+
+        <div class="input-group">
+          <label for="password" class="hidden">비밀번호</label>
+          <input class="login-placeholder" type="password" id="password" name="password" placeholder="비밀번호를 입력하세요" required autocomplete="current-password">
+          <div class="error-message small">비밀번호를 입력해주세요.</div>
+        </div>
+        
+        <div class="options-row">
+          <div class="remember-me">
+            <input type="checkbox" name="remember" id="checkbox">
+            <label for="checkbox" class="body1">로그인 상태 유지하기</label>
+          </div>
+          <a href="#" class="body1 find-account">아이디 | 비밀번호 찾기</a>
+        </div>
+        
+        <button type="submit" class="title">로그인</button>
+        
+        <p class="signup-prompt body1">아직 회원이 아니신가요? <a href="#" class="body1-bold">회원가입</a></p>
+      </form>
+    </section>
+  </main>
+
+  <script>
+    // Simple validation for demonstration
+    document.getElementById('login-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const emailInput = document.getElementById('email');
+      const passwordInput = document.getElementById('password');
+      let isValid = true;
+      
+      // Validate email
+      if (!emailInput.value || !emailInput.value.includes('@')) {
+        emailInput.classList.add('error');
+        isValid = false;
+      } else {
+        emailInput.classList.remove('error');
+      }
+      
+      // Validate password
+      if (!passwordInput.value) {
+        passwordInput.classList.add('error');
+        isValid = false;
+      } else {
+        passwordInput.classList.remove('error');
+      }
+      
+      // Submit if valid
+      if (isValid) {
+        console.log('Form submitted');
+        this.submit();
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내 정보 수정</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/mypage_info.css">
+    <script src="./js/common.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="page-header">
+            <a href="#" onclick="goBack(event)"><i class="fa fa-angle-left icon"></i><span class="hidden">뒤로가기</span></a>
+            <h1 class="title">내 정보 수정</h1>
+        </div>
+    </header>
+
+    <nav id="gnb">
+        <h2 class="hidden">주 메뉴</h2>
+        <ul>
+          <li><a href="./index.html" class="homeBtn">홈</a></li>
+          <li><a href="./search.html" class="searchBtn">검색</a></li>
+          <li><a href="./like_list.html" class="likeBtn">찜한 맛집</a></li>
+          <li><a href="./reser_list.html" class="reservationBtn">예약내역</a></li>
+          <li><a href="./mypage.html" class="mypageBtn">마이페이지</a></li>
+        </ul>
+    </nav>
+
+
+    <main>
+        <section class="personalInfo">
+            <h2 class="title">개인정보</h2>
+            <dl>
+                <dt>이름</dt>
+                <dd>사용자</dd>
+            </dl>
+            <dl>
+                <dt>전화번호</dt>
+                <dd>000-0000-0000</dd>
+            </dl>
+            <dl>
+                <dt>주소</dt>
+                <dd>대구광역시 동구 신천1동</dd>
+            </dl>
+            <a href="#" class="btn">수정하기</a>
+        </section>
+        <section class="accountInfo">
+            <h2 class="title">계정 정보</h2>
+            <dl>
+                <dt>이메일</dt>
+                <dd>example@gmail.com</dd>
+            </dl>
+            <dl>
+                <dt>비밀번호</dt>
+                <dd><a href="#"><i class="fa fa-angle-right icon"></i><span class="hidden">변경하기</span></a></dd>
+            </dl>
+            <dl>
+                <dt>간편로그인</dt>
+                <dd>카카오</dd>
+            </dl>
+        </section>
+        <section class="paymentInfo">
+            <h2 class="title">결제 정보</h2>
+            <dl>
+                <dt>결제내역</dt>
+                <dd><a href="#"><i class="fa fa-angle-right icon"></i><span class="hidden">자세히보기</span></a></dd>
+            </dl>
+        </section>
+    </main>
+</body>
+
+</html>
