@@ -1,223 +1,360 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>맛집 상세 정보보</title>
-  </head>
-  <body>
-    <header>
-      <h1>매장 상세페이지</h1>
-      <div>
-        <h2>페이지 부가 기능</h2>
-        <ul>
-          <li><a href="#">뒤로가기</a></li>
-          <li><a href="#">찜하기</a></li>
-          <li><a href="#">페이지 공유하기</a></li>
-        </ul>
-      </div>
-      
-      <div>
-        <!-- 매장 슬라이더 플러그인 -->
-      </div>
-    </header>
-    <!-- 메인 시작 -->
-    <main>
-      <section>
-        <h2>매장정보</h2>
 
-        <div>
-          <dl>
-            <dt>평점</dt>
-            <dd>4.5</dd>
-            <dt>리뷰</dt>
-            <dd>1,000</dd>
-            <dt>드라이브 가능 여부</dt>
-            <dd>drive up</dd>
-          </dl>
-        </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>제주 고씨 든렘지 레스토랑</title>
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/store-detail.css">
+  <link rel="stylesheet" href="./css/slider.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="./js/store-detail.js" defer></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1 class="hidden">매장 상세페이지</h1>
+    <div class="header-btns">
+      <a href="#" class="back-btn">back</a>
+      <button class="like">
+        <img class="like-icon1 active" src="../icon/like.png" alt="찜하기">
+        <img class="like-icon2" src="../icon/liked.png" alt="찜하기">
+        <span class="hidden">찜</span>
+      </button>
+      <i class="fa-solid fa-arrow-up-right-from-square share-btn"><span class="hidden">공유하기</span></i>
+    </div>
 
-        <article>
-          <h3>매장 이름</h3>
-          <p>매장 소개</p>
-          <!-- 매장 편의시설 안내 태그 -->
-          <div>
-            <p>단체 이용 가능</p>
-            <p>아기의자</p>
-            <p>주차가능</p>
+    <div class="store-container">
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="https://placehold.co/400x244" alt="main-slider1">
           </div>
-          <!-- 매장 부가 정보 -->
-          <div>
-            <dl>
-              <dt>가는법</dt>
-              <dd>1호선 중앙로역에서 400m</dd>
-            </dl>
-            <dl>
-              <dt>영업시간</dt>
-              <dd>오늘 (수) 10:00 - 21:30</dd>
-            </dl>
-            <dl>
-              <dt>가격 안내</dt>
-              <dd>점심, 저녁 동일가 2만원</dd>
-            </dl>
+          <div class="swiper-slide">
+            <img src="https://placehold.co/400x244" alt="main-slider2">
           </div>
-        </article>
-      </section>
-
-      <section>
-        <!-- 메뉴에 대한 간략한 정보 -->
-        <h2>메뉴</h2>
-        <ul>
-          <li>
-            <a href="#">
-              <dl>
-                <dt>런치 다이닝 코스</dt>
-                <dd>가게 이미지</dd>
-                <dd>
-                  어린이 손님에 한하여 예약시 50% 할인된 가격으로 즐기실 수
-                  있습니다
-                </dd>
-                <dd>가격 1억</dd>
-              </dl>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <dl>
-                <dt>런치 다이닝 코스</dt>
-                <dd>
-                  어린이 손님에 한하여 예약시 50% 할인된 가격으로 즐기실 수
-                  있습니다
-                </dd>
-                <dd>가격 1억</dd>
-                <dd>메뉴 이미지</dd>
-              </dl>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <dl>
-                <dt>런치 다이닝 코스</dt>
-                <dd>
-                  어린이 손님에 한하여 예약시 50% 할인된 가격으로 즐기실 수
-                  있습니다
-                </dd>
-                <dd>가격 1억</dd>
-                <dd>메뉴 이미지</dd>
-              </dl>
-            </a>
-          </li>
-        </ul>
-        <a href="#">메뉴 전체보기</a>
-      </section>
-      <section>
-        <h2>매장 소식</h2>
-
-        <ul>
-          <li>
-            <a href="#">
-              <dl>
-                <dt>안녕하세요 제목 입니다</dt>
-                <dd>소식 일지</dd>
-                <dd>내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.</dd>
-              </dl>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <dl>
-                <dt>안녕하세요 제목 입니다</dt>
-                <dd>소식 일지</dd>
-                <dd>내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.</dd>
-              </dl>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <dl>
-                <dt>안녕하세요 제목 입니다</dt>
-                <!-- 물어보기 -->
-                <dd>소식 일지</dd>
-                <dd>내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.</dd>
-              </dl>
-            </a>
-          </li>
-        </ul>
-      </section>
-
-      <section>
-        <h2>방문자 리뷰</h2>
-        <p>리뷰 작성자 수</p>
-        <p>가게 평점</p>
-        <div>
-          <!-- 방문자 리뷰 항목화 -->
-          <ul>
-            <li>음식이 맞있어요 <span>512</span></li>
-            <li>팁 안줘도 되니까 좋아요 <span>512</span></li>
-            <li>분위기가 고급스러워요 <span>512</span></li>
-            <li>직원들이 친절해요 <span>512</span></li>
-            <li>인테리어가 멋져요 <span>512</span></li>
-          </ul>
+          <div class="swiper-slide">
+            <img src="https://placehold.co/400x244" alt="main-slider3">
+          </div>
         </div>
+        <div class="swiper-pagination"></div>
+      </div>
 
-        <article>
-          <h3>리뷰 리스트</h3>
-          <dl>
-            <dt>김두한</dt>
-            <dd>이미지</dd>
-            <dd>리뷰 글입니다.</dd>
-            <dd>좋아요 수</dd>
-            <dd>리뷰에 대한 댓글</dd>
-          </dl>
-          <dl>
-            <dt>김두한</dt>
-            <dd>이미지</dd>
-            <dd>리뷰 글입니다.</dd>
-            <dd>좋아요 수</dd>
-            <dd>리뷰에 대한 댓글</dd>
-          </dl>
-        </article>
-        <a href="#">리뷰 더 보기</a>
-      </section>
-      <section>
-        <h2>매장정보</h2>
-        <article>
-          <h3>오시는길</h3>
-          <div>
-            <div><!-- 지도 영역 --></div>
-            <div>
-              <p>
-                가게의 위치정보를 받아옴<span><a href="#">주소복사</a></span>
-              </p>
-              <p>어디에서 324km</p>
-              <p>어디에서 324km</p>
-              <a href="#">길찾기</a>
+      <script>
+        var swiper = new Swiper(".mySwiper", {
+          slidesPerView: 1,
+          spaceBetween: 0,
+          loop: true,
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+        });
+      </script>
+    </div>
+  </header>
+  <!-- main -->
+  <main>
+    <!-- store info -->
+    <section class="store-info-section">
+      <h2 class="hidden">매장정보</h2>
+      <div class="store-stats">
+        <dl>
+          <dt class="body1">★</dt>
+          <dd class="sub-title1">4.5</dd>
+        </dl>
+        <dl>
+          <dt>리뷰</dt>
+          <dd class="sub-title1">1,000</dd>
+        </dl>
+        <span class="body1">드라이브 가능</span>
+      </div>
+      <div class="store-heading">
+        <h3 class="title">제주 고씨 든렘지 레스토랑</h3>
+        <p class="body1">제주도 로컬푸드를 사용한 이탈리안 레스토랑으로 제주의 맛과 멋을 담은 특별한 요리를 선보입니다.</p>
+      </div>
+      <div class="store-tags">
+        <p>단체 이용 가능</p>
+        <p>아기의자</p>
+        <p>주차가능</p>
+      </div>
+      <div class="store-details">
+        <dl>
+          <dt class="body1"><i class="fa-solid fa-location-dot icon"></i><span class="hidden">가는방법</span></dt>
+          <dd>1호선 중앙로역에서 400m</dd>
+        </dl>
+        <dl>
+          <dt class="body1"><i class="fa-regular fa-clock icon"></i><span class="hidden">영업시간</span></dt>
+          <dd>오늘 (수) 10:00 - 21:30</dd>
+        </dl>
+        <dl>
+          <dt class="body1"><i class="fa-solid fa-sack-dollar icon"></i><span class="hidden">가격 안내</span></dt>
+          <dd>점심, 저녁 동일가 2만원</dd>
+        </dl>
+      </div>
+    </section>
+    <section class="store-navbar">
+      <h2 class="hidden">이용 메뉴</h2>
+      <nav id="lnb">
+        <ul>
+          <li><a class="active" href="">홈</a></li>
+          <li><a href="">매뉴</a></li>
+          <li><a href="">소식</a></li>
+          <li><a href="">리뷰</a></li>
+          <li><a href="">매장정보</a></li>
+        </ul>
+      </nav>
+    </section>
+    <!-- menu section -->
+    <section class="store-menu-section">
+      <h2 class="title">메뉴</h2>
+      <dl>
+        <dt class="sub-title1">라구 로마뇰라</dt>
+        <dd class="body1" style="color: var(--text-grey);">발음하기도 빡세네요</dd>
+        <dd class="price body1">520,000원</dd>
+        <dd class="photo"><img src="https://placehold.co/100" alt="라구 로마뇰라"></dd>
+      </dl>
+      <dl>
+        <dt class="sub-title1">토마 호크</dt>
+        <dd class="body1" style="color: var(--text-grey);">스테....이크! 에크!</dd>
+        <dd class="price body1">520,000원</dd>
+        <dd class="photo"><img src="https://placehold.co/100" alt=""></dd>
+      </dl>
+      <dl>
+        <dt class="sub-title1">노브랜드버거 샐러드</dt>
+        <dd class="body1" style="color: var(--text-grey);">이거 맛있더라고요</dd>
+        <dd class="price body1">520,000원</dd>
+        <dd class="photo"><img src="https://placehold.co/100" alt=""></dd>
+      </dl>
+      <a class="seemore body1" href="menu_more.html">전체보기</a>
+    </section>
+    <!-- news section -->
+    <section class="news-section">
+      <div class="section-header">
+        <h2 class="title">매장 소식</h2>
+      </div>
+      <div class="slider-container">
+        <ul class="news-list" id="news-slider">
+          <li>
+            <a href="#">
+              <dl>
+                <dt class="sub-title1">여름 신메뉴 출시 안내</dt>
+                <dd class="news-date">2023.07.15</dd>
+                <dd class="news-content body1">여름을 맞아 신선한 제철 해산물을 활용한 신메뉴를 선보입니다. 많은 관심 부탁드립니다.</dd>
+              </dl>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <dl>
+                <dt class="sub-title1">8월 휴무 안내</dt>
+                <dd class="news-date">2023.07.25</dd>
+                <dd class="news-content body1">8월 15일 광복절은 정상 영업합니다. 8월 20일~21일은 내부 공사로 휴무입니다.</dd>
+              </dl>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <dl>
+                <dt class="sub-title1">예약 시스템 변경 안내</dt>
+                <dd class="news-date">2023.08.01</dd>
+                <dd class="news-content body1">9월부터 예약 시스템이 변경됩니다. 자세한 내용은 게시글을 확인해주세요.</dd>
+              </dl>
+            </a>
+          </li>
+        </ul>
+        <div class="slider-indicators" id="slider-indicators"></div>
+      </div>
+      <a class="seemore body1" href="menu_more.html">전체보기</a>
+    </section>
+    <!-- review section -->
+    <section>
+      <h2 class="title">방문자 리뷰</h2>
+      <!-- review 1 -->
+      <div class="review-container">
+        <div class="review-header">
+          <div class="user-info">
+            <div class="profile-image">
+              <img src="https://placehold.co/40" alt="프로필 이미지">
+            </div>
+            <div class="detail-wrap">
+              <div class="user-details">
+                <p class="username sub-title1">헤르미온느</p>
+                <span class="review-date body1">2023.12.19</span>
+              </div>
+              <div class="star-rating">
+                ★★★★★
+              </div>
             </div>
           </div>
-        </article>
-        <article>
-          <h3>매장상세정보</h3>
-          <dl>
-            <dt>Tel.</dt>
-            <dd>123-456-1234</dd>
-          </dl>
-          <div>
-            <h4>안내 및 유의사항</h4>
-            <dl>
-              <dt>토 - 일요일 및 공휴일 운영시간 안내</dt>
-              <dd>10:30 - 14:30</dd>
-              <dd>브레이크 타임</dd>
-              <dd>16:30 - 20:30</dd>
-            </dl>
-
-            <p>&#x2A; 영업시간은 매장 사정에 따라 변경될 수 있습니다.</p>
+        </div>
+        <div class="review-content">
+          <p class="review-text body2">
+            처음에 들어갔을때 예쁜 공간이 눈에 들어와요. 음식 맛도 좋고 특히 조명에서 나오는 빛이 너무 예뻐 몽환적인 분위기로 데이트 필수코스입니다!
+            인테리어가 정말 예쁘네요. 최고에요!
+          </p>
+          <div class="review-images">
+            <img src="https://placehold.co/120" alt="리뷰 이미지 1">
+            <img src="https://placehold.co/120" alt="리뷰 이미지 2">
+            <img src="https://placehold.co/120" alt="리뷰 이미지 3">
+            <img src="https://placehold.co/120" alt="리뷰 이미지 4">
+            <img src="https://placehold.co/120" alt="리뷰 이미지 5">
+            <img src="https://placehold.co/120" alt="리뷰 이미지 6">
           </div>
-        </article>
-      </section>
-      <div>
-        <span><a href="#">전화기 아이콘</a></span>
-        <span><a href="#">예약하기</a></span>
+        </div>
+        <div class="review-actions">
+          <button class="like-btn sub-title1">
+            <img class="like-icon1 active" src="./image/like.png" alt="좋아요">
+            <img class="like-icon2" src="./image/liked.png" alt="좋아요">
+            <span class="like-count">10</span>
+          </button>
+          <button class="comment-btn sub-title1">
+            <img src="./image/comment.png" alt="comment-icon">
+            <span class="comment-count">3</span>
+          </button>
+        </div>
       </div>
-    </main>
-  </body>
+      <!-- review 2 will be deprecated -->
+      <div class="review-container">
+        <div class="review-header">
+          <div class="user-info">
+            <div class="profile-image">
+              <img src="https://placehold.co/40" alt="프로필 이미지">
+            </div>
+            <div class="detail-wrap">
+              <div class="user-details">
+                <p class="username sub-title1">헤르미온느</p>
+                <span class="review-date body1">2023.12.19</span>
+              </div>
+              <div class="star-rating">
+                ★★★★★
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="review-content">
+          <p class="review-text body2">
+            처음에 들어갔을때 예쁜 공간이 눈에 들어와요. 음식 맛도 좋고 특히 조명에서 나오는 빛이 너무 예뻐 몽환적인 분위기로 데이트 필수코스입니다!
+            인테리어가 정말 예쁘네요. 최고에요!
+          </p>
+          <div class="review-images">
+            <img src="https://placehold.co/120" alt="리뷰 이미지 1">
+            <img src="https://placehold.co/120" alt="리뷰 이미지 2">
+            <img src="https://placehold.co/120" alt="리뷰 이미지 3">
+            <img src="https://placehold.co/120" alt="리뷰 이미지 4">
+            <img src="https://placehold.co/120" alt="리뷰 이미지 5">
+            <img src="https://placehold.co/120" alt="리뷰 이미지 6">
+          </div>
+        </div>
+        <div class="review-actions">
+          <button class="like-btn sub-title1">
+            <img class="like-icon1 active" src="./image/like.png" alt="좋아요">
+            <img class="like-icon2" src="./image/liked.png" alt="좋아요">
+            <span class="like-count">10</span>
+          </button>
+          <button class="comment-btn sub-title1">
+            <img src="./image/comment.png" alt="comment-icon">
+            <span class="comment-count">3</span>
+          </button>
+        </div>
+      </div>
+      <a class="seemore body1" href="menu_more.html">전체보기</a>
+    </section>
+    <!-- 오시는 길 -->
+    <section class="map-section">
+      <h2 class="title">오시는 길</h2>
+      <div class="map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.3350067188517!2d127.03155294984232!3d37.50001615612253!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca3fe3854fd13%3A0xdbb2d70b1648d2ce!2z6rWs6riA7L2U66as7JWEIOuzuOyCrA!5e0!3m2!1sko!2skr!4v1740631602548!5m2!1sko!2skr"
+          width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="store-location">
+        <div class="location-text">
+          <div class="gps"></div>
+          <p>가게의 위치가 나오는 영역</p>
+        </div>
+        <button>
+          <i class="fa-regular fa-copy"><span class="hidden">복사</span></i>
+        </button>
+      </div>
+      <!-- 지하철 넘버 -->
+      <div class="subway-container">
+        <div class="subway">
+          <div class="subway-1"></div>
+          <div class="subway-2"></div>
+          <p>서면역에서 352KM</p>
+        </div>
+        <div class="subway">
+          <div class="subway-1"></div>
+          <p>부암역에서 32KM</p>
+        </div>
+      </div>
+      <a href="#"><i class="fa-solid fa-paper-plane"></i><span>길찾기</span></a>
+    </section>
+    <div class="bottom-actions">
+      <div class="call-button">
+        <a href="tel:064-123-4567">
+          <img src="../images/call.png" alt="전화">
+          <span class="small">전화</span>
+        </a>
+      </div>
+      <div class="reservation-button">
+        <a href="#" class="sub-title1">예약하기</a>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <dl>
+      <dt class="sub-title2">안내 및 유의사항</dt>
+      <dd class="body1">&#42; 영업시간은 매장 사정에 따라 변경될 수 있습니다.</dd>
+      <dt class="sub-title2">환불정책</dt>
+      <dd class="body1">방문 1~3시간 전 취소 &rarr; 50% 환불</dd>
+      <dd class="body1">방문 시간 당일 2시간 전 &rarr; 환불 불가</dd>
+      <dd class="body1">
+        * 단 기상님이 이동을 시작한 이후에는 일부 추가비용이 발생합니다.
+      </dd>
+      <dd class="body1">
+        선결제 (앱 내 결제) &rarr; 결제 취소 후 카드사 경제 서비스 규정에 따라
+        3~5일 내 환불
+      </dd>
+      <dd class="body1">
+        현장 결제 &rarr; 매장 자체 환불 규정에 따름 (DELIWAY 직접 환불 불가)
+      </dd>
+      <dd class="body1">
+        포인트/쿠폰 사용 예약 &rarr; 포인트는 즉시 반환, 쿠폰은 복구 불가 할
+        수도 있음
+      </dd>
+      <dd class="body1">
+        간편 결제 (카카오페이, 네이버페이 등) &rarr; 취소 후 1~2일 내 환불
+      </dd>
+    </dl>
+  </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // 좋아요 기능
+      function initializeLikeButtons() {
+        const likeButtons = document.querySelectorAll('.like-btn');
+
+        likeButtons.forEach(likeButtons => {
+          likeButtons.addEventListener('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            const icon1 = this.querySelector(".like-icon1"); //빈 하트
+            const icon2 = this.querySelector(".like-icon2"); //채워진 하트
+
+            icon1.classList.toggle('active');
+            icon2.classList.toggle('active');
+          })
+        })
+      }
+      // 좋아요 기능 함수 호출
+      initializeLikeButtons();
+    });
+  </script>
+</body>
+
 </html>
