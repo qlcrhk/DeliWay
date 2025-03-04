@@ -95,6 +95,10 @@ main section ul {
     background-color: var(--white);
 }
 
+.reservation-card:last-child {
+    margin-bottom: 150px;
+}
+
 .history {
     display: flex;
     justify-content: space-between;
