@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="맛집 파트너 예약 관리 시스템">
+    <title>예약 관리 시스템</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/owner-common.css">
+    <link rel="stylesheet" href="./css/owner-reservation.css">
+    <script src="./js/owner-common.js" defer></script>
+    <script src="./js/owner-reservation.js" defer></script>
+<body>
+    <button class="sidebar-toggle" aria-label="메뉴 열기">
+        <i class="ri-menu-line"></i>
+    </button>
+    <!-- Navigation -->
+    <aside class="sidebar" role="navigation">
+        <div class="sidebar-brand">
+            <div class="brand-logo">
+                <i class="ri-store-2-fill"></i>
+            </div>
+            <h1 class="brand-name">델리웨이</h1>
+        </div>
+        <nav>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="./owner-dashboard.html">
+                        <i class="ri-dashboard-line"></i>
+                        대시보드
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="./owner-reservation.html"  class="active">
+                        <i class="ri-calendar-line"></i>
+                        예약 관리
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="./owner-store.html">
+                        <i class="ri-store-line"></i>
+                        매장 정보
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="./owner-menu.html">
+                        <i class="ri-restaurant-line"></i>
+                        메뉴 관리
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="./owner-sales.html">
+                        <i class="ri-bar-chart-line"></i>
+                        매출 통계
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="./owner-setting.html">
+                        <i class="ri-settings-line"></i>
+                        설정
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+    <!-- 메인 콘텐츠 영역 -->
+    <main class="main-content" role="main">
+        <!-- 헤더 영역 -->
+        <header class="page-header">
+            <h1>예약 관리</h1>
+            <button type="button" class="btn btn-primary" aria-label="예약 가능 시간 설정">
+                예약 가능 시간 설정
+            </button>
+        </header>
+
+        <!-- 날짜 선택 및 필터 영역 -->
+        <section class="date-filter-section" aria-labelledby="date-filter-title">
+            <h2 id="date-filter-title" class="visually-hidden">날짜 및 필터 선택</h2>
+            <form class="date-selector" role="form">
+                <select name="year-month" aria-label="년월 선택">
+                    <option value="2024-02">2024년 2월</option>
+                </select>
+                <select name="day" aria-label="일 선택">
+                    <option value="23">23일</option>
+                </select>
+            </form>
+            <nav class="reservation-filters" role="navigation" aria-label="예약 상태 필터">
+                <button type="button" class="filter-btn active" aria-pressed="true">전체</button>
+                <button type="button" class="filter-btn" aria-pressed="false">대기중</button>
+                <button type="button" class="filter-btn" aria-pressed="false">확정</button>
+                <button type="button" class="filter-btn" aria-pressed="false">취소</button>
+            </nav>
+        </section>
+
+        <!-- 통계 영역 -->
+        <section class="statistics-section" aria-labelledby="statistics-title">
+            <h2 id="statistics-title" class="visually-hidden">예약 통계</h2>
+            <div class="stats-grid">
+                <article class="stat-card">
+                    <header>
+                        <h3 class="stat-label">오늘 예약</h3>
+                        <div class="stat-value">15</div>
+                    </header>
+                </article>
+                <article class="stat-card">
+                    <header>
+                        <h3 class="stat-label">대기중</h3>
+                        <div class="stat-value">3</div>
+                    </header>
+                </article>
+                <article class="stat-card">
+                    <header>
+                        <h3 class="stat-label">픽업 요청</h3>
+                        <div class="stat-value">2</div>
+                    </header>
+                </article>
+            </div>
+        </section>
+
+        <div class="grid-container">
+            <!-- 예약 목록 영역 -->
+            <section class="reservation-section" aria-labelledby="reservation-list-title">
+                <h2 id="reservation-list-title" class="visually-hidden">예약 목록</h2>
+                <div class="card">
+                    <ul class="reservation-list" role="list">
+                        <li class="reservation-item">
+                            <article class="reservation-content">
+                                <header class="reservation-header">
+                                    <div class="customer-info">
+                                        <h3>김손님</h3>
+                                        <span>4인</span>
+                                    </div>
+                                    <span class="status-badge status-pending" role="status">대기중</span>
+                                </header>
+                                <div class="reservation-details">
+                                    <dl>
+                                        <dt>예약 시간</dt>
+                                        <dd>2024-02-23 18:30</dd>
+                                        <dt>연락처</dt>
+                                        <dd>010-1234-5678</dd>
+                                        <dt>요청사항</dt>
+                                        <dd>창가 자리 희망</dd>
+                                        <dt>픽업 요청</dt>
+                                        <dd>강남역 4번 출구</dd>
+                                    </dl>
+                                </div>
+                                <footer class="reservation-actions">
+                                    <button type="button" class="btn btn-primary">승인</button>
+                                    <button type="button" class="btn btn-danger">거절</button>
+                                </footer>
+                            </article>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 예약 관리 사이드바 -->
+            <aside class="management-sidebar" aria-labelledby="management-title">
+                <div class="card">
+                    <section class="time-management-section">
+                        <h2 id="management-title">예약 가능 시간</h2>
+                        <!-- 달력 영역 -->
+                        <div class="calendar-section" role="region" aria-label="예약 달력">
+                            <div class="calendar-header" role="rowheader">
+                                <span>일</span>
+                                <span>월</span>
+                                <span>화</span>
+                                <span>수</span>
+                                <span>목</span>
+                                <span>금</span>
+                                <span>토</span>
+                            </div>
+                            <div class="calendar" role="grid">
+                                <!-- 달력 날짜들 -->
+                            </div>
+                        </div>
+
+                        <!-- 시간대 선택 영역 -->
+                        <section class="time-slots" aria-label="예약 가능 시간대">
+                            <h3 class="visually-hidden">시간대 선택</h3>
+                            <button type="button" class="time-slot available" aria-pressed="true">17:00</button>
+                            <button type="button" class="time-slot unavailable" aria-pressed="false">17:30</button>
+                            <button type="button" class="time-slot available" aria-pressed="true">18:00</button>
+                        </section>
+
+                        <!-- 픽업 서비스 섹션 -->
+                        <section class="pickup-section" aria-labelledby="pickup-title">
+                            <h3 id="pickup-title">픽업 서비스 현황</h3>
+                            <figure class="pickup-map">
+                                <figcaption class="visually-hidden">픽업 위치 지도</figcaption>
+                                <div role="img" aria-label="지도 영역">[지도 영역]</div>
+                            </figure>
+                        </section>
+                    </section>
+                </div>
+            </aside>
+        </div>
+    </main>
+</body>
+</html>

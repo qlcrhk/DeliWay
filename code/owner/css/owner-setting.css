@@ -1,0 +1,233 @@
+/* Settings Owner Specific Styles */
+
+/* Settings Layout */
+.settings-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .settings-header {
+    margin-bottom: 2rem;
+  }
+  
+  .settings-title {
+    font-size: 1.875rem;
+    font-weight: 600;
+    color: var(--gray-900);
+    margin-bottom: 0.5rem;
+  }
+  
+  .settings-description {
+    color: var(--gray-600);
+  }
+  
+  /* Settings Navigation */
+  .settings-nav {
+    display: flex;
+    gap: 1rem;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--gray-200);
+    overflow-x: auto;
+  }
+  
+  .settings-nav-item {
+    padding: 0.75rem 1.5rem;
+    color: var(--gray-600);
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    white-space: nowrap;
+    transition: var(--transition);
+  }
+  
+  .settings-nav-item:hover {
+    background: var(--gray-100);
+    color: var(--gray-900);
+  }
+  
+  .settings-nav-item.active {
+    background: var(--primary-color);
+    color: white;
+  }
+  
+  /* Settings Section */
+  .settings-section {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .section-header {
+    margin-bottom: 2rem;
+  }
+  
+  .section-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--gray-900);
+    margin-bottom: 0.5rem;
+  }
+  
+  .section-description {
+    color: var(--gray-600);
+    font-size: 0.875rem;
+  }
+  
+  /* Toggle Switch */
+  .toggle-switch {
+    display: flex;
+    align-items: center;
+  }
+  
+  .toggle-label {
+    margin-left: 0.75rem;
+    font-size: 0.875rem;
+    color: var(--gray-700);
+  }
+  
+  .toggle-track {
+    position: relative;
+    display: inline-block;
+    width: 36px;
+    height: 20px;
+    background: var(--gray-300);
+    border-radius: 999px;
+    transition: var(--transition);
+    cursor: pointer;
+  }
+  
+  .toggle-track::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 16px;
+    height: 16px;
+    background: white;
+    border-radius: 50%;
+    transition: var(--transition);
+  }
+  
+  input[type="checkbox"]:checked + .toggle-track {
+    background: var(--primary-color);
+  }
+  
+  input[type="checkbox"]:checked + .toggle-track::after {
+    transform: translateX(16px);
+  }
+  
+  input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* Time Input Group */
+  .time-input-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .time-input {
+    width: 100px;
+  }
+  
+  /* Image Upload */
+  .image-upload {
+    border: 2px dashed var(--gray-300);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  
+  .image-upload:hover {
+    border-color: var(--primary-color);
+    background: var(--gray-50);
+  }
+  
+  .upload-icon {
+    font-size: 2rem;
+    color: var(--gray-400);
+    margin-bottom: 1rem;
+  }
+  
+  .upload-text {
+    color: var(--gray-600);
+    font-size: 0.875rem;
+  }
+  
+  /* Form Hint */
+  .form-hint {
+    font-size: 0.875rem;
+    color: var(--gray-500);
+    margin-top: 0.25rem;
+  }
+  
+  /* Form Actions */
+  .form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--gray-200);
+    margin-top: 2rem;
+  }
+  
+  /* Special Cases */
+  .form-actions.with-danger {
+    justify-content: space-between;
+  }
+  
+  /* Grid Layouts */
+  .days-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 0.5rem;
+  }
+  
+  .settings-grid {
+    display: grid;
+    gap: 1rem;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .settings-container {
+      padding: 0 1rem;
+    }
+  
+    .settings-section {
+      padding: 1.5rem;
+    }
+  
+    .settings-nav {
+      padding-bottom: 0.5rem;
+    }
+  
+    .form-actions {
+      flex-direction: column-reverse;
+    }
+  
+    .form-actions.with-danger {
+      flex-direction: column;
+    }
+  
+    .form-actions button {
+      width: 100%;
+    }
+  
+    .time-input-group {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  
+    .time-input {
+      width: 100%;
+    }
+  }

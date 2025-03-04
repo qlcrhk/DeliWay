@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>리뷰 댓글 확인</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/review_detail.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="./js/common.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="page-header">
+            <a href="#" onclick="goBack(event)"  class="back-btn"><i class="fa fa-angle-left icon"></i><span class="hidden">뒤로가기</span></a>
+            <h1 class="title">매장 이름</h1>
+            <div class="header-placeholder"></div>
+        </div>
+    </header>
+
+    <main>
+        <section class="review-container">
+            <h2 class="hidden">리뷰에 대한 댓글</h2>
+            <div class="review-header">
+                <div class="user-info">
+                    <div class="profile-image">
+                        <img src="https://placehold.co/40" alt="프로필 이미지">
+                    </div>
+                    <div class="detail-wrap">
+                        <div class="user-details">
+                            <p class="username sub-title1">헤르미온느</p>
+                            <span class="review-date body1">1시간</span>
+                        </div>
+                        <div class="star-rating">
+                            ★★★★★
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="review-content">
+                <p class="review-text body2">
+                    처음에 들어갔을때 예쁜 공간이 눈에 들어와요. 음식 맛도 좋고 특히 조명에서 나오는 빛이 너무 예뻐 몽환적인 분위기로 데이트 필수코스입니다!
+                    인테리어가 정말 예쁘네요. 최고에요!
+                </p>
+                <div class="review-images">
+                    <img src="https://placehold.co/120" alt="리뷰 이미지 1">
+                    <img src="https://placehold.co/120" alt="리뷰 이미지 2">
+                    <img src="https://placehold.co/120" alt="리뷰 이미지 3">
+                    <img src="https://placehold.co/120" alt="리뷰 이미지 4">
+                    <img src="https://placehold.co/120" alt="리뷰 이미지 5">
+                </div>
+            </div>
+            <div class="review-actions">
+                <button class="like-btn sub-title1">
+                    <img class="like-icon1 active" src="../icon/likeBtn-active.png" alt="좋아요">
+                    <img class="like-icon2" src="../icon/liked.png" alt="좋아요">
+                    <span class="like-count">10</span>
+                </button>
+                <button class="comment-btn sub-title1">
+                    <img src="../icon/comment.png" alt="comment-icon">
+                    <span class="comment-count">3</span>
+                </button>
+            </div>
+        </section>
+
+        <section class="comments-container">
+            <div class="comment-count-header">
+                <h2 class="sub-title2">댓글 3개</h2>
+            </div>
+            <ul class="comment-list">
+                <li class="comment-item">
+                    <div class="comment-header">
+                        <div class="comment-profile">
+                            <img src="https://placehold.co/30" alt="프로필사진">
+                            <p class="commenter-name body1-bold">해리포터</p>
+                            <span class="comment-date small">1주</span>
+                        </div>
+                    </div>
+                    <div class="comment-text">
+                        <p class="body2">정말 좋은 리뷰네요! 저도 꼭 가보고 싶어요.</p>
+                        <p class="comment-reply small ">답글 달기</p>
+                        <p class="comment-seemore small active">답글 더보기</p>
+                    </div>
+                </li>
+                <li class="comment-item">
+                    <div class="comment-header">
+                        <div class="comment-profile">
+                            <img src="https://placehold.co/30" alt="프로필사진">
+                            <p class="commenter-name body1-bold">론 위즐리</p>
+                            <span class="comment-date small">1시간</span>
+                        </div>
+                    </div>
+                    <div class="comment-text">
+                        <p class="body2">혹시 예약은 어떻게 하셨나요?</p>
+                        <p class="comment-reply small">답글 달기</p>
+                    </div>
+                </li>
+                <li class="comment-item">
+                    <div class="comment-header">
+                        <div class="comment-profile">
+                            <img src="https://placehold.co/30" alt="프로필사진">
+                            <p class="commenter-name body1-bold">지니 위즐리</p>
+                            <span class="comment-date small">20분</span>
+                        </div>
+                    </div>
+                    <div class="comment-text">
+                        <p class="body2">분위기가 정말 좋아 보이네요! 친구들과 가보려고요~</p>
+                        <p class="comment-reply small">답글 달기</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <!-- 댓글 입력창 -->
+    <section class="comment-form-section">
+        <h2 class="hidden">댓글 입력창</h2>
+        <form class="comment-form" action="#" method="post">
+                <input type="text" id="comment" name="comment" placeholder="댓글을 입력하세요..." class="comment-input">
+                <button type="submit" class="submit-btn"><img src="../icon/send.png" alt="전송"><span class="hidden">등록</span></button>
+        </form>
+    </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            initializeLikeButtons();
+        })
+        function initializeLikeButtons() {
+            const likeButtons = document.querySelectorAll('.like-btn');
+
+            likeButtons.forEach(likeButton => {
+                likeButton.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    const icon1 = this.querySelector(".like-icon1");//빈 하트
+                    const icon2 = this.querySelector(".like-icon2");//채워진 하트
+
+                    icon1.classList.toggle('active');
+                    icon2.classList.toggle('active');
+                })
+            })
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>검색</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/search.css">
+    <link rel="stylesheet" href="./css/search-modal.css">
+    <script src="./js/search-modal.js" defer></script>
+    <script src="./js/review_write.js"></script>
+    <script src="./js/common.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="page-header">
+            <a href="#"><i class="fa fa-angle-left icon" onclick="goBack(event)"></i><span class="hidden">뒤로가기</span></a>
+            <h1 class="title hidden">검색</h1>
+            <form action="#" method="GET">
+                <input type="text" name="query" placeholder="원하는 주제나 맛집을 입력해주세요." required>
+                <button type="reset"><i class="fa fa-close icon"></i><span class="hidden">취소</span></button>
+            </form>
+        </div>
+    </header>
+    <main>
+        <!-- 검색 필터 -->
+        <section class="searchFilter">
+            <h2 class="title">검색 필터</h2>
+            <ul class="roundBox">
+                <li><button type="button" class="tag" onclick="toggleSelection(event)">필터</button></li>
+                <li><button type="button" class="tag" onclick="toggleSelection(event)">내 주변</button></li>
+                <li><button type="button" class="tag" onclick="toggleSelection(event)">거리별</button></li>
+                <li><button type="button" class="tag" onclick="toggleSelection(event)">지역별</button></li>
+                <li><button type="button" class="tag" onclick="toggleSelection(event)">가격대별</button></li>
+                <li><button type="button" class="tag" onclick="toggleSelection(event)">업종 선택</button></li>
+                <li><button type="button" class="tag" onclick="toggleSelection(event)">픽업서비스 가능</button></li>
+            </ul>
+        </section>
+
+        <!-- 추천 검색어 -->
+        <section class="recommended">
+            <h2 class="title">추천 검색어</h2>
+            <fieldset>
+                <ul class="roundBox">
+                    <li><button type="button">가족식사</button></li>
+                    <li><button type="button">회식</button></li>
+                    <li><button type="button">데이트</button></li>
+                    <li><button type="button">브런치</button></li>
+                </ul>
+            </fieldset>
+        </section>
+
+        <!-- 최근 검색어 -->
+        <section class="recent">
+            <div class="seemoreWrap">
+                <h2 class="title">최근 검색어</h2>
+                <a href="#" class="body1">전체 삭제</a>
+            </div>
+            <ul class="roundBox">
+                <li><button type="button">파스타 <i class="fa fa-close icon"></i></button></li>
+                <li><button type="button">한우 맛집 <i class="fa fa-close icon"></i></button></li>
+                <li><button type="button">이자카야 <i class="fa fa-close icon"></i></button></li>
+                <li><button type="button">카페 <i class="fa fa-close icon"></i></button></li>
+                <li><button type="button">데이트 <i class="fa fa-close icon"></i></button></li>
+            </ul>
+        </section>
+
+        <!-- 인기 검색어 -->
+        <section class="popular">
+            <h2 class="title">인기 검색어</h2>
+            <ol>
+                <li><a href="#">치킨 맛집</a></li>
+                <li><a href="#">분위기 좋은 레스토랑</a></li>
+                <li><a href="#">가성비 좋은 식당</a></li>
+                <li><a href="#">서울 핫플</a></li>
+            </ol>
+        </section>
+
+        <!-- 추천 맛집 -->
+        <section class="recomand-section">
+            <div class="title-container">
+                <div class="recomend-title">
+                    <h2 class="title">고객님이 좋아할 맛집</h2>
+                    <p>궁예도 한 수 접는 독심술</p>
+                </div>
+                <div class="all-btn">
+                    <a href="#">전체보기 <span class="all-arr"></span></a>
+                </div>
+            </div>
+
+            <div class="store-container" id="restaurant-slider">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <dl class="rec-container" style="background-image: url('./image/restaurant1.png')">
+                                <dt>샤브20 상인점</dt>
+                                <dd class="rec-content">평점 4.6</dd>
+                                <dd class="rec-content">대구 동구</dd>
+                                <dd class="like">
+                                    <img class="like-icon1 active" src="./image/like-active.png" alt="찜하기">
+                                    <img class="like-icon2" src="./image/liked.png" alt="찜하기">
+                                </dd>
+                            </dl>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <dl class="rec-container" style="background-image: url('./image/restaurant2.png')">
+                                <dt>화로구이</dt>
+                                <dd class="rec-content">평점 4.8</dd>
+                                <dd class="rec-content">서울 강남</dd>
+                                <dd class="like">
+                                    <img class="like-icon1 active" src="./image/like-active.png" alt="찜하기">
+                                    <img class="like-icon2" src="./image/liked.png" alt="찜하기">
+                                </dd>
+                            </dl>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <dl class="rec-container" style="background-image: url('./image/restaurant3.png')">
+                                <dt>미도인</dt>
+                                <dd class="rec-content">평점 4.5</dd>
+                                <dd class="rec-content">부산 해운대</dd>
+                                <dd class="like">
+                                    <img class="like-icon1 active" src="./image/like-active.png" alt="찜하기">
+                                    <img class="like-icon2" src="./image/liked.png" alt="찜하기">
+                                </dd>
+                            </dl>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <dl class="rec-container" style="background-image: url('./image/restaurant4.png')">
+                                <dt>서래갈매기</dt>
+                                <dd class="rec-content">평점 4.7</dd>
+                                <dd class="rec-content">서울 서초</dd>
+                                <dd class="like">
+                                    <img class="like-icon1 active" src="./image/like-active.png" alt="찜하기">
+                                    <img class="like-icon2" src="./image/liked.png" alt="찜하기">
+                                </dd>
+                            </dl>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <dl class="rec-container" style="background-image: url('./image/restaurant5.png')">
+                                <dt>오마카세 진</dt>
+                                <dd class="rec-content">평점 4.9</dd>
+                                <dd class="rec-content">서울 강남</dd>
+                                <dd class="like">
+                                    <img class="like-icon1 active" src="./image/like-active.png" alt="찜하기">
+                                    <img class="like-icon2" src="./image/liked.png" alt="찜하기">
+                                </dd>
+                            </dl>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <!-- 필터 전체 모달창  -->
+    <div class="modal filter-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <p class="hidden">필터</p>
+            </div>
+            <div>
+                <p class="sub-title2">정렬</p>
+                <ul class="roundBox">
+                    <li><button type="button" class="tag" onclick="toggleSelection(event)">별점순</button></li>
+                    <li><button type="button" class="tag" onclick="toggleSelection(event)">가격순</button></li>
+                    <li><button type="button" class="tag" onclick="toggleSelection(event)">거리순</button></li>
+                </ul>
+            </div>
+            <div>
+                <p class="sub-title2">업종 선택</p>
+                <ul class="roundBox">
+                    <li><button type="button" class="tag" onclick="toggleSelection(event)">한식</button></li>
+                    <li><button type="button" class="tag" onclick="toggleSelection(event)">중식</button></li>
+                    <li><button type="button" class="tag" onclick="toggleSelection(event)">양식</button></li>
+                    <li><button type="button" class="tag" onclick="toggleSelection(event)">일식</button></li>
+                    <li><button type="button" class="tag" onclick="toggleSelection(event)">채식</button></li>
+                    <li><button type="button" class="tag" onclick="toggleSelection(event)">오마카세</button></li>
+                    <li><button type="button" class="tag" onclick="toggleSelection(event)">뷔페</button></li>
+                    <li><button type="button" class="tag" onclick="toggleSelection(event)">카페&디저트</button></li>
+                </ul>
+            </div>
+            <div>
+                <p class="sub-title2">지역 선택</p>
+                <ul class="roundBox">
+                    <li><button type="button" class="tag" onclick="toggleSelection(event)">서울</button></li>
+                    <li><button type="button" class="tag" onclick="toggleSelection(event)">인천</button></li>
+                    <li><button type="button" class="tag" onclick="toggleSelection(event)">부산</button></li>
+                    <li><button type="button" class="tag" onclick="toggleSelection(event)">대구</button></li>
+                    <li><button type="button" class="tag" onclick="toggleSelection(event)">대전</button></li>
+                    <li><button type="button" class="tag" onclick="toggleSelection(event)">광주</button></li>
+                    <li><button type="button" class="tag" onclick="toggleSelection(event)">울산</button></li>
+                    <li><button type="button" class="tag" onclick="toggleSelection(event)">세종</button></li>
+                    <li><button type="button" class="tag" onclick="toggleSelection(event)">강원</button></li>
+                    <li><button type="button" class="tag" onclick="toggleSelection(event)">경북</button></li>
+                    <li><button type="button" class="tag" onclick="toggleSelection(event)">경남</button></li>
+                    <li><button type="button" class="tag" onclick="toggleSelection(event)">전북</button></li>
+                    <li><button type="button" class="tag" onclick="toggleSelection(event)">전남</button></li>
+                    <li><button type="button" class="tag" onclick="toggleSelection(event)">충북</button></li>
+                    <li><button type="button" class="tag" onclick="toggleSelection(event)">충남</button></li>
+                    <li><button type="button" class="tag" onclick="toggleSelection(event)">제주</button></li>
+                    <li><button type="button" class="tag" onclick="toggleSelection(event)">전국</button></li>
+                </ul>
+            </div>
+            <div class="filter-range">
+                <p class="sub-title2">가격대</p>
+                <div class="range-slider">
+                    <div class="slider-container">
+                        <div class="slider-fill"></div>
+                        <div class="slider-handle" style="left: 100%"></div>
+                    </div>
+                    <div class="range-labels">
+                        <span class="range-label">0원</span>
+                        <span class="range-label">50만원</span>
+                    </div>
+                </div>
+            </div>
+            <div class="filter-range">
+                <p class="sub-title2">거리별</p>
+                <div class="range-slider">
+                    <div class="slider-container">
+                        <div class="slider-fill"></div>
+                        <div class="slider-handle" style="left: 100%"></div>
+                    </div>
+                    <div class="range-labels">
+                        <span class="range-label">100m</span>
+                        <span class="range-label">10km</span>
+                    </div>
+                </div>
+            </div>
+            <button class="apply-button title">적용하기</button>
+        </div>
+    </div>
+    <!-- 업종선택 모달창 -->
+    <div class="modal category-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <p class="sub-title2">업종 선택</p>
+            </div>
+            <ul class="roundBox">
+                <li><button type="button" class="tag" onclick="toggleSelection(event)">한식</button></li>
+                <li><button type="button" class="tag" onclick="toggleSelection(event)">중식</button></li>
+                <li><button type="button" class="tag" onclick="toggleSelection(event)">양식</button></li>
+                <li><button type="button" class="tag" onclick="toggleSelection(event)">일식</button></li>
+                <li><button type="button" class="tag" onclick="toggleSelection(event)">채식</button></li>
+                <li><button type="button" class="tag" onclick="toggleSelection(event)">오마카세</button></li>
+                <li><button type="button" class="tag" onclick="toggleSelection(event)">뷔페</button></li>
+                <li><button type="button" class="tag" onclick="toggleSelection(event)">카페&디저트</button></li>
+            </ul>
+            <button class="apply-button title">적용하기</button>
+        </div>
+    </div>
+
+    <!-- 지역선택 모달창 -->
+    <div class="modal region-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <p class="sub-title2">지역 선택</p>
+            </div>
+            <ul class="roundBox">
+                <li><button type="button" class="tag" onclick="toggleSelection(event)">서울</button></li>
+                <li><button type="button" class="tag" onclick="toggleSelection(event)">인천</button></li>
+                <li><button type="button" class="tag" onclick="toggleSelection(event)">부산</button></li>
+                <li><button type="button" class="tag" onclick="toggleSelection(event)">대구</button></li>
+                <li><button type="button" class="tag" onclick="toggleSelection(event)">대전</button></li>
+                <li><button type="button" class="tag" onclick="toggleSelection(event)">광주</button></li>
+                <li><button type="button" class="tag" onclick="toggleSelection(event)">울산</button></li>
+                <li><button type="button" class="tag" onclick="toggleSelection(event)">세종</button></li>
+                <li><button type="button" class="tag" onclick="toggleSelection(event)">강원</button></li>
+                <li><button type="button" class="tag" onclick="toggleSelection(event)">경북</button></li>
+                <li><button type="button" class="tag" onclick="toggleSelection(event)">경남</button></li>
+                <li><button type="button" class="tag" onclick="toggleSelection(event)">전북</button></li>
+                <li><button type="button" class="tag" onclick="toggleSelection(event)">전남</button></li>
+                <li><button type="button" class="tag" onclick="toggleSelection(event)">충북</button></li>
+                <li><button type="button" class="tag" onclick="toggleSelection(event)">충남</button></li>
+                <li><button type="button" class="tag" onclick="toggleSelection(event)">제주</button></li>
+                <li><button type="button" class="tag" onclick="toggleSelection(event)">전국</button></li>
+            </ul>
+            <button class="apply-button title">적용하기</button>
+        </div>
+    </div>
+    <!-- 가격대 모달창 -->
+    <div class="modal price-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <p class="sub-title2">가격대</p>
+            </div>
+            <div class="range-slider">
+                <div class="slider-container">
+                    <div class="slider-fill"></div>
+                    <div class="slider-handle"></div>
+                </div>
+                <div class="range-labels">
+                    <span class="range-label">0원</span>
+                    <span class="range-label">50만원</span>
+                </div>
+            </div>
+            <button class="apply-button title">적용하기</button>
+        </div>
+    </div>
+    <!-- 거리별 모달창 -->
+    <div class="modal distance-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <p class="sub-title2">거리별</p>
+            </div>
+            <div class="range-slider">
+                <div class="slider-container">
+                    <div class="slider-fill"></div>
+                    <div class="slider-handle"></div>
+                </div>
+                <div class="range-labels">
+                    <span class="range-label">100m</span>
+                    <span class="range-label">10km</span>
+                </div>
+            </div>
+            <button class="apply-button title">적용하기</button>
+        </div>
+    </div>
+    <script>
+        // 좋아요 버튼 초기화
+        function initializeLikeButtons() {
+            const likeButtons = document.querySelectorAll(".like");
+
+            likeButtons.forEach(likeButton => {
+                likeButton.addEventListener("click", function (e) {
+                    e.preventDefault(); // 기본 동작(페이지 이동) 방지
+                    e.stopPropagation(); // 이벤트 전파 방지
+
+                    const icon1 = this.querySelector(".like-icon1"); // 빈 하트
+                    const icon2 = this.querySelector(".like-icon2"); // 채워진 하트
+
+                    // active 클래스를 토글 (각각 개별적으로 적용)
+                    icon1.classList.toggle("active");
+                    icon2.classList.toggle("active");
+                });
+            });
+        }
+
+        // 맛집 슬라이더 초기화 및 기능 구현
+        function initializeRestaurantSlider() {
+            const slider = document.getElementById('restaurant-slider');
+            if (!slider) return;
+
+            const sliderList = slider.querySelector('ul');
+            const sliderItems = slider.querySelectorAll('li');
+
+            // 아이템이 없거나 하나뿐이라면 슬라이더 필요 없음
+            if (!sliderItems || sliderItems.length <= 1) return;
+
+            // 터치 이벤트 변수
+            let touchStartX = 0;
+            let touchEndX = 0;
+            let isDragging = false;
+
+            // 터치 이벤트 (모바일 스와이프 지원)
+            sliderList.addEventListener('touchstart', function (e) {
+                touchStartX = e.changedTouches[0].screenX;
+                isDragging = true;
+            }, { passive: true });
+
+            sliderList.addEventListener('touchend', function (e) {
+                if (!isDragging) return;
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+                isDragging = false;
+            }, { passive: true });
+
+            // 스와이프 방향 감지 및 처리
+            function handleSwipe() {
+                const threshold = 50; // 스와이프 감지 임계값 (픽셀)
+                const diff = touchStartX - touchEndX;
+
+                if (Math.abs(diff) < threshold) return;
+
+                if (diff > 0) {
+                    // 왼쪽으로 스와이프 - 다음 슬라이드
+                    sliderList.scrollBy({ left: 250, behavior: 'smooth' });
+                } else {
+                    // 오른쪽으로 스와이프 - 이전 슬라이드
+                    sliderList.scrollBy({ left: -250, behavior: 'smooth' });
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

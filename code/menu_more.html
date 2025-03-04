@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./css/meun_more.css">
+    <script src="./js/common.js" defer></script>
+    <title>메뉴더보기</title>
+</head>
+
+<body>
+    <div id="header-wrap">
+        <header>
+            <h1 class="title">제주 고씨 든렘지 레스토랑</h1>
+            <a href="#" class="back" onclick="goBack(event)"><i class="fa fa-angle-left" aria-hidden="true" style="color: black;"></i><span
+                    class="hidden">뒤로가기</span></a>
+        </header>
+
+        <h2 class="hidden">메뉴별 이동</h2>
+        <ul id="menu-nav">
+            <li><a href="#" class="sub-title1">파스타</a></li>
+            <li><a href="#" class="sub-title1">스테이크</a></li>
+            <li><a href="#" class="sub-title1 ">샐러드</a></li>
+        </ul>
+    </div>
+
+    <main>
+        <div id="container">
+            <section id="pasta">
+                <h3 class="sub-title2">파스타</h3>
+
+                <dl class="under-line">
+                    <dt class="sub-title1 menu-name">라구 로마뇰라</dt>
+                    <dd class="body1" style="color: var(--text-grey);">발음하기도 빡세네요</dd>
+                    <dd class="price body1">520,000원</dd>
+                    <dd class="photo"><img src="../images/pasta1.png" alt="라구 로마뇰라"></dd>
+                </dl>
+
+                <dl class="under-line">
+                    <dt class="sub-title1 menu-name">살모네 크레마</dt>
+                    <dd class="body1" style="color: var(--text-grey);">외노자 요리사가 맛있다면서 출시한 요리</dd>
+                    <dd class="price body1">1,120,000원</dd>
+                    <dd class="photo"><img src="../images/pasta2.png" alt=""></dd>
+                </dl>
+
+                <dl>
+                    <dt class="sub-title1 menu-name">봉골레</dt>
+                    <dd class="body1" style="color: var(--text-grey);">"늘 먹던 걸로"</dd>
+                    <dd class="price body1">230,000원</dd>
+                    <dd class="photo"><img src="../images/pasta3.png" alt=""></dd>
+                </dl>
+
+            </section>
+            <section id="stake">
+                <h3 class="sub-title2">스테이크</h3>
+
+                <dl>
+                    <dt class="sub-title1 menu-name">토마 호크</dt>
+                    <dd class="body1" style="color: var(--text-grey);">스테....이크! 에크!</dd>
+                    <dd class="price body1">520,000원</dd>
+                    <dd class="photo"><img src="../images/stake.png" alt=""></dd>
+                </dl>
+
+            </section>
+            <section id="salad">
+                <h3 class="sub-title2">샐러드</h3>
+
+                <dl class="under-line">
+                    <dt class="sub-title1 menu-name">노브랜드버거 샐러드</dt>
+                    <dd class="body1" style="color: var(--text-grey);">이거 맛있더라고요</dd>
+                    <dd class="price body1">520,000원</dd>
+                    <dd class="photo"><img src="../images/salad1.png" alt=""></dd>
+                </dl>
+
+                <dl class="under-line">
+                    <dt class="sub-title1 menu-name">유기농 샐러드</dt>
+                    <dd class="body1" style="color: var(--text-grey);">포장지에 유기농이라길래 샀으니까 유기농임</dd>
+                    <dd class="price body1">1,120,000원</dd>
+                    <dd class="photo"><img src="../images/salad2.png" alt=""></dd>
+                </dl>
+
+                <dl>
+                    <dt class="sub-title1 menu-name">옆 집 텃밭에서 훔쳐온 야채로 만든 샐러드</dt>
+                    <dd class="body1" style="color: var(--text-grey);">새벽에 몰래 훔쳐왔습니다</dd>
+                    <dd class="price body1">230,000원</dd>
+                    <dd class="photo"><img src="../images/salad3.png" alt=""></dd>
+                </dl>
+
+            </section>
+        </div>
+
+        <div id="btn-container">
+            <div class="btn-call">
+                    <img src="../images/call.png" alt="">
+                    <p class="small">전화</p>
+            </div>
+            <button class="btn_reservation sub-title1">예약하기</button>
+        </div>
+    </main>
+
+</body>
+
+</html>

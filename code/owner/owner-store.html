@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="맛집 파트너 매장 정보 관리">
+    <title>매장 정보 관리</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/owner-common.css">
+    <link rel="stylesheet" href="./css/owner-store.css">
+    <script src="./js/owner-common.js" defer></script>
+<body>
+    <button class="sidebar-toggle" aria-label="메뉴 열기">
+        <i class="ri-menu-line"></i>
+    </button>
+    <!-- Navigation -->
+    <aside class="sidebar" role="navigation">
+        <div class="sidebar-brand">
+            <div class="brand-logo">
+                <i class="ri-store-2-fill"></i>
+            </div>
+            <h1 class="brand-name">델리웨이</h1>
+        </div>
+        <nav>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="./owner-dashboard.html" class="active">
+                        <i class="ri-dashboard-line"></i>
+                        대시보드
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="./owner-reservation.html">
+                        <i class="ri-calendar-line"></i>
+                        예약 관리
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="./owner-store.html">
+                        <i class="ri-store-line"></i>
+                        매장 정보
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="./owner-menu.html">
+                        <i class="ri-restaurant-line"></i>
+                        메뉴 관리
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="./owner-sales.html">
+                        <i class="ri-bar-chart-line"></i>
+                        매출 통계
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="./owner-setting.html">
+                        <i class="ri-settings-line"></i>
+                        설정
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+    <main class="main-content" role="main">
+        <header class="page-header">
+            <h2 class="page-title">매장 정보 관리</h2>
+            <button type="button" class="button button-primary">변경사항 저장</button>
+        </header>
+
+        <form id="storeInfoForm">
+            <section class="section" aria-labelledby="basic-info-title">
+                <div class="section-header">
+                    <h3 id="basic-info-title" class="section-title">기본 정보</h3>
+                </div>
+
+                <div class="form-group">
+                    <label for="storeName" class="form-label">매장명</label>
+                    <input type="text" id="storeName" class="form-input" value="맛있는 치킨" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="storeDesc" class="form-label">매장 소개</label>
+                    <textarea id="storeDesc" class="form-textarea">신선한 재료로 만드는 프리미엄 치킨전문점</textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="storeAddress" class="form-label">주소</label>
+                    <input type="text" id="storeAddress" class="form-input" value="서울시 강남구 테헤란로 123">
+                </div>
+
+                <div class="form-group">
+                    <label for="storePhone" class="form-label">전화번호</label>
+                    <input type="tel" id="storePhone" class="form-input" value="02-1234-5678">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">매장 사진</label>
+                    <div class="image-upload" role="button" tabindex="0">
+                        <p>이미지를 드래그하거나 클릭하여 업로드</p>
+                    </div>
+                    <div class="image-preview" aria-label="업로드된 이미지 미리보기">
+                        <div class="preview-item">
+                            <img src="/api/placeholder/150/150" alt="매장 전경" class="preview-img">
+                        </div>
+                        <div class="preview-item">
+                            <img src="/api/placeholder/150/150" alt="매장 내부" class="preview-img">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" aria-labelledby="hours-title">
+                <div class="section-header">
+                    <h3 id="hours-title" class="section-title">영업 시간</h3>
+                </div>
+
+                <div class="hours-grid">
+                    <div class="form-group">
+                        <label for="weekdayStart" class="form-label">평일</label>
+                        <select id="weekdayStart" class="form-select">
+                            <option>11:00</option>
+                        </select>
+                        ~
+                        <select id="weekdayEnd" class="form-select">
+                            <option>22:00</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="weekendStart" class="form-label">주말</label>
+                        <select id="weekendStart" class="form-select">
+                            <option>11:00</option>
+                        </select>
+                        ~
+                        <select id="weekendEnd" class="form-select">
+                            <option>23:00</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="breakTime" class="form-label">브레이크타임</label>
+                        <select id="breakTime" class="form-select">
+                            <option>15:00 ~ 17:00</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" aria-labelledby="services-title">
+                <div class="section-header">
+                    <h3 id="services-title" class="section-title">서비스 설정</h3>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">예약 서비스</label>
+                    <label class="toggle-switch">
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                        <p class="form-description">예약 기능을 활성화하면 손님들이 온라인으로 예약할 수 있습니다.</p>
+                    </div>
+    
+                    <div class="form-group">
+                        <label class="form-label">예약 가능 인원</label>
+                        <div class="form-inline">
+                            <input type="number" class="form-input" value="2" min="1" max="10"> 명 ~
+                            <input type="number" class="form-input" value="8" min="1" max="20"> 명
+                        </div>
+                    </div>
+    
+                    <div class="form-group">
+                        <label class="form-label">픽업 서비스</label>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                        <p class="form-description">픽업 서비스를 제공하면 손님을 지정된 장소에서 픽업할 수 있습니다.</p>
+                    </div>
+    
+                    <div class="form-group">
+                        <label class="form-label">픽업 가능 거리</label>
+                        <select class="form-select">
+                            <option>1km 이내</option>
+                            <option selected>2km 이내</option>
+                            <option>3km 이내</option>
+                            <option>5km 이내</option>
+                        </select>
+                    </div>
+                </section>
+    
+                <section class="section" aria-labelledby="facility-title">
+                    <div class="section-header">
+                        <h3 id="facility-title" class="section-title">시설 정보</h3>
+                    </div>
+    
+                    <div class="facilities-grid">
+                        <div class="facility-item">
+                            <label class="checkbox-label">
+                                <input type="checkbox" checked>
+                                <span>주차 가능</span>
+                            </label>
+                            <input type="text" class="form-input" placeholder="주차 정보 입력" value="건물 내 2시간 무료주차">
+                        </div>
+    
+                        <div class="facility-item">
+                            <label class="checkbox-label">
+                                <input type="checkbox" checked>
+                                <span>화장실</span>
+                            </label>
+                        </div>
+    
+                        <div class="facility-item">
+                            <label class="checkbox-label">
+                                <input type="checkbox" checked>
+                                <span>무선 인터넷</span>
+                            </label>
+                        </div>
+    
+                        <div class="facility-item">
+                            <label class="checkbox-label">
+                                <input type="checkbox">
+                                <span>단체석</span>
+                            </label>
+                            <input type="text" class="form-input" placeholder="수용 가능 인원">
+                        </div>
+                    </div>
+                </section>
+    
+                <section class="section" aria-labelledby="notice-title">
+                    <div class="section-header">
+                        <h3 id="notice-title" class="section-title">공지사항</h3>
+                        <button type="button" class="button button-outline">공지 추가</button>
+                    </div>
+    
+                    <div class="notice-list">
+                        <article class="notice-item">
+                            <header class="notice-header">
+                                <h4>신메뉴 출시 안내</h4>
+                                <div class="notice-actions">
+                                    <button type="button" class="button button-outline">수정</button>
+                                    <button type="button" class="button button-outline">삭제</button>
+                                </div>
+                            </header>
+                            <p class="notice-content">3월 1일부터 신메뉴 '트러플 치킨'이 출시됩니다.</p>
+                            <footer class="notice-footer">
+                                <time datetime="2024-02-23">2024.02.23</time>
+                            </footer>
+                        </article>
+                    </div>
+                </section>
+    
+                <section class="section" aria-labelledby="keywords-title">
+                    <div class="section-header">
+                        <h3 id="keywords-title" class="section-title">검색 키워드</h3>
+                    </div>
+    
+                    <div class="form-group">
+                        <label class="form-label">키워드 입력</label>
+                        <div class="keywords-input">
+                            <input type="text" class="form-input" placeholder="키워드를 입력하세요">
+                            <button type="button" class="button button-outline">추가</button>
+                        </div>
+                        <div class="keywords-list">
+                            <span class="keyword-tag">#치킨 <button type="button" class="remove-tag">×</button></span>
+                            <span class="keyword-tag">#강남맛집 <button type="button" class="remove-tag">×</button></span>
+                            <span class="keyword-tag">#데이트코스 <button type="button" class="remove-tag">×</button></span>
+                        </div>
+                    </div>
+                </section>
+    
+                <div class="form-actions">
+                    <button type="submit" class="button button-primary">변경사항 저장</button>
+                    <button type="button" class="button button-outline">취소</button>
+                </div>
+            </form>
+        </main>
+    </body>
+    </html>
