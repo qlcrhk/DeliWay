@@ -38,11 +38,21 @@ header a {
   padding: 30px 0 0px 0;
 }
 
+.tab-menu li {
+    text-align: center;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+}
+
+.tab-menu .active {
+    border-bottom: 3px solid var(--primary);
+    font-weight: bold;
+}
+
 .like {
   width: 50%;
   height: 50px;
   text-align: center;
-  border-bottom: 3px solid var(--primary);
 }
 
 .delist {
@@ -215,7 +225,6 @@ main section ul {
 }
 
 .add-card .plus {
-    transform: scale(130);
     color: var(--black);
 }
 
