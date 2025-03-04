@@ -1,0 +1,155 @@
+/* 공통 스타일 import */
+@charset "utf-8";
+
+/* 레이아웃 기본 설정 */
+body {
+    max-width: 440px;
+    margin: 0 auto;
+    background-color: var(--background-grey);
+}
+
+/* 헤더 스타일 */
+
+#header-wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    margin: 0 auto;
+    z-index: 1000;
+    background-color: var(--white);
+    border-bottom: 1px solid var(--background-grey);
+}
+
+header {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 56px;
+    padding: 30px 20px 50px 20px;
+    background: var(--white);
+}
+
+header h1 {
+    color: var(--black);
+}
+
+header > .back {
+    position: absolute;
+    left: 20px;
+    font-size: 22px;
+    color: var(--black);
+}
+
+#menu-nav {
+    display: flex;
+    color: var(--black);
+    background: var(--white);
+    margin-bottom: 6px;
+    justify-content: center;
+    gap: 0px;
+}
+
+#menu-nav > li {
+    width: 100%;
+    text-align: center;
+    height: 50px;
+}
+
+#menu-nav > li > a {
+    display: block;
+    width: 100%;
+    line-height: 50px;
+    color: var(--black);
+}
+
+main {
+    padding: 142px 0 70px;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    background: var(--white);
+    padding: 25px 25px 10px 25px;
+}
+
+#pasta, #stake {
+    margin-bottom: 6px;
+}
+
+.sub-title2 {
+    margin-bottom: 10px;
+}
+
+.menu-name {
+    margin-top: 20px;
+}
+
+dl {
+    position: relative;
+    padding-bottom: 10px;
+}
+
+#under-line {
+    border-bottom: 1px solid var(--background-grey);
+}
+
+dl > .photo {
+    position: absolute;
+    bottom: -5%;
+    right: 0;
+}
+
+.photo > img {
+    width: 100px;
+    height: 100px;
+}
+
+dt,dd {
+    margin-bottom: 10px;
+}
+
+#btn-container {
+    display: flex;
+    background: var(--white);
+    justify-content: center;
+    width: 440px;
+    padding: 10px 25px;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    z-index: 9999;
+    transform: translateX(-50%);
+    gap: 15px;
+    align-items: center;
+}
+
+#btn-container > .btn-call {
+    text-align: center;
+}
+
+#btn-container > .btn-call > img {
+    margin: 5px;
+}
+
+
+
+#btn-container > .btn_reservation {
+    width: 70%;
+    height: 50px;
+    background-color: var(--primary);
+    color: var(--white);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#btn-container > .btn-call > img {
+    width: 24px;
+    height: 24px;
+}
+
+

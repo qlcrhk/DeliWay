@@ -154,6 +154,7 @@ header {
     display: block;
 }
 
+.like-btn img,
 .comment-btn img {
     width: 25px;
     height: 25px;

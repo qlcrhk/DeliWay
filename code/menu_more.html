@@ -1,57 +1,105 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>메뉴 더보기</title>
-  </head>
-  <body>
-    <header>
-      <h1>매장 이름</h1>
-      <a href="#">back</a>
-    </header>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/menu_more.css">
+    <title>메뉴더보기</title>
+</head>
+
+<body>
+    <div id="header-wrap">
+        <header>
+            <h1 class="title">제주 고씨 든렘지 레스토랑</h1>
+            <a href="#" class="back"><i class="fa fa-angle-left" aria-hidden="true" style="color: black;"></i><span
+                    class="hidden">뒤로가기</span></a>
+        </header>
+
+        <ul id="menu-nav">
+            <h2 class="hidden">메뉴별 이동</h2>
+            <li><a href="#" class="sub-title1">파스타</a></li>
+            <li><a href="#" class="sub-title1">스테이크</a></li>
+            <li><a href="#" class="sub-title1 ">샐러드</a></li>
+        </ul>
+    </div>
 
     <main>
-      <section>
-        <h2>메뉴 카테고리(전체/ 파스타타 등등)</h2>
-        <ul>
-          <li>
-            <a href="#">
-                <dt>메뉴이름</dt>
-                <dd>메뉴 설명</dd>
-                <dt>메뉴 가격</dt>
-                <dd>500,000원</dd>
-            </a>
-        </li>
-        </ul>
-      </section>
-      <section>
-        <h2>예약 및 전화 걸기</h2>
-        <a href="#">전화걸기</a>
-        <a href="#">예약하기</a>
-      </section>
+        <div id="container">
+            <section id="pasta">
+                <h3 class="sub-title2">파스타</h3>
 
-      <section>
-        <h2>상세 정보</h2>
-        <article>
-            <h3>전화번호</h3>
-            <p>tel. 012-123-1234</p>
-        </article>
-        <article>
-            <h3>안내 및 유의사항</h3>
-            <p>* 영업시간은 매장 사정에 따라 변경될 수 있습니다.</p>
-        </article>
-    </section>
-    <section>
-        <h2>환불정책</h2>
-        <p>방문 1~3시간 전 취소 &rarr; 50% 환불</p>
-        <p>방문 시간 당일 2시간 전 &rarr; 환불 불가</p>
-        <p>* 단 기상님이 이동을 시작한 이후에는 일부 추가비용이 발생합니다.</p>
-        <p>선결제 (앱 내 결제) &rarr; 결제 취소 후 카드사 경제 서비스 규정에 따라 3~5일 내 환불</p>
-        <p>현장 결제 &rarr; 매장 자체 환불 규정에 따름 (DELIWAY 직접 환불 불가)</p>
-        <p>포인트/쿠폰 사용 예약 &rarr; 포인트는 즉시 반환, 쿠폰은 복구 불가 할 수도 있음</p>
-        <p>간편 결제 (카카오페이, 네이버페이 등) &rarr; 취소 후 1~2일 내 환불</p>
-    </section>
+                <dl id="under-line">
+                    <dt class="sub-title1 menu-name">라구 로마뇰라</dt>
+                    <dd class="body1" style="color: var(--text-grey);">발음하기도 빡세네요</dd>
+                    <dd class="price body1">520,000원</dd>
+                    <dd class="photo"><img src="../images/pasta1.png" alt="라구 로마뇰라"></dd>
+                </dl>
+
+                <dl id="under-line">
+                    <dt class="sub-title1 menu-name">살모네 크레마</dt>
+                    <dd class="body1" style="color: var(--text-grey);">외노자 요리사가 맛있다면서 출시한 요리</dd>
+                    <dd class="price body1">1,120,000원</dd>
+                    <dd class="photo"><img src="../images/pasta2.png" alt=""></dd>
+                </dl>
+
+                <dl>
+                    <dt class="sub-title1 menu-name">봉골레</dt>
+                    <dd class="body1" style="color: var(--text-grey);">"늘 먹던 걸로"</dd>
+                    <dd class="price body1">230,000원</dd>
+                    <dd class="photo"><img src="../images/pasta3.png" alt=""></dd>
+                </dl>
+
+            </section>
+            <section id="stake">
+                <h3 class="sub-title2">스테이크</h3>
+
+                <dl>
+                    <dt class="sub-title1 menu-name">토마 호크</dt>
+                    <dd class="body1" style="color: var(--text-grey);">스테....이크! 에크!</dd>
+                    <dd class="price body1">520,000원</dd>
+                    <dd class="photo"><img src="../images/stake.png" alt=""></dd>
+                </dl>
+
+            </section>
+            <section id="salad">
+                <h3 class="sub-title2">샐러드</h3>
+
+                <dl id="under-line">
+                    <dt class="sub-title1 menu-name">노브랜드버거 샐러드</dt>
+                    <dd class="body1" style="color: var(--text-grey);">이거 맛있더라고요</dd>
+                    <dd class="price body1">520,000원</dd>
+                    <dd class="photo"><img src="../images/salad1.png" alt=""></dd>
+                </dl>
+
+                <dl id="under-line">
+                    <dt class="sub-title1 menu-name">유기농 샐러드</dt>
+                    <dd class="body1" style="color: var(--text-grey);">포장지에 유기농이라길래 샀으니까 유기농임</dd>
+                    <dd class="price body1">1,120,000원</dd>
+                    <dd class="photo"><img src="../images/salad2.png" alt=""></dd>
+                </dl>
+
+                <dl>
+                    <dt class="sub-title1 menu-name">옆 집 텃밭에서 훔쳐온 야채로 만든 샐러드</dt>
+                    <dd class="body1" style="color: var(--text-grey);">새벽에 몰래 훔쳐왔습니다</dd>
+                    <dd class="price body1">230,000원</dd>
+                    <dd class="photo"><img src="../images/salad3.png" alt=""></dd>
+                </dl>
+
+            </section>
+        </div>
+
+        <div id="btn-container">
+            <div class="btn-call">
+                    <img src="../images/call.png" alt="">
+                    <p class="small">전화</p>
+            </div>
+            <button class="btn_reservation sub-title1">예약하기</button>
+        </div>
     </main>
-  </body>
+
+</body>
+
 </html>

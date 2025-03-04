@@ -1,16 +1,15 @@
 @charset "utf-8";
-
+html,body {
+    height: 100%;
+}
 body{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: start;
+    align-content: center;
     margin: 0 25px;
 }
 
-header h2{
-    margin: 123px 0 40px;
-}
 header a{
     position: absolute;
     top: 30px;
@@ -19,35 +18,31 @@ header a{
     font-size: 22px;
     color: var(--black);
 }
-
-/* 메인 */
-main{
+main {
     width: 100%;
-    display: flex;
-    flex-direction: column;
 }
+h2 {
+    margin-bottom: 20px;
+}
+
 label{
     display: flex;
     padding: 20px 25px;
     margin-bottom: 10px;
 }
-
 #agree{
     border-radius: 10px;
     background-color: var(--background-grey);
 }
 span{
-    padding-right: 10px;
     padding-left: 10px;
 }
-label div {
-    display: flex;
-}
-label div p{
-    color: #006ffd;
+
+label span{
+    color: var(--primary);
 }
 .select_disable{
-    color: var(--background-grey);
+    color: var(--text-grey);
 }
 
 button{
@@ -88,4 +83,3 @@ input[type="checkbox"]:checked::after {
     border: solid var(--white);
     border-width: 0 2px 2px 0;
     transform: rotate(45deg);
-}

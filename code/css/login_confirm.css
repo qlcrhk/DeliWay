@@ -36,7 +36,7 @@ input{
 }
 
 input:focus {
-    border: 1px solid var(--primary);
+    outline: var(--primary);
 }
 
 button{
