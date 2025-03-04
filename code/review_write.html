@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="./css/review_write.css">
+
+  <script src="./js/review_write.js" defer></script>
+  <script src="./js/common.js" defer></script>
+  
+  <title>리뷰작성</title>
+</head>
+
+<body>
+  <header>
+    <h1 class="title">리뷰 작성하기</h1>
+    <a href="#"><i class="fa fa-angle-left" aria-hidden="true" style="color: black;" onclick="goBack(event)"></i><span
+        class="hidden">뒤로가기</span></a>
+  </header>
+
+  <main>
+    <section id="section">
+      <h2 class="sub-title2">제주 고씨 든렘지 레스토랑</h2>
+
+      <form>
+        <fieldset>
+          <legend>방문 목적을 알려주세요</legend>
+          <div class="btns">
+            <button type="button" class="tag" onclick="toggleSelection(event)">가족 외식</button>
+            <button type="button" class="tag" onclick="toggleSelection(event)">데이트</button>
+            <button type="button" class="tag" onclick="toggleSelection(event)">친구 모임</button>
+            <button type="button" class="tag" onclick="toggleSelection(event)">회식</button>
+            <button type="button" class="tag" onclick="toggleSelection(event)">혼밥</button>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>어떤 점이 좋았나요?</legend>
+          <div class="slider-container">
+            <div class="slider" id="good-points-slider">
+              <div class="which-one">
+                <div>
+                  <p class="menu-title ">가격 및 음식</p>
+                  <div class="btn-wrap">
+                    <button type="button" class="tag2" onclick="toggleSelection(event)">음식이 맛있어요</button>
+                    <button type="button" class="tag2" onclick="toggleSelection(event)">양이 많아요</button>
+                    <button type="button" class="tag2" onclick="toggleSelection(event)">재료가 신선해요</button>
+                    <button type="button" class="tag2" onclick="toggleSelection(event)">메뉴 구성이 좋아요</button>
+                    <button type="button" class="tag2" onclick="toggleSelection(event)">가성비가 좋아요</button>
+                    <button type="button" class="tag2" onclick="toggleSelection(event)">가격만큼 고급스러워요</button>
+                  </div>
+                </div>
+
+                <div>
+                  <p class="menu-title">분위기</p>
+                  <div class="btn-wrap">
+                    <button type="button" class="tag2" onclick="toggleSelection(event)">분위기가 좋아요</button>
+                    <button type="button" class="tag2" onclick="toggleSelection(event)">데이트하기 좋아요</button>
+                    <button type="button" class="tag2" onclick="toggleSelection(event)">혼밥하기 좋아요</button>
+                    <button type="button" class="tag2" onclick="toggleSelection(event)">단체 모임하기 좋아요</button>
+                    <button type="button" class="tag2" onclick="toggleSelection(event)">인테리어가 예뻐요</button>
+                    <button type="button" class="tag2" onclick="toggleSelection(event)">매장이 고급스러워요</button>
+                  </div>
+                </div>
+
+                <div>
+                  <p class="menu-title">기타 정보</p>
+                  <div class="btn-wrap">
+                    <button type="button" class="tag2" onclick="toggleSelection(event)">직원이 친절해요</button>
+                    <button type="button" class="tag2" onclick="toggleSelection(event)">매장이 청결해요</button>
+                    <button type="button" class="tag2" onclick="toggleSelection(event)">주차하기 편해요</button>
+                    <button type="button" class="tag2" onclick="toggleSelection(event)">아이와 가기 좋아요</button>
+                    <button type="button" class="tag2" onclick="toggleSelection(event)">반려동물과 가기 좋아요</button>
+                    <button type="button" class="tag2" onclick="toggleSelection(event)">화장실이 청결해요</button>
+                  </div>
+                </div>
+
+                <div>
+                  <p class="menu-title">선택 안 함</p>
+                  <div class="btn-wrap">
+                    <button type="button" class="tag2" onclick="toggleSelection(event)">선택할 키워드가 없어요</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+
+        <div class="input-group picture">
+          <label>사진 업로드</label>
+          <div class="image-upload">
+            <label for="review-image" class="image-upload-button"></label>
+            <input type="file" id="review-image" name="review-image" class="hidden" accept="image/*">
+          </div>
+        </div>
+
+        <div class="review">
+          <p class="score sub-title1">별점</p>
+          <div class="star-rating">
+            <span onclick="setRating(1)">★</span>
+            <span onclick="setRating(2)">★</span>
+            <span onclick="setRating(3)">★</span>
+            <span onclick="setRating(4)">★</span>
+            <span onclick="setRating(5)">★</span>
+            <input type="hidden" id="rating" name="rating" value="0">
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label for="title">제목</label>
+          <input type="text" id="title" name="title" required>
+        </div>
+
+        <div class="input-group">
+          <label for="content">내용</label>
+          <textarea id="content" name="content" rows="10" placeholder="리뷰를 작성해주세요" required></textarea>
+        </div>
+
+        <button type="submit" onclick="showConfirmModal(event)">리뷰 등록하기</button>
+      </form>
+    </section>
+  </main>
+
+  <div id="cautionModal" class="modal">
+    <div class="modal-content">
+      <p class="small">
+        정확하고 유익한 정보를 나누어 쾌적한 리뷰 문화를 경험할 수 있도록 아래
+        사항을 유의해주세요. <br><br><br>
+        1. 실제 방문 경험과 다르거나 확인되지 않은 내용을 작성하지 말아주세요. <br><br>
+        2. 다른 손님이나 직원의 모습이 동의 없이 포함되지 않도록 유의해 주세요. <br><br>
+        3. 비방, 모욕적인 표현 금지, 악의적인 비난, 무례한 언어, 인격을 침해하는 표현은 작성하지 말아주세요.
+      </p>
+      <button onclick="closeModal('cautionModal'); showCompletionModal()">확인</button>
+    </div>
+  </div>
+
+  <div id="completionModal" class="modal">
+    <div class="modal-content">
+      <p>리뷰등록이 완료되었습니다</p>
+      <button onclick="closeModal('completionModal')">확인</button>
+    </div>
+  </div>
+</body>
+
+</html>

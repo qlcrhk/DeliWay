@@ -1,0 +1,185 @@
+@charset "utf-8";
+
+body {
+    background-color: var(--white);
+    margin: 0 auto;
+}
+
+/* 헤더 */
+header {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    margin-top: 30px;
+}
+
+header h1 {
+    font-family: 'Pretendard-Bold';
+    color: var(--black);
+}
+
+header a {
+    position: absolute;
+    left: 20px;
+    font-size: 22px;
+    color: var(--black);
+}
+
+.tab-menu {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid var(--background-grey);
+    padding: 30px 0 0px 0;
+}
+
+.tab-menu li {
+    text-align: center;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+}
+
+.tab-menu .active {
+    border-bottom: 3px solid var(--primary);
+    font-weight: bold;
+}
+
+.my-reser {
+    width: 50%;
+    height: 50px;
+    text-align: center;
+}
+
+.visit {
+    width: 50%;
+    height: 50px;
+    text-align: center;
+}
+
+/* 찜한 맛집 목록 스타일 */
+
+main {
+    padding: 25px 25px 0px;
+    margin-bottom: 150px;
+    /* 내비게이션 높이 + 여백 */
+}
+
+main section ul {
+    padding: 0;
+    margin: 0;
+}
+
+.round {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 25px 30px;
+}
+
+.visit-day {
+    border: none;
+    display: none;
+}
+
+.on {
+    display: block;
+}
+
+.reservation-card {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    margin-bottom: 20px;
+    background-color: var(--white);
+}
+
+.history {
+    display: flex;
+    justify-content: space-between;
+    margin: 25px 20px 0 ;
+}
+
+.reservation-card img {
+    width: 90px;
+    height: 90px;
+    border-radius: 10px;
+    object-fit: cover;
+    background-color: var(--background-grey);
+    /* 이미지 로딩 전 배경색 */
+    margin-right: 20px;
+}
+
+
+.rest-info {
+    display: flex;
+    padding: 20px 25px 30px 25px;
+    border-bottom: 1px solid var(--background-grey);
+}
+
+.rest {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+.rest-place {
+    width: 100%;
+}
+
+.restaurant-name {
+    font-family: 'Pretendard-Bold';
+    color: var(--black);
+    margin: 0 0 5px 0;
+
+}
+
+.restaurant-location {
+    font-family: 'Pretendard-Medium';
+    color: var(--text-grey);
+    margin: 0 0 10px 0;
+}
+
+.rest-time {
+    color: var(--black);
+    display: flex;
+}
+
+.clock {
+    width: 20px;
+    height: 20px;
+}
+
+.person {
+    margin-left: 10px;
+}
+
+.view-details {
+    display: block;
+    text-align: center;
+    background-color: var(--white);
+    color: var(--black);
+    font-family: 'Pretendard-Medium';
+    padding: 20px 0;
+}
+
+.plus {
+    color: var(--black);
+    margin-left: 5px;
+    width: 20px;
+    height: 20px;
+}
+
+#section {
+    position: relative;
+}
+
+.tab-content {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: none;
+}

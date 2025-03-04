@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/reser_list.css">
+
+    <script src="./js/tab.js" defer></script>
+
+    <title>예약내역</title>
+</head>
+
+<body>
+    <header>
+        <h1 class="title">예약 내역</h1>
+        <a href="#"><i class="fa fa-angle-left" aria-hidden="true"></i><span class="hidden">뒤로가기</span></a>
+    </header>
+
+    <nav id="gnb">
+        <h2 class="hidden">메인 메뉴</h2>
+        <ul>
+            <li><a href="#" class="homeBtn">홈</a></li>
+            <li><a href="#" class="searchBtn">검색</a></li>
+            <li><a href="#" class="likeBtn">찜한 맛집</a></li>
+            <li><a href="#" class="reservationBtn">예약내역</a></li>
+            <li><a href="#" class="mypageBtn">마이페이지</a></li>
+        </ul>
+    </nav>
+
+    <!-- 카테고리 탭 -->
+    <ul class="tab-menu">
+        <li class="my-reser active">
+            <p class="title">나의 예약</p>
+        </li>
+        <li class="visit">
+            <p class="title">방문 기록</p>
+        </li>
+    </ul>
+
+    <main>
+        <section id="section">
+            <h2 class="hidden">예약 및 방문기록</h2>
+            <!-- 각각 클릭시 정보만 바뀌게 작성 ui동일하기 떄문 -->
+
+
+            <div class="tab-content">
+
+            <div class="round sub-title2">
+                <!-- 총 갯수 span태그에 총 몇건인지 데이터 표기 -->
+                <p>총 <span>8</span>건</p>
+
+                <!-- option에 더 넣을 내용있으면 바로 추가하겠음 -->
+                <select name="#" class="visit-day body1">
+                    <option value="">방문일자</option>
+                    <option value="">일주일</option>
+                    <option value="">1달 전</option>
+                    <option value="">3달 전</option>
+                </select>
+            </div>
+
+            <!-- 예약 카드 영역 -->
+            <div class="reservation-card">
+                <div class="history body1">
+                    <p>예약 확정</p>
+                    <p>총 1회 방문</p>
+                </div>
+                <div class="rest-info">
+                    <img src="../images/food.png" alt="">
+                    <div class="rest">
+                        <div class="rest-place">
+                            <p class="restaurant-name sub-title2">제주고씨 든렘지 레스토랑</p>
+                            <p class="restaurant-location small">양식 · 대구 동구 신천동</p>
+                        </div>
+                        <div class="rest-time">
+                            <p class="restaurant-time body1"><span>2025.07.27(금) · 18:00</span></p>
+                            <p class="person body1">2명</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="view-details">매장 자세히 보기 <i class='fas fa-plus plus'></i></a>
+            </div>
+
+            <div class="reservation-card">
+                <div class="history body1">
+                    <p>예약 확정</p>
+                    <p>총 12회 방문</p>
+                </div>
+                <div class="rest-info">
+                    <img src="../images/food.png" alt="">
+                    <div class="rest">
+                        <div class="rest-place">
+                            <p class="restaurant-name sub-title2">토스트를 네 입에 토스</p>
+                            <p class="restaurant-location small">양식 · 대구 동구 신천동</p>
+                        </div>
+                        <div class="rest-time">
+                            <p class="restaurant-time body1"><span>2025.07.27(금) · 12:00</span></p>
+                            <p class="person body1">2명</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="view-details">매장 자세히 보기 <i class='fas fa-plus plus'></i></a>
+            </div>
+        </div>
+
+            <!-- 방문 기록 -->
+            <div class="tab-content">
+                <div class="round sub-title2">
+                    <!-- 총 갯수 span태그에 총 몇건인지 데이터 표기 -->
+                    <p>총 <span>2</span>건</p>
+
+                    <!-- option에 더 넣을 내용있으면 바로 추가하겠음 -->
+                    <select name="#" class="visit-day on body1">
+                        <option value="">방문일자</option>
+                        <option value="">일주일</option>
+                        <option value="">1달 전</option>
+                        <option value="">3달 전</option>
+                    </select>
+                </div>
+
+                <!-- 예약 카드 영역 -->
+                <div class="reservation-card">
+                    <div class="history body1">
+                        <p>리뷰 완료</p>
+                        <p>총 1회 방문</p>
+                    </div>
+                    <div class="rest-info">
+                        <img src="../images/food.png" alt="">
+                        <div class="rest">
+                            <div class="rest-place">
+                                <p class="restaurant-name sub-title2">제주고씨 든렘지 레스토랑</p>
+                                <p class="restaurant-location small">양식 · 대구 동구 신천동</p>
+                            </div>
+                            <div class="rest-time">
+                                <p class="restaurant-time body1"><span>2025.07.27(금) · 18:00</span></p>
+                                <p class="person body1">2명</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="view-details">내가 쓴 리뷰 보기 <i class='fas fa-plus plus'></i></a>
+                </div>
+
+                <div class="reservation-card">
+                    <div class="history body1">
+                        <p>리뷰 작성 전</p>
+                        <p>총 12회 방문</p>
+                    </div>
+                    <div class="rest-info">
+                        <img src="../images/food.png" alt="">
+                        <div class="rest">
+                            <div class="rest-place">
+                                <p class="restaurant-name sub-title2">토스트를 네 입에 토스</p>
+                                <p class="restaurant-location small">양식 · 대구 동구 신천동</p>
+                            </div>
+                            <div class="rest-time">
+                                <p class="restaurant-time body1"><span>2025.07.27(금) · 12:00</span></p>
+                                <p class="person body1">2명</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="view-details">리뷰 작성하기 <i class='fas fa-plus plus'></i></a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+</body>
+
+</html>

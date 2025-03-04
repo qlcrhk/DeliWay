@@ -1,0 +1,157 @@
+@charset "utf-8";
+
+/* 기초 셋팅 */
+:root {
+    /* Color design */
+    --primary: #834EC3;
+    --primary-dark: #613991;
+    --primary-light: #E0D3F0;
+    --black: #000000;
+    --white: #FFFFFF;
+    --err: #ff0000;
+    --text-grey: #6F6F6F;
+    --text-grey-dark: #272727;
+    --background-grey: #EDEDED;
+
+    /* Font Sizes */
+    --login-font-size: 24px;
+    --title-font-size: 20px;
+    --login-placeholder-font-size:400 20px;
+    --sub-title2-font-size: 18px;
+    --sub-title1-font-size: 16px;
+    --body2-font-size: 16px;
+    --body1-font-size: 14px;
+    --small-font-size: 12px;
+}
+
+*{
+    box-sizing: border-box;
+    list-style:none;
+    text-decoration: none;
+}
+
+body,h1,h2,h3,h4,h5,h6,a,ul,li,ol,dl,dt,dd,p,div,form,fieldset,button{
+    margin: 0;
+    padding: 0;
+}
+
+::-webkit-scrollbar {
+    display: none;
+  }
+
+a {
+    color: var(--black);
+}
+
+fieldset {
+    border :none;
+}
+
+.hidden {
+    display: inline-block;
+    position: absolute;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    clip: rect(0,0,0,0);
+}
+
+/* 폰트 */
+body {
+    font-family: 'Pretendard-Medium';
+    font-size: 16px;
+}
+
+.login {
+    font-family: 'Pretendard-Bold';
+    font-size: 26px;
+}
+.login-placeholder {
+    font-family: 'Pretendard-Medium';
+    font-size: 20px;
+}
+
+.title {
+    font-family: 'Pretendard-Bold';
+    font-size: 20px;
+}
+.sub-title1 {
+    font-family: 'Pretendard-Bold';
+    font-size: 16px;
+}
+.sub-title2 {
+    font-family: 'Pretendard-Bold';
+    font-size: 18px;
+}
+
+.body1 {
+    font-family: 'Pretendard-Medium';
+    font-size: 14px;
+}
+
+.body1-bold {
+    font-family: 'Pretendard-Bold';
+    font-size: 14px;
+}
+
+.small {
+    font-family: 'Pretendard-Medium';
+    font-size: 11px;
+}
+
+
+/* navibar */
+#gnb ul {
+    position: fixed;
+    bottom:0;
+    display: flex;
+    width: 100%;
+    height: 100px;
+    background: #fff;
+    z-index: 999;
+}
+#gnb ul li {
+    width: 20%;
+}
+
+#gnb ul li a {
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 28px;
+    width: 100%;
+    height: 100%;
+    text-indent: -100%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.homeBtn {
+    background-image: url(../../icon/homeBtn.png);
+}
+.homeBtn.active {
+    background-image: url(../../icon/homeBtn-active.png);
+}
+.searchBtn {
+    background-image: url(../../icon/searchBtn.png);
+}
+.searchBtn.active {
+    background-image: url(../../icon/searchBtn-active.png);
+}
+.likeBtn {
+    background-image: url(../../icon/likeBtn.png);
+}
+.linkBtn.active {
+    background-image: url(../../icon/likeBtn-active.png);
+}
+.reservationBtn {
+    background-image: url(../../icon/reservationBtn.png);
+}
+.reservationBtn.active {
+    background-image: url(../../icon/reservationBtn-active.png);
+}
+.mypageBtn {
+    background-image: url(../../icon/mypageBtn.png);
+}
+.mypageBtn.active {
+    background-image: url(../../icon/mypageBtn-active.png);
+}
