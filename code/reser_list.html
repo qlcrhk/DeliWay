@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/reser_list.css">
 
-    <script src="./js/common.js" defer></script>
+    <script src="./js/tab.js" defer></script>
 
     <title>예약내역</title>
 </head>
@@ -17,20 +17,19 @@
 <body>
     <header>
         <h1 class="title">예약 내역</h1>
-        <a href="#" onclick="goBack(event)"><i class="fa fa-angle-left" aria-hidden="true"></i><span class="hidden">뒤로가기</span></a>
+        <a href="#"><i class="fa fa-angle-left" aria-hidden="true"></i><span class="hidden">뒤로가기</span></a>
     </header>
 
     <nav id="gnb">
-        <h2 class="hidden">주 메뉴</h2>
+        <h2 class="hidden">메인 메뉴</h2>
         <ul>
-          <li><a href="./index.html" class="homeBtn">홈</a></li>
-          <li><a href="./search.html" class="searchBtn">검색</a></li>
-          <li><a href="./like_list.html" class="likeBtn">찜한 맛집</a></li>
-          <li><a href="./reser_list.html" class="reservationBtn">예약내역</a></li>
-          <li><a href="./mypage.html" class="mypageBtn">마이페이지</a></li>
+            <li><a href="#" class="homeBtn">홈</a></li>
+            <li><a href="#" class="searchBtn">검색</a></li>
+            <li><a href="#" class="likeBtn">찜한 맛집</a></li>
+            <li><a href="#" class="reservationBtn">예약내역</a></li>
+            <li><a href="#" class="mypageBtn">마이페이지</a></li>
         </ul>
     </nav>
-
 
     <!-- 카테고리 탭 -->
     <ul class="tab-menu">
@@ -48,6 +47,7 @@
             <!-- 각각 클릭시 정보만 바뀌게 작성 ui동일하기 떄문 -->
 
 
+            <div class="tab-content">
 
             <div class="round sub-title2">
                 <!-- 총 갯수 span태그에 총 몇건인지 데이터 표기 -->
@@ -104,12 +104,13 @@
                 </div>
                 <a href="#" class="view-details">매장 자세히 보기 <i class='fas fa-plus plus'></i></a>
             </div>
+        </div>
 
             <!-- 방문 기록 -->
-            <div class="visit-wrap">
+            <div class="tab-content">
                 <div class="round sub-title2">
                     <!-- 총 갯수 span태그에 총 몇건인지 데이터 표기 -->
-                    <p>총 <span>8</span>건</p>
+                    <p>총 <span>2</span>건</p>
 
                     <!-- option에 더 넣을 내용있으면 바로 추가하겠음 -->
                     <select name="#" class="visit-day on body1">
@@ -134,8 +135,8 @@
                                 <p class="restaurant-location small">양식 · 대구 동구 신천동</p>
                             </div>
                             <div class="rest-time">
-                                <p class="restaurant-time "><span>2025.07.27(금) · 18:00</span></p>
-                                <p class="person">2명</p>
+                                <p class="restaurant-time body1"><span>2025.07.27(금) · 18:00</span></p>
+                                <p class="person body1">2명</p>
                             </div>
                         </div>
                     </div>
@@ -155,8 +156,8 @@
                                 <p class="restaurant-location small">양식 · 대구 동구 신천동</p>
                             </div>
                             <div class="rest-time">
-                                <p class="restaurant-time "><span>2025.07.27(금) · 12:00</span></p>
-                                <p class="person">2명</p>
+                                <p class="restaurant-time body1"><span>2025.07.27(금) · 12:00</span></p>
+                                <p class="person body1">2명</p>
                             </div>
                         </div>
                     </div>
