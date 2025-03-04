@@ -15,13 +15,14 @@
   <script src="./js/likeButton.js" defer></script>
   <script src="./js/modal.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="./js/common.js" defer></script>
 </head>
 
 <body>
   <header>
     <h1 class="hidden">이용내역 정보</h1>
     <div class="header-btns">
-      <a href="#" class="back-btn">back</a>
+      <a href="#" onclick="goBack(event)" class="back-btn">back</a>
       <button class="like">
         <img class="like-icon1 active" src="../icon/like.png" alt="찜하기">
         <img class="like-icon2" src="../icon/liked.png" alt="찜하기">

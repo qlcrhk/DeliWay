@@ -10,11 +10,12 @@
     <link rel="stylesheet" href="./css/search-modal.css">
     <script src="./js/search-modal.js" defer></script>
     <script src="./js/review_write.js"></script>
+    <script src="./js/common.js" defer></script>
 </head>
 <body>
     <header>
         <div class="page-header">
-            <a href="#"><i class="fa fa-angle-left icon"></i><span class="hidden">뒤로가기</span></a>
+            <a href="#"><i class="fa fa-angle-left icon" onclick="goBack(event)"></i><span class="hidden">뒤로가기</span></a>
             <h1 class="title hidden">검색</h1>
             <form action="#" method="GET">
                 <input type="text" name="query" placeholder="원하는 주제나 맛집을 입력해주세요." required>

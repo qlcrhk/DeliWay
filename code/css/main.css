@@ -6,6 +6,7 @@
 body {
   padding-bottom: 150px;
   overflow-x: hidden;
+  max-width: 440px;
 }
 
 section {

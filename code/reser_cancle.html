@@ -14,13 +14,14 @@
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="./js/likeButton.js"></script>
+  <script src="./js/common.js" defer></script>
 </head>
 
 <body>
   <header>
     <h1 class="hidden">이용내역 정보</h1>
     <div class="header-btns">
-      <a href="#" class="back-btn">back</a>
+      <a href="#" onclick="goBack(event)" class="back-btn">back</a>
       <button class="like">
         <img class="like-icon1 active" src="../icon/like.png" alt="찜하기">
         <img class="like-icon2" src="../icon/liked.png" alt="찜하기">
@@ -61,13 +62,14 @@
   <nav id="gnb">
     <h2 class="hidden">주 메뉴</h2>
     <ul>
-      <li><a href="#" class="homeBtn">홈</a></li>
-      <li><a href="#" class="searchBtn">검색</a></li>
-      <li><a href="#" class="likeBtn">찜한 맛집</a></li>
-      <li><a href="#" class="reservationBtn">예약내역</a></li>
-      <li><a href="#" class="mypageBtn">마이페이지</a></li>
+      <li><a href="./index.html" class="homeBtn">홈</a></li>
+      <li><a href="./search.html" class="searchBtn">검색</a></li>
+      <li><a href="./like_list.html" class="likeBtn">찜한 맛집</a></li>
+      <li><a href="./reser_list.html" class="reservationBtn">예약내역</a></li>
+      <li><a href="./mypage.html" class="mypageBtn">마이페이지</a></li>
     </ul>
-  </nav>
+</nav>
+
 
   <main>
     <section class="title-section">
