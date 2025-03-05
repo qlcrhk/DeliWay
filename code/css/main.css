@@ -168,10 +168,10 @@ dd {
 
 dd:nth-of-type(3) {
   position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 50px;
-  height: 50px;
+  bottom: -1px;
+  right: -1px;
+  width: 51px;
+  height: 51px;
   background-color: #fff;
   border-radius: 10px 0 0;
   display: flex;
@@ -219,10 +219,10 @@ dd:nth-of-type(3)::before {
 
 /* 거리 선택 */
 .distance-section ul {
-  padding-left: var(--padding-default);
+  padding: 0 var(--padding-default);
   display: flex;
-  gap: 15px;
-  overflow:scroll;
+  gap: 10px;
+  overflow: scroll;
 }
 
 .distance-section ul li {
@@ -232,20 +232,18 @@ dd:nth-of-type(3)::before {
   background-color: var(--primary-light);
   border-radius: 20px;
   width: 100px;
-  padding: 5px;
-  
 }
 
 .distance-section ul li a {
+  padding: 10px 20px;
   display: inline-flex;
+  white-space: nowrap;
   justify-content: center;
   align-items: center;
-  font-size: 16px;
   text-decoration: none;
-  width: 100px;
+  width: 100%;
   height: 100%;
   color: var(--primary-dark);
-  font-weight: bold;
 }
 
 /* 광고 */
