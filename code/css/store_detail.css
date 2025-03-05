@@ -102,20 +102,9 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
     right: 70px;
   }
-  
-  .like-icon1,
-  .like-icon2 {
-    display: none;
-    width: 20px;
-  }
-  
-  .active {
-    display: block;
-  }
-  
+ 
   .share-btn {
     right: 25px;
     text-align: center;
@@ -499,8 +488,9 @@ main {
     display: block;
 }
 
+.comment-btn img,
 .like-btn img,
-.comment-btn img {
+.like img {
     width: 25px;
     height: 25px;
 }
@@ -570,13 +560,12 @@ main {
 }
 
 .gps {
-    background-image: url("../asset/icon/gps.png");
+    background-image: url("../../icon/gps.png");
     background-size: 20px;
     background-position: center;
     width: 20px;
     height: 20px;
     margin-right: 0.3em;
-    margin-top: 3px;
 }
 
 .subway {
